@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Naver Map View Controller-->
+        <scene sceneID="MPf-Q0-HGC">
+            <objects>
+                <viewController id="fHE-Oo-TyF" customClass="NaverMapViewController" customModule="JBNU_COE" customModuleProvider="target" sceneMemberID="viewController">
+                    <containerView key="view" opaque="NO" contentMode="scaleToFill" id="bSK-mR-J1J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    </containerView>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uPa-nD-qQc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4" y="106"/>
+        </scene>
+    </scenes>
+</document>

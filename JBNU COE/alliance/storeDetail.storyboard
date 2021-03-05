@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Store Detail View Controller-->
+        <scene sceneID="QwF-q9-0bx">
+            <objects>
+                <viewController storyboardIdentifier="Store Detail View Controller" id="IMO-hL-QKO" customClass="StoreDetailViewController" customModule="JBNU_COE" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="BQQ-XA-73X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7hP-Qw-evc">
+                                <rect key="frame" x="0.0" y="34" width="375" height="428"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <segue destination="RDk-6g-UGk" kind="embed" destinationCreationSelector="loadSwiftUI:" id="BWU-jT-ecz"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="23E-TF-ers" customClass="NMFMapView">
+                                <rect key="frame" x="0.0" y="375" width="375" height="258"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Oqh-j2-ElD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="23E-TF-ers" id="LZY-Yu-Ji4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Zz-fN-D61" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1094.8598130841121" y="329.15766738660909"/>
+        </scene>
+        <!--Hosting Controller-->
+        <scene sceneID="ydo-3c-vY9">
+            <objects>
+                <hostingController id="RDk-6g-UGk" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZMc-W4-4xQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2093" y="132"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
