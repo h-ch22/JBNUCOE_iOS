@@ -119,6 +119,8 @@ class getStores: ObservableObject{
             if let document = document{
                 var openTime = document.get("open") as! String
                 var closeTime = document.get("close") as! String
+                var brake = document.get("break") as! String
+                var closed = document.get("closed") as! String
                 
                 if openTime != "unknown" && closeTime != "unknown"{
                     enable = openTime + " ~ " + closeTime
@@ -128,14 +130,13 @@ class getStores: ObservableObject{
                     enable = "알 수 없음"
                 }
                 
-                self.loadBenefits(storeName: storeName, category: category, isEnable: enable)
-                
+                self.loadBenefits(storeName: storeName, category: category, isEnable: enable, brake : brake, closed : closed)
             }
             
         }
     }
     
-    func loadBenefits(storeName : String, category: String, isEnable : String){
+    func loadBenefits(storeName : String, category: String, isEnable : String, brake : String, closed : String){
         print(storeName + "," + category)
         var benefitDictionary: Any?
         
@@ -151,23 +152,23 @@ class getStores: ObservableObject{
                 let s = String(describing: benefitDictionary)
                 var split_Str = s.components(separatedBy: "Optional([\"benefits\":")
                 var final_Str = split_Str[1].components(separatedBy: "])")
-                self.setBenefits(benefit : final_Str[0], storeName: storeName, isEnable : isEnable)
+                self.setBenefits(benefit : final_Str[0], storeName: storeName, isEnable : isEnable, brake : brake, closed : closed)
             }
         }
         
     }
     
-    func setBenefits(benefit: String, storeName : String, isEnable : String){
+    func setBenefits(benefit: String, storeName : String, isEnable : String, brake : String, closed : String){
         var benefits = [String : String]()
         
         benefits.updateValue(benefit, forKey: storeName)
         for (key, value) in benefits{
-            self.loadimg(storeName: storeName, benefits: benefits, isEnable: isEnable)
+            self.loadimg(storeName: storeName, benefits: benefits, isEnable: isEnable, brake : brake, closed : closed)
         }
         
     }
     
-    func loadimg(storeName : String, benefits : [String : String], isEnable : String){
+    func loadimg(storeName : String, benefits : [String : String], isEnable : String, brake : String, closed : String){
         var urlDict = [String : String]()
         var engDict = [String : String]()
         var strURL : String = ""
@@ -194,16 +195,16 @@ class getStores: ObservableObject{
                     strURL = imgurl!.absoluteString
                     
                     urlDict.updateValue(strURL, forKey: storeName)
-                    self.setData(storeName: storeName, category: self.category, benefits: benefits, engDict: engDict, urlDict: urlDict, isEnable : isEnable)
+                    self.setData(storeName: storeName, category: self.category, benefits: benefits, engDict: engDict, urlDict: urlDict, isEnable : isEnable, brake : brake, closed : closed)
                     
                 }
             }
         }
     }
     
-    func setData(storeName : String, category: String, benefits: [String : String], engDict : [String : String], urlDict : [String : String], isEnable : String){
+    func setData(storeName : String, category: String, benefits: [String : String], engDict : [String : String], urlDict : [String : String], isEnable : String, brake : String, closed : String){
         self.alliance.append(
-            Alliance(storeName: storeName, benefits: benefits[storeName]!, engName: engDict[storeName]!, url: URL(string: urlDict[storeName]!)!, category: category, isEnable: isEnable)
+            Alliance(storeName: storeName, benefits: benefits[storeName]!, engName: engDict[storeName]!, url: URL(string: urlDict[storeName]!)!, category: category, isEnable: isEnable, brake : brake, closed : closed)
         )
         
         filteredArray = self.alliance.filter{storeName.contains($0.storeName)}

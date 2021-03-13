@@ -46,55 +46,77 @@ struct info: View {
                         
                         Text("현재 버전 : " + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!)
                         
-                        if latestVersion != Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String{
-                            VStack {
-                                Spacer()
-                                
-                                HStack{
-                                    Image(systemName: "xmark")
-                                        .foregroundColor(.red)
-                                    
-                                    Text("최신 버전이 아닙니다.")
-                                        .foregroundColor(.red)
-                                }
-                                
-                                Spacer()
-                                
-                                Button(action : {
-                                    if let url = URL(string : "items-apps://itunes.apple.com/app/id1549231899"), UIApplication.shared.canOpenURL(url){
-                                        UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                                    }
-                                }){
-                                    HStack{
-                                        Text("업데이트 하기")
-                                            .foregroundColor(.white)
-                                        
-                                        Image(systemName: "chevron.right")
-                                            .foregroundColor(.white)
-                                    }.padding([.vertical], 10).padding([.horizontal], 25).background(RoundedRectangle(cornerRadius: 10.0).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/))
-                                }
-                                
-                                Spacer()
-                                
-                            }
-                            
-                        }
-                        
-                        else{
-                            
+                        if latestVersion == "0.0.0"{
                             Spacer()
                             
                             HStack{
-                                Image(systemName: "checkmark")
-                                    .foregroundColor(.green)
+                                Image(systemName: "exclamationmark.circle.fill")
+                                    .foregroundColor(.orange)
                                 
-                                Text("최신 버전입니다.")
+                                Text("버전 정보를 확인할 수 없습니다.")
                                     .foregroundColor(.green)
                             }
                             
                             Spacer()
-                            
                         }
+                        
+                        else{
+                            if latestVersion != Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String{
+                                VStack {
+                                    Spacer()
+                                    
+                                    HStack{
+                                        Image(systemName: "xmark")
+                                            .foregroundColor(.red)
+                                        
+                                        Text("최신 버전이 아닙니다.")
+                                            .foregroundColor(.red)
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                    Button(action : {
+                                        let appStore_Str = "https://apps.apple.com/kr/app/%EC%A0%84%EB%B6%81%EB%8C%80-%EA%B3%B5%EB%8C%80/id1549231899"
+                                        
+                                        let appStore = URL(string: appStore_Str)
+                                        
+                                        if UIApplication.shared.canOpenURL(appStore!){
+                                            UIApplication.shared.openURL(appStore!)
+                                        }
+                                    }){
+                                        HStack{
+                                            Text("업데이트 하기")
+                                                .foregroundColor(.white)
+                                            
+                                            Image(systemName: "chevron.right")
+                                                .foregroundColor(.white)
+                                        }.padding([.vertical], 10).padding([.horizontal], 25).background(RoundedRectangle(cornerRadius: 10.0).foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/))
+                                    }
+                                    
+                                    Spacer()
+                                    
+                                }
+                                
+                            }
+                            
+                            else{
+                                
+                                Spacer()
+                                
+                                HStack{
+                                    Image(systemName: "checkmark")
+                                        .foregroundColor(.green)
+                                    
+                                    Text("최신 버전입니다.")
+                                        .foregroundColor(.green)
+                                }
+                                
+                                Spacer()
+                                
+                            }
+                        }
+                        
+
                     }
                 }.padding(20).background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.gray).opacity(0.2))
                 

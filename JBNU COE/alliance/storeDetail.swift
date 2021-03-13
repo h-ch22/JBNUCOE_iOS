@@ -223,7 +223,7 @@ struct loadMap : UIViewControllerRepresentable{
 }
 
 struct storeDetail_Previews: PreviewProvider {
-    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable: "")
+    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable: "", brake : "", closed : "")
 
     static var previews: some View {
         storeDetail(alliance: $alliance)

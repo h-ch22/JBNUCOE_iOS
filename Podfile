@@ -13,7 +13,7 @@ pod 'Firebase/Messaging'
 pod 'Firebase/MLVision'
 pod ‘SDWebImageSwiftUI’
 pod 'NMapsMap'
-pod 'JTAppleCalendar'
+pod 'KVKCalendar'
 
 
   # Pods for JBNU COE

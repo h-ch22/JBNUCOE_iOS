@@ -14,6 +14,8 @@ struct Products: View {
     @State var labcoatLate : Int = 0
     @State var umbrellaLate : Int = 0
     @State var serviceStatus : Bool = true
+    @State var uniformLate : Int = 0
+    @State var slipperLate : Int = 0
     
     func getData(){
         db = Firestore.firestore()
@@ -23,6 +25,8 @@ struct Products: View {
         let calculatorRef = db.collection("Products").document("calculator")
         let labcoatRef = db.collection("Products").document("labcoat")
         let umbrellaRef = db.collection("Products").document("umbrella")
+        let slipperRef = db.collection("Products").document("slipper")
+        let uniformRef = db.collection("Products").document("uniform")
         
         statusRef.getDocument(){(document, err) in
             if let document = document{
@@ -108,6 +112,18 @@ struct Products: View {
                 umbrellaLate = document.get("late") as! Int
             }
         }
+        
+        slipperRef.getDocument(){(document, err) in
+            if let document = document{
+                slipperLate = document.get("late") as! Int
+            }
+        }
+        
+        uniformRef.getDocument(){(document, err) in
+            if let document = document{
+                uniformLate = document.get("late") as! Int
+            }
+        }
     }
     
     var body: some View {
@@ -116,7 +132,7 @@ struct Products: View {
                 Spacer()
                 
                 if serviceStatus{
-                    Image(systemName: "checkmark")
+                    Image(systemName: "checkmark.circle")
                         .resizable()
                         .frame(width: 100, height: 100, alignment: .center)
                         .foregroundColor(.green)
@@ -139,136 +155,201 @@ struct Products: View {
                 
                 Spacer()
 
-                VStack {
-                    HStack{
-                        Image("ic_battery")
-                            .resizable().frame(width : 50, height: 50)
-                        Text("보조 배터리")
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
+                Group{
+                    VStack {
+                        HStack{
+                            Image("ic_battery")
+                                .resizable().frame(width : 50, height: 50)
+                            Text("보조 배터리")
+                                .fontWeight(.semibold)
 
-                        Spacer()
+                            Spacer()
+                            
+                        }
                         
-                    }
-                    
-                    if batteryLate > 0{
-                        HStack {
-                            Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                            Text("대여 가능 (잔여 : " + String(batteryLate) + "개)").foregroundColor(.green)
-                            
-                            Spacer()
+                        if batteryLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(batteryLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
                         }
-                    }
-                    
-                    else{
-                        HStack {
-                            Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                            Text("대여 불가").foregroundColor(.red)
-                            
-                            Spacer()
-                        }
-                    }
-                }.padding(20)
-                
-                Divider()
-                
-                VStack {
-                    HStack{
-                        Image("ic_calculator")
-                            .resizable().frame(width : 50, height: 50)
-
-                        Text("공학용 계산기")
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
                         
-                        Spacer()
-
-                    }
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
                     
-                    if calculatorLate > 0{
-                        HStack {
-                            Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                            Text("대여 가능 (잔여 : " + String(calculatorLate) + "개)").foregroundColor(.green)
+                    Divider()
+                    
+                    VStack {
+                        HStack{
+                            Image("ic_calculator")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("공학용 계산기")
+                                .fontWeight(.semibold)
                             
                             Spacer()
+
                         }
-                    }
+                        
+                        if calculatorLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(calculatorLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
+                        }
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
                     
-                    else{
-                        HStack {
-                            Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                            Text("대여 불가").foregroundColor(.red)
-                            
+                    Divider()
+
+                    VStack {
+                        HStack{
+                            Image("ic_labcoat")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("실험복")
+                                .fontWeight(.semibold)
+
                             Spacer()
                         }
-                    }
-                }.padding(20)
-                
-                Divider()
-
-                VStack {
-                    HStack{
-                        Image("ic_labcoat")
-                            .resizable().frame(width : 50, height: 50)
-
-                        Text("실험복")
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-
-                        Spacer()
-                    }
+                        
+                        if labcoatLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(labcoatLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
+                        }
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
                     
-                    if labcoatLate > 0{
-                        HStack {
-                            Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                            Text("대여 가능 (잔여 : " + String(labcoatLate) + "개)").foregroundColor(.green)
-                            
+                    Divider()
+                }
+
+                Group{
+                    VStack {
+                        HStack{
+                            Image("ic_umbrella")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("우산")
+                                .fontWeight(.semibold)
+
                             Spacer()
                         }
-                    }
+                        
+                        if umbrellaLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(umbrellaLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
+                        }
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
                     
-                    else{
-                        HStack {
-                            Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                            Text("대여 불가").foregroundColor(.red)
-                            
+                    Divider()
+
+                    VStack {
+                        HStack{
+                            Image("ic_slippers")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("슬리퍼")
+                                .fontWeight(.semibold)
+
                             Spacer()
                         }
-                    }
-                }.padding(20)
-                
-                Divider()
-
-                VStack {
-                    HStack{
-                        Image("ic_umbrella")
-                            .resizable().frame(width : 50, height: 50)
-
-                        Text("우산")
-                            .foregroundColor(.black)
-                            .fontWeight(.semibold)
-
-                        Spacer()
-                    }
+                        
+                        if slipperLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(slipperLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
+                        }
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
                     
-                    if umbrellaLate > 0{
-                        HStack {
-                            Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                            Text("대여 가능 (잔여 : " + String(umbrellaLate) + "개)").foregroundColor(.green)
-                            
+                    Divider()
+
+                    VStack {
+                        HStack{
+                            Image("ic_uniform")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("유니폼")
+                                .fontWeight(.semibold)
+
                             Spacer()
                         }
-                    }
-                    
-                    else{
-                        HStack {
-                            Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                            Text("대여 불가").foregroundColor(.red)
-                            
-                            Spacer()
+                        
+                        if uniformLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : " + String(uniformLate) + "개)").foregroundColor(.green)
+                                
+                                Spacer()
+                            }
                         }
-                    }
-                }.padding(20)
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가").foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
+                }
+
             
             }
         }.navigationBarTitle("대여 사업 잔여 수량 확인")

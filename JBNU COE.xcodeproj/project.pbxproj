@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3E04F10716561BDDF2C8395C /* Pods_JBNU_COETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F1DB2F2C01EE148E2A13D8F /* Pods_JBNU_COETests.framework */; };
+		264D79DF8531B8F4998153DF /* Pods_JBNU_COE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 870015903E4E5C6C27999EB4 /* Pods_JBNU_COE.framework */; };
 		7B16C15A25F2266700E21F5A /* ProductRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16C15925F2266700E21F5A /* ProductRow.swift */; };
 		7B16C15F25F2267300E21F5A /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16C15E25F2267300E21F5A /* Product.swift */; };
 		7B16C16425F227BE00E21F5A /* ProductLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B16C16325F227BE00E21F5A /* ProductLog.swift */; };
+		7B19E86325FA086E0024B8A5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19E86225FA086E0024B8A5 /* CalendarViewController.swift */; };
+		7B19E86B25FA09850024B8A5 /* EventViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19E86A25FA09850024B8A5 /* EventViewer.swift */; };
+		7B19E87025FA0A3F0024B8A5 /* DisplayCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19E86F25FA0A3F0024B8A5 /* DisplayCalendar.swift */; };
 		7B1B5C8725EEAB4400543DBF /* img_hjy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B5C8625EEAB4400543DBF /* img_hjy.png */; };
+		7B56583B25FCF5A300F6E2B8 /* ic_slippers.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B56583925FCF5A300F6E2B8 /* ic_slippers.png */; };
+		7B56583C25FCF5A300F6E2B8 /* ic_uniform.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B56583A25FCF5A300F6E2B8 /* ic_uniform.png */; };
 		7B6BD71025E689FF006D1A1C /* info.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6BD70F25E689FF006D1A1C /* info.swift */; };
 		7B6BD71525E68B01006D1A1C /* ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B6BD71425E68B01006D1A1C /* ic.png */; };
 		7B6BD71A25E692F5006D1A1C /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6BD71925E692F5006D1A1C /* EULA.swift */; };
@@ -81,8 +86,8 @@
 		7BEB161E25E25B84003A20E2 /* building_9_1f.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEB15F025E25B83003A20E2 /* building_9_1f.jpeg */; };
 		7BEB161F25E25B84003A20E2 /* building_9_2f.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 7BEB15F125E25B83003A20E2 /* building_9_2f.jpeg */; };
 		7BEB162A25E273A1003A20E2 /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BEB162925E273A1003A20E2 /* Products.swift */; };
-		DE35B6BB3DCDA12F891AE48A /* Pods_JBNU_COE.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF67F50E6458918968E59FC8 /* Pods_JBNU_COE.framework */; };
-		F2640BA41044ACA388E1AF16 /* Pods_JBNU_COE_JBNU_COEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 549FA96944B228314C166D56 /* Pods_JBNU_COE_JBNU_COEUITests.framework */; };
+		E4075078F91DFD19A9191A54 /* Pods_JBNU_COE_JBNU_COEUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25520F5D13614A1187872B06 /* Pods_JBNU_COE_JBNU_COEUITests.framework */; };
+		EAF4AD2BF7DE9BAFFAEDF56E /* Pods_JBNU_COETests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 798EE8B6DFB7477E08082CBC /* Pods_JBNU_COETests.framework */; };
 		F600B0F825B9686500817ACE /* Ad_2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600B0F725B9686500817ACE /* Ad_2.swift */; };
 		F600B0FD25B9687C00817ACE /* Ad_3.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600B0FC25B9687C00817ACE /* Ad_3.swift */; };
 		F600B10225B96A1F00817ACE /* CampusMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F600B10125B96A1F00817ACE /* CampusMapView.swift */; };
@@ -114,7 +119,6 @@
 		F6378B5525B03CDB00B9ACAD /* NoticeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6378B5425B03CDB00B9ACAD /* NoticeRow.swift */; };
 		F6378B5A25B046A500B9ACAD /* Alliance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6378B5925B046A500B9ACAD /* Alliance.swift */; };
 		F6378B5F25B0472D00B9ACAD /* AllianceRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6378B5E25B0472D00B9ACAD /* AllianceRow.swift */; };
-		F63C9B4425B6AD0D00965984 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C9B4325B6AD0D00965984 /* SearchBar.swift */; };
 		F63C9B8D25B7036B00965984 /* loadCampusMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C9B8C25B7036B00965984 /* loadCampusMapView.swift */; };
 		F63C9B9A25B80B4800965984 /* sports_background.png in Resources */ = {isa = PBXBuildFile; fileRef = F63C9B9925B80B4800965984 /* sports_background.png */; };
 		F63C9BAB25B80CE500965984 /* SportsMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C9BAA25B80CE500965984 /* SportsMain.swift */; };
@@ -140,7 +144,6 @@
 		F63C9C1325B817D800965984 /* ic_60px.png in Resources */ = {isa = PBXBuildFile; fileRef = F63C9C0025B817D800965984 /* ic_60px.png */; };
 		F63C9C1425B817D800965984 /* ic_167px.png in Resources */ = {isa = PBXBuildFile; fileRef = F63C9C0125B817D800965984 /* ic_167px.png */; };
 		F63C9C1525B817D800965984 /* ic_172px.png in Resources */ = {isa = PBXBuildFile; fileRef = F63C9C0225B817D800965984 /* ic_172px.png */; };
-		F63C9C2E25B8291E00965984 /* FavoriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63C9C2D25B8291E00965984 /* FavoriteView.swift */; };
 		F63F033D25B861760001428F /* StudentCouncil_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F033C25B861760001428F /* StudentCouncil_main.swift */; };
 		F63F034225B865B00001428F /* StudentCouncil_greet.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F034125B865B00001428F /* StudentCouncil_greet.swift */; };
 		F63F034725B865C10001428F /* StudentCouncil_introduce.swift in Sources */ = {isa = PBXBuildFile; fileRef = F63F034625B865C10001428F /* StudentCouncil_introduce.swift */; };
@@ -163,7 +166,6 @@
 		F685078725B1F5E60054E9DF /* ic_1024px.png in Resources */ = {isa = PBXBuildFile; fileRef = F685078625B1F5E60054E9DF /* ic_1024px.png */; };
 		F6851CA925ABA5D800882E0F /* more.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6851CA825ABA5D800882E0F /* more.swift */; };
 		F686F0A825AB86C7009BA783 /* background_ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = F686F0A725AB86C7009BA783 /* background_ipad.png */; };
-		F697398F25CC18E800DC3AC9 /* CalendarView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F697398E25CC18E800DC3AC9 /* CalendarView.storyboard */; };
 		F69DBA5B25ADC2E5008F9EA5 /* storeDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F69DBA5A25ADC2E5008F9EA5 /* storeDetail.storyboard */; };
 		F6A1E88725AABB9400BD02EA /* JBNU_COEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A1E88625AABB9400BD02EA /* JBNU_COEApp.swift */; };
 		F6A1E88925AABB9400BD02EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A1E88825AABB9400BD02EA /* ContentView.swift */; };
@@ -220,14 +222,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0FAA2110009AEE9D78A75A51 /* Pods-JBNU COE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE.release.xcconfig"; path = "Target Support Files/Pods-JBNU COE/Pods-JBNU COE.release.xcconfig"; sourceTree = "<group>"; };
-		549FA96944B228314C166D56 /* Pods_JBNU_COE_JBNU_COEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COE_JBNU_COEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6F1DB2F2C01EE148E2A13D8F /* Pods_JBNU_COETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7AA54DA98CA7C6EB2746F02E /* Pods-JBNU COETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COETests.release.xcconfig"; path = "Target Support Files/Pods-JBNU COETests/Pods-JBNU COETests.release.xcconfig"; sourceTree = "<group>"; };
+		03DAEDABC7C9B098C9DEC53B /* Pods-JBNU COETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COETests.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COETests/Pods-JBNU COETests.debug.xcconfig"; sourceTree = "<group>"; };
+		11B10CAFE57F5677DC376020 /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE-JBNU COEUITests.release.xcconfig"; path = "Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests.release.xcconfig"; sourceTree = "<group>"; };
+		25520F5D13614A1187872B06 /* Pods_JBNU_COE_JBNU_COEUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COE_JBNU_COEUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68A26E629B1E896DFF48805F /* Pods-JBNU COE.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE.release.xcconfig"; path = "Target Support Files/Pods-JBNU COE/Pods-JBNU COE.release.xcconfig"; sourceTree = "<group>"; };
+		798EE8B6DFB7477E08082CBC /* Pods_JBNU_COETests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COETests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B16C15925F2266700E21F5A /* ProductRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductRow.swift; sourceTree = "<group>"; };
 		7B16C15E25F2267300E21F5A /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7B16C16325F227BE00E21F5A /* ProductLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductLog.swift; sourceTree = "<group>"; };
+		7B19E86225FA086E0024B8A5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		7B19E86A25FA09850024B8A5 /* EventViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventViewer.swift; sourceTree = "<group>"; };
+		7B19E86F25FA0A3F0024B8A5 /* DisplayCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCalendar.swift; sourceTree = "<group>"; };
 		7B1B5C8625EEAB4400543DBF /* img_hjy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_hjy.png; sourceTree = "<group>"; };
+		7B56583925FCF5A300F6E2B8 /* ic_slippers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_slippers.png; sourceTree = "<group>"; };
+		7B56583A25FCF5A300F6E2B8 /* ic_uniform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_uniform.png; sourceTree = "<group>"; };
 		7B6BD70F25E689FF006D1A1C /* info.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = info.swift; sourceTree = "<group>"; };
 		7B6BD71425E68B01006D1A1C /* ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic.png; sourceTree = "<group>"; };
 		7B6BD71925E692F5006D1A1C /* EULA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EULA.swift; sourceTree = "<group>"; };
@@ -297,10 +305,10 @@
 		7BEB15F025E25B83003A20E2 /* building_9_1f.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building_9_1f.jpeg; sourceTree = "<group>"; };
 		7BEB15F125E25B83003A20E2 /* building_9_2f.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = building_9_2f.jpeg; sourceTree = "<group>"; };
 		7BEB162925E273A1003A20E2 /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
-		8E6EE7D8B765F6B7286E3D63 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE-JBNU COEUITests.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		957A9DFEDF016202B1F0BD9F /* Pods-JBNU COETests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COETests.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COETests/Pods-JBNU COETests.debug.xcconfig"; sourceTree = "<group>"; };
-		A5FF4A67E4DC1B9920E9429F /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE-JBNU COEUITests.release.xcconfig"; path = "Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests.release.xcconfig"; sourceTree = "<group>"; };
-		CF67F50E6458918968E59FC8 /* Pods_JBNU_COE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		870015903E4E5C6C27999EB4 /* Pods_JBNU_COE.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_JBNU_COE.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8540B5FC7403604D3433092 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE-JBNU COEUITests.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F2BA4AF533AD3BDF60E35AA1 /* Pods-JBNU COE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COE/Pods-JBNU COE.debug.xcconfig"; sourceTree = "<group>"; };
+		F35D238E965A31555571C30C /* Pods-JBNU COETests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COETests.release.xcconfig"; path = "Target Support Files/Pods-JBNU COETests/Pods-JBNU COETests.release.xcconfig"; sourceTree = "<group>"; };
 		F600B0F725B9686500817ACE /* Ad_2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad_2.swift; sourceTree = "<group>"; };
 		F600B0FC25B9687C00817ACE /* Ad_3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ad_3.swift; sourceTree = "<group>"; };
 		F600B10125B96A1F00817ACE /* CampusMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMapView.swift; sourceTree = "<group>"; };
@@ -332,7 +340,6 @@
 		F6378B5425B03CDB00B9ACAD /* NoticeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeRow.swift; sourceTree = "<group>"; };
 		F6378B5925B046A500B9ACAD /* Alliance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alliance.swift; sourceTree = "<group>"; };
 		F6378B5E25B0472D00B9ACAD /* AllianceRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllianceRow.swift; sourceTree = "<group>"; };
-		F63C9B4325B6AD0D00965984 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		F63C9B8C25B7036B00965984 /* loadCampusMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadCampusMapView.swift; sourceTree = "<group>"; };
 		F63C9B9925B80B4800965984 /* sports_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sports_background.png; sourceTree = "<group>"; };
 		F63C9BAA25B80CE500965984 /* SportsMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SportsMain.swift; sourceTree = "<group>"; };
@@ -358,7 +365,6 @@
 		F63C9C0025B817D800965984 /* ic_60px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_60px.png; sourceTree = "<group>"; };
 		F63C9C0125B817D800965984 /* ic_167px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_167px.png; sourceTree = "<group>"; };
 		F63C9C0225B817D800965984 /* ic_172px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_172px.png; sourceTree = "<group>"; };
-		F63C9C2D25B8291E00965984 /* FavoriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteView.swift; sourceTree = "<group>"; };
 		F63F033C25B861760001428F /* StudentCouncil_main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncil_main.swift; sourceTree = "<group>"; };
 		F63F034125B865B00001428F /* StudentCouncil_greet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncil_greet.swift; sourceTree = "<group>"; };
 		F63F034625B865C10001428F /* StudentCouncil_introduce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentCouncil_introduce.swift; sourceTree = "<group>"; };
@@ -381,7 +387,6 @@
 		F685078625B1F5E60054E9DF /* ic_1024px.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_1024px.png; sourceTree = "<group>"; };
 		F6851CA825ABA5D800882E0F /* more.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = more.swift; sourceTree = "<group>"; };
 		F686F0A725AB86C7009BA783 /* background_ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_ipad.png; sourceTree = "<group>"; };
-		F697398E25CC18E800DC3AC9 /* CalendarView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CalendarView.storyboard; sourceTree = "<group>"; };
 		F69DBA5A25ADC2E5008F9EA5 /* storeDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = storeDetail.storyboard; sourceTree = "<group>"; };
 		F6A1E88325AABB9400BD02EA /* JBNU COE.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "JBNU COE.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F6A1E88625AABB9400BD02EA /* JBNU_COEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JBNU_COEApp.swift; sourceTree = "<group>"; };
@@ -425,7 +430,6 @@
 		F6E7B90225C4B80000BD4434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F6E7B90725C4BFF000BD4434 /* JBNU COE.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "JBNU COE.entitlements"; sourceTree = "<group>"; };
 		F6E9A88725AB62A100687D99 /* ic_coelogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_coelogo.png; path = "JBNU COE/ic/ic_coelogo.png"; sourceTree = SOURCE_ROOT; };
-		FDAB10654E5D6995C3FD2093 /* Pods-JBNU COE.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JBNU COE.debug.xcconfig"; path = "Target Support Files/Pods-JBNU COE/Pods-JBNU COE.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -433,7 +437,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DE35B6BB3DCDA12F891AE48A /* Pods_JBNU_COE.framework in Frameworks */,
+				264D79DF8531B8F4998153DF /* Pods_JBNU_COE.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -441,7 +445,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3E04F10716561BDDF2C8395C /* Pods_JBNU_COETests.framework in Frameworks */,
+				EAF4AD2BF7DE9BAFFAEDF56E /* Pods_JBNU_COETests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,7 +453,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2640BA41044ACA388E1AF16 /* Pods_JBNU_COE_JBNU_COEUITests.framework in Frameworks */,
+				E4075078F91DFD19A9191A54 /* Pods_JBNU_COE_JBNU_COEUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,24 +463,24 @@
 		0F5C7EECE75482AD90081B65 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				FDAB10654E5D6995C3FD2093 /* Pods-JBNU COE.debug.xcconfig */,
-				0FAA2110009AEE9D78A75A51 /* Pods-JBNU COE.release.xcconfig */,
-				8E6EE7D8B765F6B7286E3D63 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */,
-				A5FF4A67E4DC1B9920E9429F /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */,
-				957A9DFEDF016202B1F0BD9F /* Pods-JBNU COETests.debug.xcconfig */,
-				7AA54DA98CA7C6EB2746F02E /* Pods-JBNU COETests.release.xcconfig */,
+				F2BA4AF533AD3BDF60E35AA1 /* Pods-JBNU COE.debug.xcconfig */,
+				68A26E629B1E896DFF48805F /* Pods-JBNU COE.release.xcconfig */,
+				E8540B5FC7403604D3433092 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */,
+				11B10CAFE57F5677DC376020 /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */,
+				03DAEDABC7C9B098C9DEC53B /* Pods-JBNU COETests.debug.xcconfig */,
+				F35D238E965A31555571C30C /* Pods-JBNU COETests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		4239A5332D0460E1254C1F0D /* Frameworks */ = {
+		7B19E84625FA05F80024B8A5 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
-				CF67F50E6458918968E59FC8 /* Pods_JBNU_COE.framework */,
-				549FA96944B228314C166D56 /* Pods_JBNU_COE_JBNU_COEUITests.framework */,
-				6F1DB2F2C01EE148E2A13D8F /* Pods_JBNU_COETests.framework */,
+				7B19E86225FA086E0024B8A5 /* CalendarViewController.swift */,
+				7B19E86A25FA09850024B8A5 /* EventViewer.swift */,
+				7B19E86F25FA0A3F0024B8A5 /* DisplayCalendar.swift */,
 			);
-			name = Frameworks;
+			path = Calendar;
 			sourceTree = "<group>";
 		};
 		F609E7E825AC33FD00635FEE /* notice */ = {
@@ -536,14 +540,6 @@
 			path = Sports;
 			sourceTree = "<group>";
 		};
-		F63C9C2C25B8291500965984 /* Favorite */ = {
-			isa = PBXGroup;
-			children = (
-				F63C9C2D25B8291E00965984 /* FavoriteView.swift */,
-			);
-			path = Favorite;
-			sourceTree = "<group>";
-		};
 		F63F033B25B8616A0001428F /* Student Council */ = {
 			isa = PBXGroup;
 			children = (
@@ -571,14 +567,6 @@
 				F685076125B1BDAB0054E9DF /* MapViewController.swift */,
 			);
 			path = alliance;
-			sourceTree = "<group>";
-		};
-		F683EB2D25B83B0E00608F1B /* Calendar */ = {
-			isa = PBXGroup;
-			children = (
-				F697398E25CC18E800DC3AC9 /* CalendarView.storyboard */,
-			);
-			path = Calendar;
 			sourceTree = "<group>";
 		};
 		F6851CA725ABA5D000882E0F /* more */ = {
@@ -617,7 +605,7 @@
 				F6A1E8A225AABB9500BD02EA /* JBNU COEUITests */,
 				F6A1E88425AABB9400BD02EA /* Products */,
 				0F5C7EECE75482AD90081B65 /* Pods */,
-				4239A5332D0460E1254C1F0D /* Frameworks */,
+				FA5E946C03421111A1C73FA6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -634,10 +622,9 @@
 		F6A1E88525AABB9400BD02EA /* JBNU COE */ = {
 			isa = PBXGroup;
 			children = (
+				7B19E84625FA05F80024B8A5 /* Calendar */,
 				F6E7B90725C4BFF000BD4434 /* JBNU COE.entitlements */,
 				F63F033B25B8616A0001428F /* Student Council */,
-				F683EB2D25B83B0E00608F1B /* Calendar */,
-				F63C9C2C25B8291500965984 /* Favorite */,
 				F63C9B8325B6FC8900965984 /* Sports */,
 				F6110F7D25B56A3000ED88B9 /* CampusMap */,
 				F623113925AD88B10069112F /* FeedbackHub */,
@@ -657,7 +644,6 @@
 				F6A1E88C25AABB9500BD02EA /* Preview Content */,
 				F6C71BB425AB986500112B91 /* BottomTabManager.swift */,
 				F6378B2625B00D3500B9ACAD /* tmp.storyboard */,
-				F63C9B4325B6AD0D00965984 /* SearchBar.swift */,
 				F6E7B90225C4B80000BD4434 /* AppDelegate.swift */,
 			);
 			path = "JBNU COE";
@@ -762,6 +748,8 @@
 		F6E9A88F25AB6C5300687D99 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				7B56583925FCF5A300F6E2B8 /* ic_slippers.png */,
+				7B56583A25FCF5A300F6E2B8 /* ic_uniform.png */,
 				7BEB15C525E25B81003A20E2 /* building_1_1f.jpeg */,
 				7BEB15CF25E25B81003A20E2 /* building_1_2f.jpeg */,
 				7BEB15ED25E25B83003A20E2 /* building_1_3f.jpeg */,
@@ -844,6 +832,16 @@
 			path = Lincense;
 			sourceTree = "<group>";
 		};
+		FA5E946C03421111A1C73FA6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				870015903E4E5C6C27999EB4 /* Pods_JBNU_COE.framework */,
+				25520F5D13614A1187872B06 /* Pods_JBNU_COE_JBNU_COEUITests.framework */,
+				798EE8B6DFB7477E08082CBC /* Pods_JBNU_COETests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -851,11 +849,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6A1E8A825AABB9500BD02EA /* Build configuration list for PBXNativeTarget "JBNU COE" */;
 			buildPhases = (
-				4C4D13822B89282438881C55 /* [CP] Check Pods Manifest.lock */,
+				181DA19288D05689AA05009A /* [CP] Check Pods Manifest.lock */,
 				F6A1E87F25AABB9400BD02EA /* Sources */,
 				F6A1E88025AABB9400BD02EA /* Frameworks */,
 				F6A1E88125AABB9400BD02EA /* Resources */,
-				328D7183ABA02960C63B13A7 /* [CP] Embed Pods Frameworks */,
+				47C8C242AF9DFBCF083358F1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -870,7 +868,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6A1E8AB25AABB9500BD02EA /* Build configuration list for PBXNativeTarget "JBNU COETests" */;
 			buildPhases = (
-				F63513A173DF0060A6FC4B9E /* [CP] Check Pods Manifest.lock */,
+				5D58CE01B446112DD5FC04AF /* [CP] Check Pods Manifest.lock */,
 				F6A1E89025AABB9500BD02EA /* Sources */,
 				F6A1E89125AABB9500BD02EA /* Frameworks */,
 				F6A1E89225AABB9500BD02EA /* Resources */,
@@ -889,11 +887,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F6A1E8AE25AABB9500BD02EA /* Build configuration list for PBXNativeTarget "JBNU COEUITests" */;
 			buildPhases = (
-				DCDB64936EFF288B82A7C04B /* [CP] Check Pods Manifest.lock */,
+				14D41F628FB6AF9E20334DD2 /* [CP] Check Pods Manifest.lock */,
 				F6A1E89B25AABB9500BD02EA /* Sources */,
 				F6A1E89C25AABB9500BD02EA /* Frameworks */,
 				F6A1E89D25AABB9500BD02EA /* Resources */,
-				534A08FBD76E9B9B5A3A94B5 /* [CP] Embed Pods Frameworks */,
+				BFBC0B32E5E5776489F898F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -961,6 +959,7 @@
 				F63C9C1025B817D800965984 /* ic_196px.png in Resources */,
 				7BEB160B25E25B84003A20E2 /* building_6_3f.jpeg in Resources */,
 				F6E9A88825AB62A100687D99 /* ic_coelogo.png in Resources */,
+				7B56583C25FCF5A300F6E2B8 /* ic_uniform.png in Resources */,
 				7BEB160025E25B84003A20E2 /* building_7_3f.jpeg in Resources */,
 				F609E80625AC97AD00635FEE /* ic_map.png in Resources */,
 				F63F035F25B871E50001428F /* greeting_img.jpg in Resources */,
@@ -1039,6 +1038,7 @@
 				7BEB160225E25B84003A20E2 /* building_8_3f.jpeg in Resources */,
 				7BEB15A725E24476003A20E2 /* img_sb.png in Resources */,
 				F609E80225AC97AD00635FEE /* ic_cancel.png in Resources */,
+				7B56583B25FCF5A300F6E2B8 /* ic_slippers.png in Resources */,
 				7BEB15C025E253F4003A20E2 /* ic_sports.png in Resources */,
 				F63C9B9A25B80B4800965984 /* sports_background.png in Resources */,
 				7BE8CE1A25E7904400268AB5 /* CampusMap.storyboard in Resources */,
@@ -1070,7 +1070,6 @@
 				F63C9C0C25B817D800965984 /* ic_58px.png in Resources */,
 				7B9EADFC25EF5D430024CF3B /* ic_event.png in Resources */,
 				F63C9C0425B817D800965984 /* ic_48px.png in Resources */,
-				F697398F25CC18E800DC3AC9 /* CalendarView.storyboard in Resources */,
 				7BEB161F25E25B84003A20E2 /* building_9_2f.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1092,63 +1091,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		328D7183ABA02960C63B13A7 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		4C4D13822B89282438881C55 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-JBNU COE-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		534A08FBD76E9B9B5A3A94B5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DCDB64936EFF288B82A7C04B /* [CP] Check Pods Manifest.lock */ = {
+		14D41F628FB6AF9E20334DD2 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1170,7 +1113,46 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F63513A173DF0060A6FC4B9E /* [CP] Check Pods Manifest.lock */ = {
+		181DA19288D05689AA05009A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JBNU COE-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47C8C242AF9DFBCF083358F1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JBNU COE/Pods-JBNU COE-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D58CE01B446112DD5FC04AF /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1190,6 +1172,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBC0B32E5E5776489F898F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-JBNU COE-JBNU COEUITests/Pods-JBNU COE-JBNU COEUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1223,22 +1222,24 @@
 				F6378B4625B0368F00B9ACAD /* Feedback.swift in Sources */,
 				F6A1E88925AABB9400BD02EA /* ContentView.swift in Sources */,
 				F6AB02B625B9EFE500A02607 /* SportsRow.swift in Sources */,
+				7B19E86B25FA09850024B8A5 /* EventViewer.swift in Sources */,
 				7BEB162A25E273A1003A20E2 /* Products.swift in Sources */,
 				F610044A25AE1F5E0082B2D1 /* setStoreInfo.swift in Sources */,
 				7B16C16425F227BE00E21F5A /* ProductLog.swift in Sources */,
 				F609E7F225AC35E700635FEE /* noticeDetail.swift in Sources */,
 				F6E7B89625C4687D00BD4434 /* showMyRoom.swift in Sources */,
 				7B6BD71A25E692F5006D1A1C /* EULA.swift in Sources */,
-				F63C9B4425B6AD0D00965984 /* SearchBar.swift in Sources */,
 				F6378B5025B03C4B00B9ACAD /* Notice.swift in Sources */,
 				F63F034225B865B00001428F /* StudentCouncil_greet.swift in Sources */,
 				F6A27CEA25AB569B00A7CED2 /* ResetPassword.swift in Sources */,
 				7B6BD71025E689FF006D1A1C /* info.swift in Sources */,
 				F6AB029E25B9D26500A02607 /* SportsMapView.swift in Sources */,
+				7B19E86325FA086E0024B8A5 /* CalendarViewController.swift in Sources */,
 				F6C71BB525AB986500112B91 /* BottomTabManager.swift in Sources */,
 				7B16C15F25F2267300E21F5A /* Product.swift in Sources */,
 				F6378B0625AFE9CC00B9ACAD /* UserManagement.swift in Sources */,
 				F63C9B8D25B7036B00965984 /* loadCampusMapView.swift in Sources */,
+				7B19E87025FA0A3F0024B8A5 /* DisplayCalendar.swift in Sources */,
 				F6AB029425B9D1D200A02607 /* SportsMapViewController.swift in Sources */,
 				F600B10225B96A1F00817ACE /* CampusMapView.swift in Sources */,
 				F600B0F825B9686500817ACE /* Ad_2.swift in Sources */,
@@ -1247,7 +1248,6 @@
 				F6851CA925ABA5D800882E0F /* more.swift in Sources */,
 				F6C71BBA25AB99D700112B91 /* Ad_1.swift in Sources */,
 				F6A1E88725AABB9400BD02EA /* JBNU_COEApp.swift in Sources */,
-				F63C9C2E25B8291E00965984 /* FavoriteView.swift in Sources */,
 				F64CC0FB25B07921008B3459 /* secessionView.swift in Sources */,
 				F685075825B184B00054E9DF /* finish.swift in Sources */,
 				F65013EE25D7D3A800C66AC5 /* Pledge.swift in Sources */,
@@ -1420,13 +1420,13 @@
 		};
 		F6A1E8A925AABB9500BD02EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FDAB10654E5D6995C3FD2093 /* Pods-JBNU COE.debug.xcconfig */;
+			baseConfigurationReference = F2BA4AF533AD3BDF60E35AA1 /* Pods-JBNU COE.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1436,7 +1436,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.jbnu.JBNU-COE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1446,13 +1446,13 @@
 		};
 		F6A1E8AA25AABB9500BD02EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0FAA2110009AEE9D78A75A51 /* Pods-JBNU COE.release.xcconfig */;
+			baseConfigurationReference = 68A26E629B1E896DFF48805F /* Pods-JBNU COE.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 6;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1462,7 +1462,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.jbnu.JBNU-COE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1472,7 +1472,7 @@
 		};
 		F6A1E8AC25AABB9500BD02EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 957A9DFEDF016202B1F0BD9F /* Pods-JBNU COETests.debug.xcconfig */;
+			baseConfigurationReference = 03DAEDABC7C9B098C9DEC53B /* Pods-JBNU COETests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1495,7 +1495,7 @@
 		};
 		F6A1E8AD25AABB9500BD02EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7AA54DA98CA7C6EB2746F02E /* Pods-JBNU COETests.release.xcconfig */;
+			baseConfigurationReference = F35D238E965A31555571C30C /* Pods-JBNU COETests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1518,7 +1518,7 @@
 		};
 		F6A1E8AF25AABB9500BD02EA /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8E6EE7D8B765F6B7286E3D63 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */;
+			baseConfigurationReference = E8540B5FC7403604D3433092 /* Pods-JBNU COE-JBNU COEUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1539,7 +1539,7 @@
 		};
 		F6A1E8B025AABB9500BD02EA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A5FF4A67E4DC1B9920E9429F /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */;
+			baseConfigurationReference = 11B10CAFE57F5677DC376020 /* Pods-JBNU COE-JBNU COEUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

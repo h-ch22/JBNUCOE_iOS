@@ -37,7 +37,6 @@ struct Home_Phone: View {
                             
                             else{
                                 timeRemaining = 2
-                                print("selectedpage is " , selectedPage)
                                 if selectedPage < 2 {
                                     withAnimation{
                                         selectedPage += 1

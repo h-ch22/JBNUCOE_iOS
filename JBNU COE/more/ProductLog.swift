@@ -17,7 +17,9 @@ class getLogData : ObservableObject{
         let calculatorRef = db.collection("Products").document("calculator").collection("Log")
         let labcoatRef = db.collection("Products").document("labcoat").collection("Log")
         let umbrellaRef = db.collection("Products").document("umbrella").collection("Log")
-
+        let slipperRef = db.collection("Products").document("slipper").collection("Log")
+        let uniformRef = db.collection("Products").document("uniform").collection("Log")
+        
         batteryRef.getDocuments(){(QuerySnapshot, err) in
             if let err = err{
                 print(err)
@@ -57,6 +59,30 @@ class getLogData : ObservableObject{
                                         for document in QuerySnapshot!.documents{
                                             self.getLogData(documentID: document.documentID, category: "umbrella", studentNo: studentNo)
                                         }
+                                        
+                                        slipperRef.getDocuments(){(QuerySnapshot, err) in
+                                            if let err = err{
+                                                print(err)
+                                            }
+                                            
+                                            else{
+                                                for document in QuerySnapshot!.documents{
+                                                    self.getLogData(documentID: document.documentID, category: "slipper", studentNo: studentNo)
+                                                }
+                                                
+                                                uniformRef.getDocuments(){(QuerySnapshot, err) in
+                                                    if let err = err{
+                                                        print(err)
+                                                    }
+                                                    
+                                                    else{
+                                                        for document in QuerySnapshot!.documents{
+                                                            self.getLogData(documentID: document.documentID, category: "uniform", studentNo: studentNo)
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -85,6 +111,14 @@ class getLogData : ObservableObject{
         
         if category == "umbrella"{
             categoryKR = "우산"
+        }
+        
+        if category == "uniform"{
+            categoryKR = "유니폼"
+        }
+        
+        if category == "slipper"{
+            categoryKR = "슬리퍼"
         }
         
         docRef.getDocument(){(document, err) in

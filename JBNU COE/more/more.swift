@@ -221,19 +221,19 @@ struct more: View {
                                 }
                             }
                             
-                            //                            Divider()
-                            //
-                            //                            NavigationLink(destination: Text("")) {
-                            //                                HStack{
-                            //                                    Image("ic_calendar")
-                            //                                        .resizable()
-                            //                                        .frame(width : 50, height : 50)
-                            //
-                            //                                    Text("취업 캘린더")
-                            //                                        .font(.title)
-                            //                                        .foregroundColor(.gray)
-                            //                                }
-                            //                            }
+                            Divider()
+                            
+                            NavigationLink(destination: DisplayCalendar().navigationBarTitle("취업 캘린더").navigationBarTitleDisplayMode(.inline)) {
+                                HStack{
+                                    Image("ic_calendar")
+                                        .resizable()
+                                        .frame(width : 50, height : 50)
+                                    
+                                    Text("취업 캘린더")
+                                        .font(.title)
+                                        .foregroundColor(.gray)
+                                }
+                            }
                             
                             Divider()
                             

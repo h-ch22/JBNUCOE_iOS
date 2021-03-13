@@ -45,9 +45,33 @@ struct AllianceRow: View {
                         Image(systemName: "exclamationmark.circle.fill")
                             .resizable()
                             .frame(width: 20, height: 20)
-                            .foregroundColor(.red)
+                            .foregroundColor(.orange)
                         
                         Text("영업 시간을 알 수 없습니다.")
+                            .foregroundColor(.orange)
+                    }
+                }
+                
+                if alliance.brake != ""{
+                    HStack{
+                        Image(systemName: "pause.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.orange)
+                        
+                        Text("브레이크 타임 : " + alliance.brake)
+                            .foregroundColor(.orange)
+                    }
+                }
+                
+                if alliance.closed != ""{
+                    HStack{
+                        Image(systemName: "minus.circle.fill")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.red)
+                        
+                        Text("휴무 : " + alliance.closed)
                             .foregroundColor(.red)
                     }
                 }
@@ -57,7 +81,7 @@ struct AllianceRow: View {
 }
 
 struct AllianceRow_Previews: PreviewProvider {
-    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable : "")
+    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable : "", brake : "", closed :"")
 
     static var previews: some View {
         AllianceRow(alliance : $alliance)
