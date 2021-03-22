@@ -22,17 +22,17 @@ struct ProductRow: View {
             
             HStack {
                 
-                Text("수량 : " + product.number)
+                Text("수량 : ".localized() + product.number)
                 
                 Spacer()
                 
                 if product.returned{
-                    Text("반납 여부 : 예")
+                    Text("반납 여부 : 예".localized())
                         .foregroundColor(.blue)
                 }
                 
                 else{
-                    Text("반납 여부 : 아니오")
+                    Text("반납 여부 : 아니오".localized())
                         .foregroundColor(.red)
                 }
                 

@@ -49,7 +49,7 @@ struct StudentCouncil_greet: View {
                     }
             }
         }.navigationBarTitleDisplayMode(.inline)
-        .navigationBarTitle(Text("인사말"))
+        .navigationBarTitle(Text("인사말".localized()))
         
     }
 }

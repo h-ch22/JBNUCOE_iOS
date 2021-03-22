@@ -46,11 +46,11 @@ struct ResetPassword: View {
         VStack {
             Spacer()
             
-            Text("도움이 필요하신가요?")
+            Text("도움이 필요하신가요?".localized())
                 .font(.largeTitle)
                 .fontWeight(.bold)
             
-            Text("아래 필드에 학우님의 E-Mail 주소를 입력해주시면,\n비밀번호 재설정 링크를 발송해드리겠습니다.")
+            Text("아래 필드에 학우님의 E-Mail 주소를 입력해주시면,\n비밀번호 재설정 링크를 발송해드리겠습니다.".localized())
                 .multilineTextAlignment(.center)
             
             Spacer()
@@ -65,7 +65,7 @@ struct ResetPassword: View {
                 resetPassword()
             }){
                 HStack{
-                    Text("비밀번호 재설정 링크 보내기")
+                    Text("비밀번호 재설정 링크 보내기".localized())
                         .foregroundColor(.white)
                     
                     Image(systemName: "chevron.right")
@@ -78,10 +78,10 @@ struct ResetPassword: View {
         }.alert(isPresented: $showAlert, content: {
             switch alert{
             case .success:
-                return Alert(title: Text("전송 성공"), message: Text("입력하신 E-Mail로 비밀번호 재설정 링크를 발송하였습니다."), dismissButton: .default(Text("확인")){showAlert = false})
+                return Alert(title: Text("전송 성공".localized()), message: Text("입력하신 E-Mail로 비밀번호 재설정 링크를 발송하였습니다.".localized()), dismissButton: .default(Text("확인".localized())){showAlert = false})
                 
             case .fail:
-                return Alert(title: Text("전송 실패"), message: Text("비밀번호 재설정 링크를 발송하지 못했습니다.\n네트워크가 정상적으로 연결되었는지, 입력하신 E-Mail이 가입 시 입력한 E-Mail 주소와 일치하는지 확인하신 후 다시 시도하십시오."), dismissButton: .default(Text("확인")){showAlert = false})
+                return Alert(title: Text("전송 실패".localized()), message: Text("비밀번호 재설정 링크를 발송하지 못했습니다.\n네트워크가 정상적으로 연결되었는지, 입력하신 E-Mail이 가입 시 입력한 E-Mail 주소와 일치하는지 확인하신 후 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())){showAlert = false})
             }
         })
     }

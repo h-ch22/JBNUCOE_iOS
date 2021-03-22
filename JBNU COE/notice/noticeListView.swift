@@ -58,7 +58,7 @@ struct noticeListView: View {
                     NoticeRow(notice: self.$getNotices.notices[index])
                 }
                 
-            }.navigationBarTitle("공지사항", displayMode: .large)
+            }.navigationBarTitle("공지사항".localized(), displayMode: .large)
             .navigationBarItems(trailing:
                 Button(action: {
                     getNotices.notices.removeAll()
@@ -68,6 +68,15 @@ struct noticeListView: View {
                                             
                 }
             )
+            
+            VStack {
+                Text("선택된 카테고리 없음".localized())
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+                
+                Text("계속 하려면 화면 좌측의 버튼을 터치해 카테고리를 선택하십시오.".localized())
+                    .foregroundColor(.gray)
+            }
         }
         .onAppear(perform: {
             getNotices.getNotices()

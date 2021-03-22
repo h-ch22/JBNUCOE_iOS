@@ -102,7 +102,7 @@ struct FeedbackHub_main: View {
                         Image("bg_feedbackHub")
                             .resizable()
                             .frame(width : 250, height: 250)
-                        Text("학우님의 의견을 들려주세요.")
+                        Text("학우님의 의견을 들려주세요.".localized())
                             .font(.title)
                             .fontWeight(.bold)
                                     
@@ -120,7 +120,7 @@ struct FeedbackHub_main: View {
                                         .frame(width : 30, height : 30)
                                         .foregroundColor(isHeartSelected ? Color.red : Color.gray)
                                     
-                                    Text("칭찬해요")
+                                    Text("칭찬해요".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isHeartSelected ? Color.red : Color.gray)
@@ -143,7 +143,7 @@ struct FeedbackHub_main: View {
                                         .foregroundColor(isRequestSelected ? Color.blue : Color.gray)
                                         .rotationEffect(Angle(degrees: -90))
 
-                                    Text("개선해주세요")
+                                    Text("개선해주세요".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isRequestSelected ? Color.blue : Color.gray)
@@ -165,7 +165,7 @@ struct FeedbackHub_main: View {
                                         .frame(width : 20, height : 30)
                                         .foregroundColor(isQuestionSelected ? Color.orange : Color.gray)
                                     
-                                    Text("궁금해요")
+                                    Text("궁금해요".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isQuestionSelected ? Color.orange : Color.gray)
@@ -180,15 +180,12 @@ struct FeedbackHub_main: View {
                         
                         Spacer()
                         
-                        TextField("제목", text: $title)
+                        TextField("제목".localized(), text: $title)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding([.horizontal],30)
+                        
+                        TextEditor(text : $Feedback).textFieldStyle(RoundedBorderTextFieldStyle()).padding().lineSpacing(10).frame(height : UIScreen.main.bounds.height / 2)
 
-                        TextField("학우님의 의견을 입력해주세요.", text: $Feedback)
-                            .textFieldStyle(RoundedBorderTextFieldStyle())
-                            .padding([.horizontal], 30)
-                            .padding([.vertical], 10)
-                            .frame(height : nil)
 
                         Spacer()
                         
@@ -222,7 +219,7 @@ struct FeedbackHub_main: View {
                             }
                         }){
                             HStack{
-                                Text("피드백 보내기")
+                                Text("피드백 보내기".localized())
                                     .foregroundColor(.white)
                                 Image(systemName : "chevron.right")
                                     .foregroundColor(.white)
@@ -235,24 +232,24 @@ struct FeedbackHub_main: View {
                 }.alert(isPresented: $showAlert){
                     switch activeAlert{
                     case .feedback:
-                        return Alert(title : Text("내용 입력"),
-                                     message: Text("피드백의 제목과 내용을 입력해주세요."),
-                                     dismissButton: .default(Text("확인")){showAlert = false})
+                        return Alert(title : Text("내용 입력".localized()),
+                                     message: Text("피드백의 제목과 내용을 입력해주세요.".localized()),
+                                     dismissButton: .default(Text("확인".localized())){showAlert = false})
                         
                     case .err:
-                        return Alert(title : Text("죄송합니다, 학우님."),
-                              message: Text("피드백을 전송하는 중 오류가 발생했습니다.\n네트워크 상태를 확인하거나, 나중에 다시시도해주세요."),
-                              dismissButton: .default(Text("확인")){showAlert = false})
+                        return Alert(title : Text("죄송합니다, 학우님.".localized()),
+                              message: Text("피드백을 전송하는 중 오류가 발생했습니다.\n네트워크 상태를 확인하거나, 나중에 다시 시도해주세요.".localized()),
+                              dismissButton: .default(Text("확인".localized())){showAlert = false})
                         
                     case .success:
-                        return Alert(title : Text("피드백 전송 완료"),
-                              message: Text("피드백이 정상적으로 전송되었습니다.\n학우님의 소중한 피드백은 관련 부서로 전달하여, 충분히 검토한 후 최대한 반영하기 위해 노력하겠습니다.\n감사합니다."),
-                              dismissButton: .default(Text("확인")){showAlert = false})
+                        return Alert(title : Text("피드백 전송 완료".localized()),
+                              message: Text("피드백이 정상적으로 전송되었습니다.\n학우님의 소중한 피드백은 관련 부서로 전달하여, 충분히 검토한 후 최대한 반영하기 위해 노력하겠습니다.\n감사합니다.".localized()),
+                              dismissButton: .default(Text("확인".localized())){showAlert = false})
                         
                     case .type:
-                    return Alert(title : Text("주제 선택"),
-                          message: Text("피드백의 주제를 선택해주세요."),
-                          dismissButton: .default(Text("확인")){showAlert = false})
+                    return Alert(title : Text("주제 선택".localized()),
+                          message: Text("피드백의 주제를 선택해주세요.".localized()),
+                          dismissButton: .default(Text("확인".localized())){showAlert = false})
                     }
                     
                 }

@@ -66,7 +66,7 @@ struct checkAcademic: View {
     
     @Binding var showAcademic : Bool
     @State var depts = ["건축공학과", "고분자.나노공학과", "고분자섬유나노공학부", "신소재공학부", "기계공학과", "기계설계공학부", "기계시스템공학부", "도시공학과", "바이오메디컬공학부", "산업정보시스템공학과", "소프트웨어공학과",
-    "양자시스템공학과", "유기소재파이버공학과", "유기소재섬유공학과", "융합기술공학과", "융합기술공학부","자원.에너지공학과", "전기공학과", "전자공학부", "컴퓨터공학부", "토목/환경/자원.에너지공학부", "항공우주공학과",
+    "신소재공학부", "양자시스템공학과", "유기소재파이버공학과", "유기소재섬유공학과", "융합기술공학과", "융합기술공학부","자원.에너지공학과", "전기공학과", "전자공학부", "컴퓨터공학부", "토목/환경/자원.에너지공학부", "항공우주공학과",
     "화학공학부", "IT응용시스템공학과", "IT정보공학과"]
     
     @State var selected = 0
@@ -96,23 +96,23 @@ struct checkAcademic: View {
                 Group{
                     Spacer()
                     
-                    Text("이제 학적사항을 확인합니다.")
+                    Text("이제 학적사항을 확인합니다.".localized())
                         .font(.largeTitle)
                         .fontWeight(.semibold)
                     
                     Spacer()
                     
-                    Text("학과를 선택하세요.")
+                    Text("학과를 선택하세요.".localized())
                         .font(.title)
                         .fontWeight(.bold)
                     
-                    Picker(selection: $selected, label: Text("학과를 선택하세요.")){
+                    Picker(selection: $selected, label: Text("학과를 선택하세요.".localized())){
                         ForEach(0..<depts.count){
                             Text(self.depts[$0])
                         }
                     }
                     
-                    TextField("학번", text: $studentNo)
+                    TextField("학번".localized(), text: $studentNo)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(20)
                     
@@ -120,13 +120,13 @@ struct checkAcademic: View {
                 }
                 
                 Group{
-                    Text("학생증 불러오기")
+                    Text("학생증 불러오기".localized())
                         .font(.title)
                         .fontWeight(.bold)
                     
                     Spacer()
                     
-                    Text("학우님의 학생증은 별도로 저장되지 않습니다.")
+                    Text("학우님의 학생증은 별도로 저장되지 않습니다.".localized())
                         .foregroundColor(.red)
                         .multilineTextAlignment(.center)
                     
@@ -142,7 +142,7 @@ struct checkAcademic: View {
                         self.showSheet = true
                     }){
                         HStack {
-                            Text("학생증 로드")
+                            Text("학생증 로드".localized())
                             Image(systemName: "chevron.right.circle")
                         }
                     }
@@ -150,22 +150,22 @@ struct checkAcademic: View {
                     Spacer()
                     
                     VStack{
-                        Text("인증 실패 화면이 계속 표시되나요?")
+                        Text("인증 실패 화면이 계속 표시되나요?".localized())
                             .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text("1. 자르거나 수정하지 않은 원본 이미지인지 확인해주세요.")
+                        Text("1. 자르거나 수정하지 않은 원본 이미지인지 확인해주세요.".localized())
                             .multilineTextAlignment(.center)
                         
                         Spacer()
                         
-                        Text("2. 선택한 학과명과 학생증의 학과명을 확인해주세요.")
+                        Text("2. 선택한 학과명과 학생증의 학과명을 확인해주세요.".localized())
                             .multilineTextAlignment(.center)
                         
                         Spacer()
                         
-                        Text("3. 학생증의 학과가 없는 경우 공과대학 SNS에 문의해주세요.")
+                        Text("3. 학생증의 학과가 없는 경우 공과대학 SNS에 문의해주세요.".localized())
                             .multilineTextAlignment(.center)
                         
                         Spacer()
@@ -180,7 +180,7 @@ struct checkAcademic: View {
                                 .frame(width : 50, height : 50)
                                 .foregroundColor(.gray)
                             
-                            Text("이전")
+                            Text("이전".localized())
                                 .foregroundColor(.gray)
                         }}
                         
@@ -203,7 +203,7 @@ struct checkAcademic: View {
                                 .frame(width : 50, height : 50)
                                 .foregroundColor(.gray)
                             
-                            Text("다음")
+                            Text("다음".localized())
                                 .foregroundColor(.gray)
                         }}
                     }
@@ -212,17 +212,17 @@ struct checkAcademic: View {
                 Spacer()
             }
         }.actionSheet(isPresented: $showSheet, content: {
-            ActionSheet(title: Text("학생증 로드"), message: Text("캡처된 학생증이 있는 경우 학생증 로드,\n학생증을 캡처해야할 경우 모바일 도서관 앱 열기 버튼을 클릭하십시오."), buttons:[
-                .default(Text("학생증 로드"), action:{activeSheet = .picker
+            ActionSheet(title: Text("학생증 로드".localized()), message: Text("캡처된 학생증이 있는 경우 학생증 로드,\n학생증을 캡처해야할 경우 모바일 도서관 앱 열기 버튼을 클릭하십시오.".localized()), buttons:[
+                .default(Text("학생증 로드".localized()), action:{activeSheet = .picker
                     showImagePicker = true
                 }),
-                .default(Text("모바일 도서관 앱 열기"), action: openLibrary),
-                .cancel(Text("취소").foregroundColor(.red))
+                .default(Text("모바일 도서관 앱 열기".localized()), action: openLibrary),
+                .cancel(Text("취소".localized()).foregroundColor(.red))
             ])
         })
         
         .alert(isPresented: $showAlert, content: {
-            Alert(title: Text("학적사항 입력"), message: Text("모든 요구사항을 충족시켜주십시오."), dismissButton: .default(Text("확인")))
+            Alert(title: Text("학적사항 입력".localized()), message: Text("모든 요구사항을 충족시켜주십시오.".localized()), dismissButton: .default(Text("확인".localized())))
         })
         
         .sheet(item: $activeSheet){item in

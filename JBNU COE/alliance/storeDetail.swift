@@ -123,7 +123,7 @@ struct storeDetail: View {
                                 Image(systemName: "phone.fill")
                                     .foregroundColor(.blue)
                                 
-                                Text("전화하기")
+                                Text("전화하기".localized())
                                     .foregroundColor(.blue)
                             }
                         }
@@ -136,7 +136,7 @@ struct storeDetail: View {
                                     Image(systemName : "map.fill")
                                         .foregroundColor(.blue)
                                     
-                                    Text("지도 보기")
+                                    Text("지도 보기".localized())
                                         .foregroundColor(.blue)
                                 }
                             }
@@ -151,7 +151,7 @@ struct storeDetail: View {
                 VStack(alignment:.center){
                     Spacer()
                     
-                    Text("대표 메뉴")
+                    Text("대표 메뉴".localized())
                         .font(.title)
                         .fontWeight(.bold)
                     

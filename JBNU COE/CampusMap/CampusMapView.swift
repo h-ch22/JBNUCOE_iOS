@@ -13,7 +13,7 @@ struct CampusMapView: View {
     @State var selectedBuilding = ""
     
     var showInside : some View{
-        NavigationLink(destination: CampusInside(building: $selectedBuilding)){Text("실내 지도 보기")}
+        NavigationLink(destination: CampusInside(building: $selectedBuilding)){Text("실내 지도 보기".localized())}
     }
     
     var body: some View {
@@ -24,7 +24,7 @@ struct CampusMapView: View {
                         isAllSelected = true
                         selectedBuilding = ""
                     }){
-                        Text("전체").foregroundColor(.blue).padding([.horizontal], 15).padding([.vertical], 10)
+                        Text("전체".localized()).foregroundColor(.blue).padding([.horizontal], 15).padding([.vertical], 10)
                     }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.white))
                     
                     Group{
@@ -34,69 +34,69 @@ struct CampusMapView: View {
                             CampusMapViewController().addMarker(type : "1st")
                             CampusMapViewController().status_fin = "1st"
                         }){
-                            Text("1호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "2nd"
                         }){
-                            Text("2호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "3rd"
                         }){
-                            Text("3호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "4th"
                         }){
-                            Text("4호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "5th"
                         }){
-                            Text("5호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("5호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "6th"
                         }){
-                            Text("6호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("6호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.blue))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "7th"
                         }){
-                            Text("7호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("7호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.purple))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "8th"
                         }){
-                            Text("8호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("8호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.gray))
                         
                         Button(action : {
                             isAllSelected = false
                             selectedBuilding = "9th"
                         }){
-                            Text("9호관").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("9호관".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.black))
                         
                         Button(action : {
                             isAllSelected = true
                         }){
-                            Text("편의").foregroundColor(.black).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("편의".localized()).foregroundColor(.black).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.white))
                     }
                 }
@@ -104,7 +104,7 @@ struct CampusMapView: View {
             .padding([.vertical], 20)
             
             loadCampusMapView()
-        }.navigationBarTitle("캠퍼스맵")
+        }.navigationBarTitle("캠퍼스 맵".localized())
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: self.isAllSelected ? AnyView(EmptyView()) :  AnyView(self.showInside))
         .onAppear(perform: {

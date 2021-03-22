@@ -70,12 +70,12 @@ struct secessionView: View {
         .alert(isPresented: $showAlert){
             switch secessionAlert{
             case .success:
-                return Alert(title: Text("감사 인사"), message: Text("회원 탈퇴가 정상적으로 처리되었습니다.\n더 좋은 서비스로 다시 만나뵐 수 있도록 노력하겠습니다.\n감사합니다."), dismissButton:.default(Text("확인")){
+                return Alert(title: Text("감사 인사".localized()), message: Text("회원 탈퇴가 정상적으로 처리되었습니다.\n더 좋은 서비스로 다시 만나뵐 수 있도록 노력하겠습니다.\n감사합니다.".localized()), dismissButton:.default(Text("확인".localized())){
                     present = true
                 })
                 
             case .fail:
-                return Alert(title: Text("회원 탈퇴 실패"), message: Text("회원 탈퇴 처리 중 오류가 발생하였습니다.\n네트워크 상태를 확인하고 다시 시도하거나, 공과대학 학생회에 문의하십시오."), dismissButton: .default(Text("확인")){
+                return Alert(title: Text("회원 탈퇴 실패".localized()), message: Text("회원 탈퇴 처리 중 오류가 발생하였습니다.\n네트워크 상태를 확인하고 다시 시도하거나, 공과대학 학생회에 문의하십시오.".localized()), dismissButton: .default(Text("확인".localized())){
                     present = true
                 })
             }

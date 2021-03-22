@@ -17,7 +17,7 @@ struct StudentCouncil_main: View {
                         .resizable()
                         .frame(width: 150, height: 150)
                     
-                    Text("우리의 이야기, 들어보실래요?")
+                    Text("우리의 이야기, 들어보실래요?".localized())
                         .font(.title)
                         .fontWeight(.bold)
                     
@@ -31,7 +31,7 @@ struct StudentCouncil_main: View {
                                     .frame(width : 30, height : 30)
                                     .foregroundColor(Color.blue)
 
-                                Text("인사말")
+                                Text("인사말".localized())
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.blue)
@@ -51,7 +51,7 @@ struct StudentCouncil_main: View {
                                     .frame(width : 30, height : 30)
                                     .foregroundColor(Color.blue)
 
-                                Text("학생회 소개")
+                                Text("국 소개".localized())
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.blue)
@@ -71,7 +71,7 @@ struct StudentCouncil_main: View {
                                     .frame(width : 30, height : 30)
                                     .foregroundColor(Color.blue)
 
-                                Text("실시간 공약 이행률")
+                                Text("실시간 공약 이행률".localized())
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(Color.blue)
@@ -88,7 +88,7 @@ struct StudentCouncil_main: View {
                 }
 
             }
-        .navigationBarTitle(Text("공대학생회 소개"))
+        .navigationBarTitle(Text("공대학생회 소개".localized()))
         .navigationBarTitleDisplayMode(.inline)
     }
 }

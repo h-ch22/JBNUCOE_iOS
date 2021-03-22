@@ -241,9 +241,9 @@ struct allianceListView: View {
             }
             
         }.navigationBarTitleDisplayMode(.inline)
-        .navigationBarTitle(categoryKR)
+        .navigationBarTitle(categoryKR.localized())
         .navigationBarItems(trailing: NavigationLink(destination: navigateToViewController(benefits: .constant(""), category: $category)
-                                                        .navigationBarTitle(Text("지도 보기"))
+                                                        .navigationBarTitle(Text("지도 보기".localized()))
                                                         .navigationBarTitleDisplayMode(.inline)){
             Image(systemName: "map.fill")
         })

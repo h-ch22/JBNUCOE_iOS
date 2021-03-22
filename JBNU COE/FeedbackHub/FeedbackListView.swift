@@ -35,6 +35,10 @@ class getFeedbacks: ObservableObject{
                 self.feedbacks.append(
                     Feedback(title: name, author: document.get("author") as? String ?? "", date: document.get("Date Time") as? String ?? "", category: document.get("Category") as? String ?? "", type: document.get("Type") as? String ?? "", contents: document.get("Feedback") as? String ?? "")
                 )
+                
+                self.feedbacks.sort{
+                    $0.date > $1.date
+                }
             }
         }
         

@@ -109,18 +109,18 @@ struct check: View {
         VStack {
             ProgressView().progressViewStyle(CircularProgressViewStyle())
             Spacer().frame(height : 20)
-            Text("학생증 정보를 확인하고 있습니다.\n잠시 기다려 주십시오.")
+            Text("학생증 정보를 확인하고 있습니다.\n잠시 기다려 주십시오.".localized())
                 .multilineTextAlignment(.center)
         }.onAppear(perform: {
             check()
         })
         .actionSheet(isPresented: $showSheet, content: {
-            ActionSheet(title: Text("유효성 검사 실패"), message: Text("학생증의 정보와 입력한 정보가 일치하지 않거나, 유효하지 않는 학생증입니다."), buttons:[
-                .default(Text("다시 시도"), action:{self.showProgress.toggle()
+            ActionSheet(title: Text("유효성 검사 실패".localized()), message: Text("학생증의 정보와 입력한 정보가 일치하지 않거나, 변조된 학생증입니다.".localized()), buttons:[
+                .default(Text("다시 시도".localized()), action:{self.showProgress.toggle()
                     self.presentationMode.wrappedValue.dismiss()
                     check()
                 }),
-                .default(Text("가입 취소").foregroundColor(.red), action:{SignIn().navigationBarHidden(true)})
+                .default(Text("가입 취소".localized()).foregroundColor(.red), action:{SignIn().navigationBarHidden(true)})
             ])
         })
         .fullScreenCover(isPresented: $processSignUp, content: {

@@ -134,41 +134,41 @@ struct MatchDetail: View {
                 VStack{
                     VStack {
                         Group{
-                                Text("작성자 : " + sports.adminName)
+                            Text("작성자 : ".localized() + sports.adminName)
 
                                 Spacer()
 
-                                Text("작성자 학과 : " + sports.dept + " " + sports.studentNo)
+                             Text("작성자 학과 : ".localized() + sports.dept + " " + sports.studentNo)
 
                                 Spacer()
 
-                                Text("모집 인원 : " + String(sports.allPeople))
+                                Text("모집 인원 : ".localized() + String(sports.allPeople))
 
                                 Spacer()
 
-                                Text("현재 인원 : " + String(sports.currentPeople))
+                                Text("현재 인원 : ".localized() + String(sports.currentPeople))
 
                                 Spacer()
 
-                                Text("종목 : " + sports.event)
+                                Text("종목 : ".localized() + sports.event)
                         }
 
                         Group{
                             Spacer()
 
-                            Text("장소 : " + sports.location)
+                            Text("장소 : ".localized() + sports.location)
 
                             Spacer()
 
-                            Text("날짜 및 시간 : " + sports.date)
+                            Text("날짜 및 시간 : ".localized() + sports.date)
 
                             Spacer()
 
-                            Text("제한 및 우대 사항 : " + sports.limit)
+                            Text("제한 및 우대 사항 : ".localized() + sports.limit)
 
                             Spacer()
 
-                            Text("대표자 연락처 : " + sports.phone)
+                            Text("대표자 연락처 : ".localized() + sports.phone)
                         }
                     }.frame(width : UIScreen.main.bounds.width / 1.2)
                     .background(RoundedRectangle(cornerRadius: 15).foregroundColor(.blue).opacity(0.2))
@@ -178,17 +178,21 @@ struct MatchDetail: View {
                     VStack{
                         Spacer()
                         
-                        Text("제 3자 개인정보 제공 사항")
+                        Text("제 3자 개인정보 제공 사항".localized())
                             .font(.headline)
                             .fontWeight(.semibold)
                         
                         Spacer()
                         
-                        Text("성명, 학과, 학번, 연락처")
+                        Text("성명, 학과, 학번, 연락처".localized())
                         
                         Spacer()
                         
-                        Text("아래 버튼을 클릭함으로 위 정보를 제 3자에게\n제공하는 것에 대해 동의하는 것으로 간주합니다.")
+                        Text("제공 목적 : 방장의 신원 확인 및 개별 연락".localized())
+
+                        Spacer()
+                        
+                        Text("아래 버튼을 클릭함으로 위 정보를 제 3자에게\n제공하는 것에 대해 동의하는 것으로 간주합니다.".localized())
                             .multilineTextAlignment(.center)
                         
                         Spacer()
@@ -203,7 +207,7 @@ struct MatchDetail: View {
                         showAlert = true
                     }) {
                         HStack{
-                            Text("지원하기")
+                            Text("지원하기".localized())
                                 .foregroundColor(.white)
                             Image(systemName : "chevron.right")
                                 .foregroundColor(.white)
@@ -214,7 +218,7 @@ struct MatchDetail: View {
                     
                     Spacer()
                     
-                    Text("공과대학 학생회는 용병 구인 및 스포츠 진행에 있어\n중계 역할만 진행하며, 스포츠 진행 및 구인 도중 발생하는\n모든 문제에 대해 책임지지 않습니다.")
+                    Text("공과대학 학생회는 용병 구인 및 스포츠 진행에 있어\n중계 역할만 진행하며, 스포츠 진행 및 구인 도중 발생하는\n모든 문제에 대해 책임지지 않습니다.".localized())
                         .multilineTextAlignment(.center)
                         .padding(15)
                     
@@ -224,27 +228,27 @@ struct MatchDetail: View {
             .alert(isPresented: $showAlert){
                 switch matchAlert{
                 case .check :
-                    return Alert(title: Text("지원 확인"), message: Text("지원하시겠습니까?"), primaryButton: .destructive(Text("예"), action: {
+                    return Alert(title: Text("지원 확인".localized()), message: Text("지원하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized()), action: {
                         checkAdmin()
-                    }), secondaryButton: .default(Text("아니오")))
+                    }), secondaryButton: .default(Text("아니오".localized())))
                     
                 case .success:
-                    return Alert(title: Text("지원 완료"), message: Text("정상 처리되었습니다."), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("지원 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())))
                     
                 case .fail:
-                    return Alert(title: Text("지원 실패"), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기지원 여부를 확인한 후 다시 시도하십시오."), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("지원 실패".localized()), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기지원 여부를 확인한 후 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())))
                     
                 case .limit:
-                    return Alert(title: Text("인원 초과"), message: Text("모집 인원을 초과했습니다."), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("인원 초과".localized()), message: Text("모집 인원을 초과했습니다.".localized()), dismissButton: .default(Text("확인".localized())))
                     
                 case .already:
-                    return Alert(title: Text("기지원자"), message: Text("이미 지원한 방입니다."), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("기지원자".localized()), message: Text("이미 지원한 방입니다.".localized()), dismissButton: .default(Text("확인".localized())))
                     
                 case .admin:
-                    return Alert(title: Text("관리자 오류"), message: Text("방의 관리자는 지원하실 수 없습니다.(기지원자)"), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("관리자 오류".localized()), message: Text("방의 관리자는 지원하실 수 없습니다.(기지원자)".localized()), dismissButton: .default(Text("확인".localized())))
                     
                 case .timeLimit:
-                    return Alert(title: Text("지원 기간 초과"), message : Text("지원 기간이 아닙니다."), dismissButton: .default(Text("확인")))
+                    return Alert(title: Text("지원 기간 초과".localized()), message : Text("지원 기간이 아닙니다.".localized()), dismissButton: .default(Text("확인".localized())))
                 }
                 
             }

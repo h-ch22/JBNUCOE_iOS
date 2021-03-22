@@ -22,7 +22,7 @@ struct NoticeRow: View {
             HStack{
                 Text(notice.date)
                 Spacer()
-                Text("조회 : " + String(notice.read))
+                Text("조회 : ".localized() + String(notice.read))
             }
         }
     }

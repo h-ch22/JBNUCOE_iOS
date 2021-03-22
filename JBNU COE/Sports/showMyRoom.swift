@@ -71,7 +71,7 @@ struct showMyRoom: View {
     
     var body: some View {
         Form{
-            Section(header : Text("관리 중인 방")){
+            Section(header : Text("관리 중인 방".localized())){
                 List(getMatches.matches.indices, id: \.self){ index in
                         NavigationLink(destination : myRoomDetails(sports: self.$getMatches.matches[index], getApplies: getApplies())){
                             SportsRow(sports: self.$getMatches.matches[index])
@@ -79,7 +79,7 @@ struct showMyRoom: View {
                 }
             }
             
-            Section(header : Text("지원한 방")){
+            Section(header : Text("지원한 방".localized())){
                 List(getApplied.appliedMatches.indices, id: \.self){index in
                         NavigationLink(destination : myRoomDetails(sports: self.$getApplied.appliedMatches[index], getApplies: getApplies())){
                             SportsRow(sports: self.$getApplied.appliedMatches[index])
@@ -88,7 +88,7 @@ struct showMyRoom: View {
             }
         }
         
-        .navigationBarTitle("지원한 방 보기")
+        .navigationBarTitle("지원한 방 보기".localized())
         .navigationBarTitleDisplayMode(.large)
         
         .navigationBarItems(trailing:

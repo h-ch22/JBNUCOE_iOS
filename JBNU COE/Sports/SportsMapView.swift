@@ -15,14 +15,15 @@ struct SportsMapView: View {
         NavigationView{
             VStack{
                 SportsMapLoader()
-            }.navigationBarTitle("지도에서 선택하기").navigationBarTitleDisplayMode(.inline)
+            }.navigationBarTitle("지도에서 확인하기".localized()).navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: Button(action: {
+                presentationMode.wrappedValue.dismiss()
             }){
-                Text("확인")
+                Text("확인".localized())
             }, trailing: Button(action: {
                 presentationMode.wrappedValue.dismiss()
             }){
-                Text("닫기")
+                Text("닫기".localized())
             })
         }
         

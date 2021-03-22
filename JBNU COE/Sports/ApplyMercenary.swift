@@ -100,7 +100,7 @@ struct ApplyMercenary: View {
                 }
             }
         }
-        .navigationBarTitle("용병 모집 현황", displayMode: .large)
+        .navigationBarTitle("용병 모집 현황".localized(), displayMode: .large)
         .navigationBarItems(trailing:
             Button(action: {
                 getMatches.matches.removeAll()

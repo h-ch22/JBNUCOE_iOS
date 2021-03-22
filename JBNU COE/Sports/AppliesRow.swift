@@ -23,7 +23,7 @@ struct AppliesRow : View{
             HStack {
                 Text(applies.dept + " " + applies.studentNo)
                 Spacer()
-                Text("연락처 : " + applies.phone)
+                Text("연락처 : ".localized() + applies.phone)
             }
         }
     }

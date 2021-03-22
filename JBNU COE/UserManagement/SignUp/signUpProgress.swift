@@ -51,15 +51,15 @@ struct signUpProgress: View {
         VStack {
             ProgressView().progressViewStyle(CircularProgressViewStyle())
             Spacer().frame(height : 20)
-            Text("학우님의 계정을 활성화하는 중입니다.")
+            Text("학우님의 계정을 활성화하는 중입니다.".localized())
                 .multilineTextAlignment(.center)
         }.onAppear(perform: {
             signUp()
         })
         .actionSheet(isPresented: $showSheet, content: {
-            ActionSheet(title: Text("가입 실패"), message: Text("네트워크에 연결되어 있지 않거나, 이미 가입한 계정입니다."), buttons:[
-                .default(Text("다시 시도"), action:{signUp()}),
-                .default(Text("가입 취소").foregroundColor(.red), action:{SignIn().navigationBarHidden(true)})
+            ActionSheet(title: Text("가입 실패".localized()), message: Text("네트워크에 연결되어 있지 않거나, 이미 가입한 계정입니다.".localized()), buttons:[
+                .default(Text("다시 시도".localized()), action:{signUp()}),
+                .default(Text("가입 취소".localized()).foregroundColor(.red), action:{SignIn().navigationBarHidden(true)})
             ])
         })
         .fullScreenCover(isPresented: $loadMain, content: {

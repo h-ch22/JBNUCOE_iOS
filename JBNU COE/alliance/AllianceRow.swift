@@ -35,7 +35,7 @@ struct AllianceRow: View {
                             .frame(width: 20, height: 20)
                             .foregroundColor(.blue)
 
-                        Text("이용 가능 시간 : " + alliance.isEnable)
+                        Text("이용 가능 시간 : ".localized() + alliance.isEnable)
                             .foregroundColor(.blue)
                     }
                 }
@@ -47,7 +47,7 @@ struct AllianceRow: View {
                             .frame(width: 20, height: 20)
                             .foregroundColor(.orange)
                         
-                        Text("영업 시간을 알 수 없습니다.")
+                        Text("영업 시간을 알 수 없습니다.".localized())
                             .foregroundColor(.orange)
                     }
                 }
@@ -59,7 +59,7 @@ struct AllianceRow: View {
                             .frame(width: 20, height: 20)
                             .foregroundColor(.orange)
                         
-                        Text("브레이크 타임 : " + alliance.brake)
+                        Text("브레이크 타임 : ".localized() + alliance.brake)
                             .foregroundColor(.orange)
                     }
                 }
@@ -71,7 +71,7 @@ struct AllianceRow: View {
                             .frame(width: 20, height: 20)
                             .foregroundColor(.red)
                         
-                        Text("휴무 : " + alliance.closed)
+                        Text("휴무 : ".localized() + alliance.closed)
                             .foregroundColor(.red)
                     }
                 }

@@ -212,21 +212,21 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "1"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "1"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "1"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                     }
                     
@@ -235,28 +235,28 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "2"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "2"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "2"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "2"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                     }
                     
@@ -265,28 +265,28 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "3"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "3"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "3"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "3"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                     }
                     
@@ -295,35 +295,35 @@ struct CampusInside: View {
                             floor = "b1f"
                             buildno = "4"
                         }){
-                            Text("지하 1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("지하 1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "1f"
                             buildno = "4"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "4"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "4"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "4"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                     }
                     
@@ -332,35 +332,35 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "5"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "5"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "5"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "5"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             floor = "5f"
                             buildno = "5"
                         }){
-                            Text("5층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("5층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                     }
                     
@@ -369,42 +369,42 @@ struct CampusInside: View {
                             floor = "b1f"
                             buildno = "6"
                         }){
-                            Text("지하 1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("지하 1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "1f"
                             buildno = "6"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "6"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "6"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "6"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                         
                         Button(action : {
                             floor = "5f"
                             buildno = "6"
                         }){
-                            Text("5층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("5층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.blue))
                     }
                     
@@ -413,42 +413,42 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "7"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "7"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "7"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "7"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             floor = "5f"
                             buildno = "7"
                         }){
-                            Text("5층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("5층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                         
                         Button(action : {
                             floor = "6f"
                             buildno = "7"
                         }){
-                            Text("6층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("6층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.blue))
                     }
                     
@@ -457,28 +457,28 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "8"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "8"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "8"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "8"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                     }
                     
@@ -488,63 +488,63 @@ struct CampusInside: View {
                             floor = "1f"
                             buildno = "9"
                         }){
-                            Text("1층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("1층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.red))
                         
                         Button(action : {
                             floor = "2f"
                             buildno = "9"
                         }){
-                            Text("2층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("2층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.pink))
                         
                         Button(action : {
                             floor = "3f"
                             buildno = "9"
                         }){
-                            Text("3층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("3층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.orange))
                         
                         Button(action : {
                             floor = "4f"
                             buildno = "9"
                         }){
-                            Text("4층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("4층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.yellow))
                         
                         Button(action : {
                             floor = "5f"
                             buildno = "9"
                         }){
-                            Text("5층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("5층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                         
                         Button(action : {
                             floor = "6f"
                             buildno = "9"
                         }){
-                            Text("6층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("6층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.blue))
                         
                         Button(action : {
                             floor = "7f"
                             buildno = "9"
                         }){
-                            Text("7층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("7층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.purple))
                         
                         Button(action : {
                             floor = "8f"
                             buildno = "9"
                         }){
-                            Text("8층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("8층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.gray))
                         
                         Button(action : {
                             floor = "9f"
                             buildno = "9"
                         }){
-                            Text("9층").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("9층".localized()).foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.black))
                     }
                     
@@ -558,13 +558,13 @@ struct CampusInside: View {
             showInsideImage(floor: $floor, building: $buildno)
                         
             Spacer()
-        }.navigationBarTitle("실내 지도 보기")
+        }.navigationBarTitle("실내 지도 보기".localized())
         .navigationBarItems(trailing:
                                 Button(action : {
                                     let numberString = "tel://" + "0632704545"
                                     let numberURL = URL(string: numberString)
                                     UIApplication.shared.openURL(numberURL!)
-                                }, label : {Text("상황실 전화하기")})
+                                }, label : {Text("상황실 전화하기".localized())})
         )
         
     }

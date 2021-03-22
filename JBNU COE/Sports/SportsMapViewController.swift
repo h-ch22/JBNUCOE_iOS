@@ -44,8 +44,8 @@ class SportsMapViewController : UIViewController, CLLocationManagerDelegate{
                 return
 
         case .denied, .restricted:
-            let alert = UIAlertController(title: "위치 서비스 비활성화됨", message: "정확한 현재 위치 표시를 위해 위치 서비스를 켜주세요.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+            let alert = UIAlertController(title: "위치 서비스 비활성화됨".localized(), message: "정확한 현재 위치 표시를 위해 위치 서비스를 켜주세요.".localized(), preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "확인".localized(), style: .default, handler: nil)
             alert.addAction(okAction)
 
             present(alert, animated: true, completion: nil)

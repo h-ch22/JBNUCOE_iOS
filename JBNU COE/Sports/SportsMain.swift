@@ -20,7 +20,7 @@ struct SportsMain: View {
                         .resizable()
                         .frame(width: 350, height: 250, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     
-                    Text("공스는 공과대학 학우님들을 위한 스포츠 상대 팀 또는 부족한 인원을 더욱 편리하게 구할 수 있도록 도와드리는 서비스입니다.")
+                    Text("공스는 공과대학 학우님들을 위한 스포츠 상대 팀 또는 부족한 인원을 더욱 편리하게 구할 수 있도록 도와드리는 서비스입니다.".localized())
                         .fixedSize(horizontal: false, vertical: true)
                         .font(.headline)
                         .multilineTextAlignment(.center)
@@ -30,7 +30,7 @@ struct SportsMain: View {
             
                     NavigationLink(destination: ApplyMercenary(getMatches: getMatches())){
                         HStack{
-                            Text("용병 모집 현황 확인하기")
+                            Text("용병 모집 현황 확인하기".localized())
                                 .fontWeight(.semibold)
                                 .foregroundColor(.white)
                             Image(systemName: "chevron.right")
@@ -45,7 +45,7 @@ struct SportsMain: View {
                     
                     Button(action: {showModal = true}){
                         HStack{
-                            Text("용병 구인 신청하기")
+                            Text("용병 구인 신청하기".localized())
                                 .fontWeight(.semibold)
                                 .foregroundColor(.blue)
                             Image(systemName: "chevron.right.circle.fill")
@@ -55,7 +55,7 @@ struct SportsMain: View {
                     
                     Spacer()
 
-                }.navigationBarTitle(Text("공스 시작하기"))
+                }.navigationBarTitle(Text("공스 시작하기".localized()))
                 .navigationBarItems(trailing: NavigationLink(destination: showMyRoom(getMatches: getMatches(), getApplied: getAppliedMatches())) {
                     Image(systemName: "person.circle")
                         .resizable()
@@ -67,6 +67,15 @@ struct SportsMain: View {
                 .onAppear(perform: {
                     getMatches().matches.removeAll()
                 })
+            }
+            
+            VStack {
+                Text("선택된 카테고리 없음".localized())
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+                
+                Text("계속 하려면 화면 좌측의 버튼을 터치해 카테고리를 선택하십시오.".localized())
+                    .foregroundColor(.gray)
             }
         }
     }

@@ -137,7 +137,7 @@ struct Products: View {
                         .frame(width: 100, height: 100, alignment: .center)
                         .foregroundColor(.green)
                     
-                    Text("서비스를 정상적으로 이용하실 수 있습니다.")
+                    Text("서비스를 정상적으로 이용하실 수 있습니다.".localized())
                         .fontWeight(.semibold)
                         .foregroundColor(.green)
                 }
@@ -148,7 +148,7 @@ struct Products: View {
                         .frame(width: 100, height: 100, alignment: .center)
                         .foregroundColor(.orange)
                     
-                    Text("서비스 준비 중입니다.")
+                    Text("서비스 준비 중입니다.".localized())
                         .fontWeight(.semibold)
                         .foregroundColor(.orange)
                 }
@@ -160,7 +160,7 @@ struct Products: View {
                         HStack{
                             Image("ic_battery")
                                 .resizable().frame(width : 50, height: 50)
-                            Text("보조 배터리")
+                            Text("보조 배터리".localized())
                                 .fontWeight(.semibold)
 
                             Spacer()
@@ -170,7 +170,7 @@ struct Products: View {
                         if batteryLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(batteryLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(batteryLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -179,7 +179,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -193,7 +193,7 @@ struct Products: View {
                             Image("ic_calculator")
                                 .resizable().frame(width : 50, height: 50)
 
-                            Text("공학용 계산기")
+                            Text("공학용 계산기".localized())
                                 .fontWeight(.semibold)
                             
                             Spacer()
@@ -203,7 +203,7 @@ struct Products: View {
                         if calculatorLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(calculatorLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(calculatorLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -212,7 +212,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -226,7 +226,7 @@ struct Products: View {
                             Image("ic_labcoat")
                                 .resizable().frame(width : 50, height: 50)
 
-                            Text("실험복")
+                            Text("실험복".localized())
                                 .fontWeight(.semibold)
 
                             Spacer()
@@ -235,7 +235,7 @@ struct Products: View {
                         if labcoatLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(labcoatLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(labcoatLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -244,7 +244,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -260,7 +260,7 @@ struct Products: View {
                             Image("ic_umbrella")
                                 .resizable().frame(width : 50, height: 50)
 
-                            Text("우산")
+                            Text("우산".localized())
                                 .fontWeight(.semibold)
 
                             Spacer()
@@ -269,7 +269,7 @@ struct Products: View {
                         if umbrellaLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(umbrellaLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(umbrellaLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -278,7 +278,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -292,7 +292,7 @@ struct Products: View {
                             Image("ic_slippers")
                                 .resizable().frame(width : 50, height: 50)
 
-                            Text("슬리퍼")
+                            Text("슬리퍼".localized())
                                 .fontWeight(.semibold)
 
                             Spacer()
@@ -301,7 +301,7 @@ struct Products: View {
                         if slipperLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(slipperLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(slipperLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -310,7 +310,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -324,7 +324,7 @@ struct Products: View {
                             Image("ic_uniform")
                                 .resizable().frame(width : 50, height: 50)
 
-                            Text("유니폼")
+                            Text("유니폼".localized())
                                 .fontWeight(.semibold)
 
                             Spacer()
@@ -333,7 +333,7 @@ struct Products: View {
                         if uniformLate > 0{
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
-                                Text("대여 가능 (잔여 : " + String(uniformLate) + "개)").foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(uniformLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }
@@ -342,7 +342,7 @@ struct Products: View {
                         else{
                             HStack {
                                 Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
-                                Text("대여 불가").foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
                                 
                                 Spacer()
                             }
@@ -352,10 +352,10 @@ struct Products: View {
 
             
             }
-        }.navigationBarTitle("대여 사업 잔여 수량 확인")
+        }.navigationBarTitle("대여 사업 잔여 수량 확인".localized())
         .navigationBarTitleDisplayMode(.inline)
         .navigationBarItems(trailing: NavigationLink(destination: ProductLog(getData: getLogData())) {
-            Text("대여 기록 확인하기")
+            Text("대여 기록 확인하기".localized())
         })
         .onAppear(perform: {
             self.getData()

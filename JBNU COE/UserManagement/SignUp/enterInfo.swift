@@ -33,7 +33,7 @@ struct enterInfo: View {
                 Group{
                     Spacer()
                     
-                    Text("인적사항을 입력해주세요.")
+                    Text("인적사항을 입력해주세요.".localized())
                         .font(.title)
                         .fontWeight(.semibold)
                     
@@ -44,12 +44,12 @@ struct enterInfo: View {
                         .keyboardType(.emailAddress)
                         .padding(30)
                                         
-                    SecureField("비밀번호 (6자 이상)", text: $password)
+                    SecureField("비밀번호 (6자 이상)".localized(), text: $password)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.asciiCapable)
                         .padding(30)
                     
-                    SecureField("비밀번호 확인", text: $checkPassword)
+                    SecureField("비밀번호 확인".localized(), text: $checkPassword)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .keyboardType(.asciiCapable)
                         .padding(30)                   
@@ -57,11 +57,11 @@ struct enterInfo: View {
                 }
                 
                 Group{
-                    TextField("성명", text : $name)
+                    TextField("성명".localized(), text : $name)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(30)
                     
-                    TextField("연락처", text : $phone)
+                    TextField("연락처".localized(), text : $phone)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(30)
                         .keyboardType(.numberPad)
@@ -78,7 +78,7 @@ struct enterInfo: View {
                             .frame(width : 50, height : 50)
                             .foregroundColor(.gray)
                         
-                        Text("이전")
+                        Text("이전".localized())
                             .foregroundColor(.gray)
                     }}
                     
@@ -111,7 +111,7 @@ struct enterInfo: View {
                             .frame(width : 50, height : 50)
                             .foregroundColor(.gray)
                         
-                        Text("다음")
+                        Text("다음".localized())
                             .foregroundColor(.gray)
                     }}
                 }
@@ -121,21 +121,21 @@ struct enterInfo: View {
         }.alert(isPresented: $showAlert, content: {
             switch alert{
             case .blankField:
-                return Alert(title: Text("공백 필드"),
-                             message: Text("모든 필드를 채워주세요."),
-                             dismissButton: .default(Text("확인")){showAlert = false})
+                return Alert(title: Text("공백 필드".localized()),
+                             message: Text("모든 필드를 채워주세요.".localized()),
+                             dismissButton: .default(Text("확인".localized())){showAlert = false})
                 
                 
             case .invalidPassword:
-                return Alert(title: Text("비밀번호 불일치"),
-                             message: Text("비밀번호가 일치하지 않습니다."),
-                             dismissButton: .default(Text("확인")){showAlert = false})
+                return Alert(title: Text("비밀번호 불일치".localized()),
+                             message: Text("비밀번호가 일치하지 않습니다.".localized()),
+                             dismissButton: .default(Text("확인".localized())){showAlert = false})
                 
                 
             case .passwordLimit:
-                return Alert(title: Text("비밀번호 제한"),
-                             message: Text("보안을 위해 6자리 이상의 비밀번호를 입력해주세요."),
-                             dismissButton: .default(Text("확인")){showAlert = false})
+                return Alert(title: Text("비밀번호 제한".localized()),
+                             message: Text("보안을 위해 6자리 이상의 비밀번호를 입력해주세요.".localized()),
+                             dismissButton: .default(Text("확인".localized())){showAlert = false})
                 
             }
         })

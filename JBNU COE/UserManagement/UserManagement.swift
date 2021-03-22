@@ -43,6 +43,17 @@ class UserManagement : ObservableObject{
         self.name = name
     }
     
+    func getPhone(){
+        let docRef = db.collection("User").document(mail)
+        
+        docRef.getDocument(){(document, error) in
+            if let document = document{
+                self.phone.append(document.get("phone") as! String)
+                self.phone = document.get("phone") as! String
+            }
+        }
+    }
+    
     func getStudentNo(){
         let docRef = db.collection("User").document(mail)
         

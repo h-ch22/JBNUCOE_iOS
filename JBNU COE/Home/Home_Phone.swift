@@ -41,134 +41,132 @@ struct Home_Phone: View {
                                     withAnimation{
                                         selectedPage += 1
                                     }
-
+                                    
                                 }
                                 
                                 else{
                                     withAnimation{
                                         selectedPage = 0
                                     }
-
+                                    
                                 }
                             }
                             
                         }
                     }
-                
+                    
                     Spacer()
                     
-                    Text("원하시는 카테고리를 선택해보세요!")
+                    Text("원하시는 카테고리를 선택해보세요!".localized())
                     
                     Spacer()
                     
                     HStack {
                         Spacer()
-
+                        
                         NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category: $category, categoryKR: $categoryKR)) {
                             VStack{
                                 Image("ic_all")
                                     .resizable()
                                     .frame(width : 100, height: 100)
-                                Text("전체 보기").foregroundColor(.gray)
+                                Text("전체 보기".localized()).foregroundColor(.gray)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             category = "All"
                             categoryKR = "전체 보기"
                         })
                         
-
+                        
                         NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category: $category, categoryKR: $categoryKR)) {
                             VStack{
                                 Image("ic_meal")
                                     .resizable()
                                     .frame(width : 100, height: 100)
-                                Text("식사").foregroundColor(.gray)
+                                Text("식사".localized()).foregroundColor(.gray)
                             }
                         }.simultaneousGesture(TapGesture().onEnded{
                             category = "Meal"
                             categoryKR = "식사"
                         })
                         
-
+                        
                         NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category: $category, categoryKR: $categoryKR)) {
                             VStack{
                                 Image("ic_sports")
                                     .resizable()
                                     .frame(width : 100, height: 100)
-                                Text("스포츠").foregroundColor(.gray)
+                                Text("스포츠".localized()).foregroundColor(.gray)
                             }
                         }
                         Spacer()
-
+                        
                     }.simultaneousGesture(TapGesture().onEnded{
                         category = "Sports"
                         categoryKR = "스포츠"
                     })
                     Spacer()
-
+                    
                     Divider()
-
+                    
                     Spacer()
                     
                     Group{
                         HStack {
                             Spacer()
-
+                            
                             NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category: $category, categoryKR: $categoryKR)) {
                                 VStack{
                                     Image("ic_cafe")
                                         .resizable()
                                         .frame(width : 100, height: 100)
-                                    Text("카페").foregroundColor(.gray)
+                                    Text("카페".localized()).foregroundColor(.gray)
                                 }
                             }.simultaneousGesture(TapGesture().onEnded{
                                 category = "Cafe"
                                 categoryKR = "카페"
                             })
                             
-
+                            
                             NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category: $category, categoryKR: $categoryKR)) {
                                 VStack{
                                     Image("ic_convenience")
                                         .resizable()
                                         .frame(width : 100, height: 100)
-                                    Text("편의").foregroundColor(.gray)
+                                    Text("편의".localized()).foregroundColor(.gray)
                                 }
                             }.simultaneousGesture(TapGesture().onEnded{
                                 category = "Convenience"
                                 categoryKR = "편의"
                             })
                             
-
+                            
                             NavigationLink(destination: allianceListView(getStores: JBNU_COE.getStores(), category:
                                                                             $category, categoryKR: $categoryKR)) {
                                 VStack{
                                     Image("ic_alcohol")
                                         .resizable()
                                         .frame(width : 100, height: 100)
-                                    Text("술").foregroundColor(.gray)
+                                    Text("술".localized()).foregroundColor(.gray)
                                 }
                             }.simultaneousGesture(TapGesture().onEnded{
                                 category = "Alcohol"
                                 categoryKR = "술"
                             })
                             Spacer()
-
+                            
                             
                         }
                         
                         Spacer()
-
+                        
                     }
-                }
-
-            .navigationBarTitle("제휴 업체", displayMode: .large)
+                }.navigationBarTitle("제휴 업체".localized(), displayMode: .large)
                 .navigationBarBackButtonHidden(true)
                 .onDisappear(perform: {
                     withAnimation{
                         selectedPage = 0
                     }
-
+                    
                     
                 })
                 
@@ -177,10 +175,19 @@ struct Home_Phone: View {
                         selectedPage = 0
                     }
                 })
-        }
-        }
+            }
             
-
+            VStack {
+                Text("선택된 카테고리 없음".localized())
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+                
+                Text("계속 하려면 화면 좌측의 버튼을 터치해 카테고리를 선택하십시오.".localized())
+                    .foregroundColor(.gray)
+            }
+        }
+        
+        
     }
 }
 

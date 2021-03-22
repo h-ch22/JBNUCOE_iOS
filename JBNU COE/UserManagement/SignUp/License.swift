@@ -43,7 +43,7 @@ struct License: View {
 
     var body: some View {
         VStack {
-            Text("이용 약관을 읽어주세요.")
+            Text("이용 약관을 읽어주세요.".localized())
                 .font(.title)
                 .fontWeight(.semibold)
             
@@ -63,7 +63,7 @@ struct License: View {
                             .frame(width : 50, height : 50)
                             .foregroundColor(.gray)
                         
-                        Text("동의 안 함")
+                        Text("동의 안 함".localized())
                             .foregroundColor(.gray)
 
                     }
@@ -81,13 +81,13 @@ struct License: View {
                             .foregroundColor(.gray)
                         
                         
-                        Text("동의")
+                        Text("동의".localized())
                             .foregroundColor(.gray)
                     }
                 }
             }
         }.alert(isPresented: $showAlert, content: {
-            Alert(title: Text("이용 약관 동의"), message: Text("소프트웨어 이용약관에 동의합니다."), primaryButton: .destructive(Text("예")){loadView = true}, secondaryButton: .default(Text("아니오")))
+            Alert(title: Text("이용 약관 동의".localized()), message: Text("소프트웨어 이용약관에 동의합니다.".localized()), primaryButton: .destructive(Text("예".localized())){loadView = true}, secondaryButton: .default(Text("아니오".localized())))
         })
         .fullScreenCover(isPresented: $loadView, content: {
             enterInfo(showView: $loadView)

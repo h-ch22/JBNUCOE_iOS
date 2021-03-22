@@ -18,7 +18,7 @@ struct finish: View {
                     .resizable().frame(width: 150, height: 150, alignment: .center)
                     .foregroundColor(.green)
                 
-                Text("감사합니다.")
+                Text("감사합니다.".localized())
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
@@ -27,7 +27,7 @@ struct finish: View {
                 NavigationLink(destination: ContentView(show: $show
                 ).navigationBarHidden(true)){
                     HStack{
-                        Text("시작하기")
+                        Text("시작하기".localized())
                             .foregroundColor(.white)
                         
                         Image(systemName: "chevron.right")

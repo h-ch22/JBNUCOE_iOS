@@ -34,17 +34,17 @@ struct info: View {
                     VStack(alignment : .leading){
                         Spacer()
                         
-                        Text("전북대학교 공과대학")
+                        Text("전북대 공대".localized())
                             .font(.title)
                             .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text("최신 버전 : " + String(latestVersion))
+                        Text("최신 버전 : ".localized() + String(latestVersion))
                         
                         Spacer()
                         
-                        Text("현재 버전 : " + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!)
+                        Text("현재 버전 : ".localized() + (Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String)!)
                         
                         if latestVersion == "0.0.0"{
                             Spacer()
@@ -53,7 +53,7 @@ struct info: View {
                                 Image(systemName: "exclamationmark.circle.fill")
                                     .foregroundColor(.orange)
                                 
-                                Text("버전 정보를 확인할 수 없습니다.")
+                                Text("버전 정보를 확인할 수 없습니다.".localized())
                                     .foregroundColor(.green)
                             }
                             
@@ -69,7 +69,7 @@ struct info: View {
                                         Image(systemName: "xmark")
                                             .foregroundColor(.red)
                                         
-                                        Text("최신 버전이 아닙니다.")
+                                        Text("최신 버전이 아닙니다.".localized())
                                             .foregroundColor(.red)
                                     }
                                     
@@ -85,7 +85,7 @@ struct info: View {
                                         }
                                     }){
                                         HStack{
-                                            Text("업데이트 하기")
+                                            Text("업데이트 하기".localized())
                                                 .foregroundColor(.white)
                                             
                                             Image(systemName: "chevron.right")
@@ -107,7 +107,7 @@ struct info: View {
                                     Image(systemName: "checkmark")
                                         .foregroundColor(.green)
                                     
-                                    Text("최신 버전입니다.")
+                                    Text("최신 버전입니다.".localized())
                                         .foregroundColor(.green)
                                 }
                                 
@@ -135,7 +135,7 @@ struct info: View {
                                     .foregroundColor(.gray)
                                 
                                 
-                                Text("개인정보 처리 방침 읽기")
+                                Text("개인정보 처리 방침 읽기".localized())
                                     .foregroundColor(.gray)
                                     .font(.title)
                             }
@@ -145,7 +145,7 @@ struct info: View {
                 }.padding(30)
                 
             }
-        }.navigationBarTitle("정보")
+        }.navigationBarTitle("정보".localized())
         .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
             getVersion()

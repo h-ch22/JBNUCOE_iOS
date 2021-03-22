@@ -117,41 +117,41 @@ struct myRoomDetails: View {
             ScrollView{
                 VStack {
                     Group{
-                        Text("작성자 : " + sports.adminName)
+                        Text("작성자 : ".localized() + sports.adminName)
                         
                         Spacer()
                         
-                        Text("작성자 학과 : " + sports.dept + " " + sports.studentNo)
+                        Text("작성자 학과 : ".localized() + sports.dept + " " + sports.studentNo)
                         
                         Spacer()
                         
-                        Text("모집 인원 : " + String(sports.allPeople))
+                        Text("모집 인원 : ".localized() + String(sports.allPeople))
                         
                         Spacer()
                         
-                        Text("현재 인원 : " + String(sports.currentPeople))
+                        Text("현재 인원 : ".localized() + String(sports.currentPeople))
                         
                         Spacer()
                         
-                        Text("종목 : " + sports.event)
+                        Text("종목 : ".localized() + sports.event)
                     }
                     
                     Group{
                         Spacer()
                         
-                        Text("장소 : " + sports.location)
+                        Text("장소 : ".localized() + sports.location)
                         
                         Spacer()
                         
-                        Text("날짜 및 시간 : " + sports.date)
+                        Text("날짜 및 시간 : ".localized() + sports.date)
                         
                         Spacer()
                         
-                        Text("제한 및 우대 사항 : " + sports.limit)
+                        Text("제한 및 우대 사항 : ".localized() + sports.limit)
                         
                         Spacer()
                         
-                        Text("대표자 연락처 : " + sports.phone)
+                        Text("대표자 연락처 : ".localized() + sports.phone)
                     }
                 }.frame(width : UIScreen.main.bounds.width / 1.2)
                 .background(RoundedRectangle(cornerRadius: 15).foregroundColor(.blue).opacity(0.2))
@@ -160,7 +160,7 @@ struct myRoomDetails: View {
             
             Spacer()
             
-            Text("지원자 현황")
+            Text("지원자 현황".localized())
                 .font(.largeTitle)
                 .fontWeight(.semibold)
             
@@ -181,25 +181,25 @@ struct myRoomDetails: View {
         .alert(isPresented: $showAlert){
             switch remove{
             case .check :
-                return Alert(title: Text("방 제거 확인"), message: Text("방 제거 시 모든 데이터가 제거되며, 복구할 수 없습니다.\n계속 하시겠습니까?"), primaryButton: .destructive(Text("예"), action: {
+                return Alert(title: Text("방 제거 확인".localized()), message: Text("방 제거 시 모든 데이터가 제거되며, 복구할 수 없습니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized()), action: {
                     removeRoom()
-                }), secondaryButton: .default(Text("아니오")))
+                }), secondaryButton: .default(Text("아니오".localized())))
                 
             case .done:
-                return Alert(title: Text("제거 완료"), message: Text("정상 처리되었습니다."), dismissButton: .default(Text("확인")))
+                return Alert(title: Text("제거 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())))
                 
             case .fail:
-                return Alert(title: Text("제거 실패"), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기삭제 여부를 확인한 후 다시 시도하십시오."), dismissButton: .default(Text("확인")))
+                return Alert(title: Text("제거 실패".localized()), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기삭제 여부를 확인한 후 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())))
                 
             case .cancelCheck :
-                return Alert(title: Text("지원 취소 확인"), message: Text("지원 취소 시 관련 데이터가 삭제되며, 번복하실 수 없습니다.\n계속 하시겠습니까?"), primaryButton: .destructive(Text("예"), action: {
+                return Alert(title: Text("지원 취소 확인".localized()), message: Text("지원 취소 시 관련 데이터가 삭제되며, 번복하실 수 없습니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized()), action: {
                     cancel()
-                }), secondaryButton: .default(Text("아니오")))
+                }), secondaryButton: .default(Text("아니오".localized())))
             case .cancelSuccess:
-                return Alert(title: Text("취소 완료"), message: Text("정상 처리되었습니다."), dismissButton: .default(Text("확인")))
+                return Alert(title: Text("취소 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())))
 
             case .cancelFail:
-                return Alert(title: Text("취소 실패"), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기취소 여부를 확인한 후 다시 시도하십시오."), dismissButton: .default(Text("확인")))
+                return Alert(title: Text("취소 실패".localized()), message: Text("처리 중 오류가 발생하였습니다.\n정상 로그인 여부, 네트워크 상태 및 기취소 여부를 확인한 후 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())))
 
             }
             

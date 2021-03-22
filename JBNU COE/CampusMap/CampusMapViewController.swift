@@ -78,7 +78,7 @@ class CampusMapViewController : UIViewController, CLLocationManagerDelegate{
             return true
         }
         
-        marker_1st.captionText = "공대 1호관"
+        marker_1st.captionText = "공대 1호관".localized()
         marker_1st.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_1st.iconTintColor = UIColor.red
         marker_1st.captionColor = UIColor.red
@@ -87,49 +87,49 @@ class CampusMapViewController : UIViewController, CLLocationManagerDelegate{
 
         marker_1st.mapView = CampusMapViewController.mapView
         
-        marker_2nd.captionText = "공대 2호관"
+        marker_2nd.captionText = "공대 2호관".localized()
         marker_2nd.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_2nd.iconTintColor = UIColor.systemPink
         marker_2nd.captionColor = UIColor.systemPink
         marker_2nd.mapView = CampusMapViewController.mapView
         
-        marker_3rd.captionText = "공대 3호관"
+        marker_3rd.captionText = "공대 3호관".localized()
         marker_3rd.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_3rd.iconTintColor = UIColor.orange
         marker_3rd.captionColor = UIColor.orange
         marker_3rd.mapView = CampusMapViewController.mapView
         
-        marker_4th.captionText = "공대 4호관"
+        marker_4th.captionText = "공대 4호관".localized()
         marker_4th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_4th.iconTintColor = UIColor.systemYellow
         marker_4th.captionColor = UIColor.systemYellow
         marker_4th.mapView = CampusMapViewController.mapView
         
-        marker_5th.captionText = "공대 5호관"
+        marker_5th.captionText = "공대 5호관".localized()
         marker_5th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_5th.iconTintColor = UIColor.green
         marker_5th.captionColor = UIColor.green
         marker_5th.mapView = CampusMapViewController.mapView
         
-        marker_6th.captionText = "공대 6호관"
+        marker_6th.captionText = "공대 6호관".localized()
         marker_6th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_6th.iconTintColor = UIColor.blue
         marker_6th.captionColor = UIColor.blue
         marker_6th.mapView = CampusMapViewController.mapView
         
-        marker_7th.captionText = "공대 7호관"
+        marker_7th.captionText = "공대 7호관".localized()
         marker_7th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_7th.iconTintColor = UIColor.purple
         marker_7th.captionColor = UIColor.purple
         marker_7th.mapView = CampusMapViewController.mapView
         
-        marker_8th.captionText = "공대 8호관"
+        marker_8th.captionText = "공대 8호관".localized()
         marker_8th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_8th.iconTintColor = UIColor.gray
         marker_8th.captionColor = UIColor.gray
         marker_8th.mapView = CampusMapViewController.mapView
         
-        marker_9th.captionText = "공대 9호관"
+        marker_9th.captionText = "공대 9호관".localized()
         marker_9th.iconImage = NMF_MARKER_IMAGE_BLACK
         marker_9th.iconTintColor = UIColor.black
         marker_9th.captionColor = UIColor.black

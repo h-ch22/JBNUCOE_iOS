@@ -30,7 +30,7 @@ struct FeedbackHub_category: View {
                     Image("bg_feedbackHub")
                         .resizable()
                         .frame(width : 250, height: 250)
-                    Text("카테고리를 선택해주세요.")
+                    Text("카테고리를 선택해주세요.".localized())
                         .font(.title)
                         .fontWeight(.bold)
                                 
@@ -55,7 +55,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 30, height : 30)
                                         .foregroundColor(isFacilitySelected ? Color.orange : Color.gray)
                                     
-                                    Text("시설")
+                                    Text("시설".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isFacilitySelected ? Color.orange : Color.gray)
@@ -83,7 +83,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 30, height : 30)
                                         .foregroundColor(isWelfareSelected ? Color.orange : Color.gray)
                                     
-                                    Text("복지")
+                                    Text("복지".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isWelfareSelected ? Color.orange : Color.gray)
@@ -113,7 +113,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 35, height : 30)
                                         .foregroundColor(isCommunicationSelected ? Color.orange : Color.gray)
                                     
-                                    Text("소통")
+                                    Text("소통".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isCommunicationSelected ? Color.orange : Color.gray)
@@ -141,7 +141,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 30, height : 30)
                                         .foregroundColor(isPromiseSelected ? Color.orange : Color.gray)
                                     
-                                    Text("공약")
+                                    Text("공약".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isPromiseSelected ? Color.orange : Color.gray)
@@ -171,7 +171,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 30, height : 30)
                                         .foregroundColor(isEventSelected ? Color.orange : Color.gray)
                                     
-                                    Text("행사")
+                                    Text("행사".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isEventSelected ? Color.orange : Color.gray)
@@ -199,7 +199,7 @@ struct FeedbackHub_category: View {
                                         .frame(width : 20, height : 30)
                                         .foregroundColor(isAppSelected ? Color.orange : Color.gray)
                                     
-                                    Text("앱")
+                                    Text("앱".localized())
                                         .font(.title)
                                         .fontWeight(.bold)
                                         .foregroundColor(isAppSelected ? Color.orange : Color.gray)
@@ -229,7 +229,7 @@ struct FeedbackHub_category: View {
                                     .frame(width : 30, height : 30)
                                     .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
                                 
-                                Text("기타")
+                                Text("기타".localized())
                                     .font(.title)
                                     .fontWeight(.bold)
                                     .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
@@ -255,9 +255,9 @@ struct FeedbackHub_category: View {
                         }
                         
                         if(isEnabled){
-                            NavigationLink(destination: FeedbackHub_main(category: $category).navigationTitle("피드백 보내기")){
+                            NavigationLink(destination: FeedbackHub_main(category: $category).navigationTitle("피드백 보내기".localized())){
                                 HStack{
-                                    Text("다음 단계로")
+                                    Text("다음 단계로".localized())
                                         .foregroundColor(.white)
                                     Image(systemName : "chevron.right")
                                         .foregroundColor(.white)
@@ -273,9 +273,9 @@ struct FeedbackHub_category: View {
                         
                     }
                 }
-            }.navigationBarTitle(Text("카테고리 선택")).navigationBarTitleDisplayMode(.inline)
+            }.navigationBarTitle(Text("카테고리 선택".localized())).navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()}){
-                Text("닫기")
+                Text("닫기".localized())
             })
             
         }

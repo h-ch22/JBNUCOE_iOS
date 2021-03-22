@@ -13,7 +13,7 @@ struct StudentCouncil_introduce: View {
             VStack(alignment:.center){
                 Spacer()
                 
-                Text("조직도")
+                Text("조직도".localized())
                     .font(.title)
                     .fontWeight(.semibold)
                 
@@ -22,7 +22,7 @@ struct StudentCouncil_introduce: View {
                 
                 Spacer()
                 
-                Text("국별 소개")
+                Text("국별 소개".localized())
                     .font(.title)
                     .fontWeight(.semibold)
 
@@ -217,7 +217,7 @@ struct StudentCouncil_introduce: View {
                 }
                 
 
-            }.navigationBarTitle(Text("공대 학생회를 소개합니다."))
+            }.navigationBarTitle(Text("공대 학생회를 소개합니다.".localized()))
             .navigationBarTitleDisplayMode(.large)
         }
     }

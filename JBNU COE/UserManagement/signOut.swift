@@ -63,12 +63,12 @@ struct signOut: View {
         .alert(isPresented: $showAlert){
             switch alert{
             case .success:
-                return Alert(title: Text("로그아웃 완료"), message: Text("정상 처리되었습니다."), dismissButton:.default(Text("확인")){
+                return Alert(title: Text("로그아웃 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton:.default(Text("확인".localized())){
                     present = true
                 })
                 
             case .fail:
-                return Alert(title: Text("로그아웃 실패"), message: Text("로그아웃 처리 중 문제가 발생하였습니다.\n네트워크 상태를 확인하고 다시 시도하십시오."), dismissButton: .default(Text("확인")){
+                return Alert(title: Text("로그아웃 실패".localized()), message: Text("로그아웃 처리 중 문제가 발생하였습니다.\n네트워크 상태를 확인하고 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())){
                     present = true
                 })
             }

@@ -98,27 +98,27 @@ class getLogData : ObservableObject{
         var categoryKR = ""
         
         if category == "battery"{
-            categoryKR = "보조 배터리"
+            categoryKR = "보조 배터리".localized()
         }
         
         if category == "calculator"{
-            categoryKR = "공학용 계산기"
+            categoryKR = "공학용 계산기".localized()
         }
         
         if category == "labcoat"{
-            categoryKR = "실험복"
+            categoryKR = "실험복".localized()
         }
         
         if category == "umbrella"{
-            categoryKR = "우산"
+            categoryKR = "우산".localized()
         }
         
         if category == "uniform"{
-            categoryKR = "유니폼"
+            categoryKR = "유니폼".localized()
         }
         
         if category == "slipper"{
-            categoryKR = "슬리퍼"
+            categoryKR = "슬리퍼".localized()
         }
         
         docRef.getDocument(){(document, err) in
@@ -149,7 +149,7 @@ struct ProductLog: View {
         List(getData.product.indices, id: \.self){ index in
             ProductRow(product: self.$getData.product[index])
 
-        }.navigationBarTitle("대여 기록 확인하기", displayMode: .large)
+        }.navigationBarTitle("대여 기록 확인하기".localized(), displayMode: .large)
         .navigationBarItems(trailing:
             Button(action: {
                 getData.product.removeAll()

@@ -198,7 +198,7 @@ struct more: View {
                             loadView = .imagePicker
                             showImagePicker = true
                         }){
-                            Text("프로필 이미지 변경")
+                            Text("프로필 이미지 변경".localized())
                                 .foregroundColor(.gray)
                         }.padding(5)
                         .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 1))
@@ -215,7 +215,7 @@ struct more: View {
                                         .resizable()
                                         .frame(width : 50, height : 50)
                                     
-                                    Text("공대학생회 소개")
+                                    Text("공대학생회 소개".localized())
                                         .font(.title)
                                         .foregroundColor(.gray)
                                 }
@@ -223,13 +223,13 @@ struct more: View {
                             
                             Divider()
                             
-                            NavigationLink(destination: DisplayCalendar().navigationBarTitle("취업 캘린더").navigationBarTitleDisplayMode(.inline)) {
+                            NavigationLink(destination: DisplayCalendar().navigationBarTitle("취업 캘린더".localized()).navigationBarTitleDisplayMode(.inline)) {
                                 HStack{
                                     Image("ic_calendar")
                                         .resizable()
                                         .frame(width : 50, height : 50)
                                     
-                                    Text("취업 캘린더")
+                                    Text("취업 캘린더".localized())
                                         .font(.title)
                                         .foregroundColor(.gray)
                                 }
@@ -245,7 +245,7 @@ struct more: View {
                                                height :50)
                                     
                                     
-                                    Text("캠퍼스 맵")
+                                    Text("캠퍼스 맵".localized())
                                         .font(.title)
                                         .foregroundColor(.gray)
                                 }
@@ -261,7 +261,7 @@ struct more: View {
                                                height :50)
                                     
                                     
-                                    Text("대여 사업 잔여 수량 확인")
+                                    Text("대여 사업 잔여 수량 확인".localized())
                                         .font(.title)
                                         .foregroundColor(.gray)
                                 }
@@ -269,6 +269,24 @@ struct more: View {
                             
                             Divider()
                             
+                            NavigationLink(destination: HandWriting_ListView(getHandWritingList: getHandWritingList())) {
+                                HStack{
+                                    Image("ic_crown")
+                                        .resizable()
+                                        .frame(width: 50,
+                                               height :50)
+
+
+                                    Text("합격자 수기 공유".localized())
+                                        .font(.title)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+
+                            Divider()
+                        }
+                        
+                        Group{
                             Button(action:{
                                 loadView = .Feedbackhub
                                 showFeedbackHub = true
@@ -280,7 +298,7 @@ struct more: View {
                                                height : 50)
                                     
                                     
-                                    Text("피드백 허브")
+                                    Text("피드백 허브".localized())
                                         .foregroundColor(.gray)
                                         .font(.title)
                                     
@@ -306,7 +324,7 @@ struct more: View {
                                            height : 50)
                                     .foregroundColor(.red)
                                 
-                                Text("로그아웃")
+                                Text("로그아웃".localized())
                                     .foregroundColor(.red)
                                     .font(.title)
                                 
@@ -329,7 +347,7 @@ struct more: View {
                                 
                                 
                                 
-                                Text("회원 탈퇴")
+                                Text("회원 탈퇴".localized())
                                     .foregroundColor(.red)
                                     .font(.title)
                                 
@@ -349,7 +367,7 @@ struct more: View {
                                     .foregroundColor(.gray)
                                 
                                 
-                                Text("정보")
+                                Text("정보".localized())
                                     .foregroundColor(.gray)
                                     .font(.title)
                                 
@@ -357,11 +375,8 @@ struct more: View {
                             }
                         }
                     }.padding(30)
-                    
-                    
                 }
-            }
-            .navigationBarTitle("더 보기", displayMode: .large)
+            }.navigationBarTitle("더 보기".localized(), displayMode: .large)
             .onAppear(perform: {
                 userManagement.getEmail()
                 loadProfile()
@@ -370,16 +385,16 @@ struct more: View {
             .alert(isPresented: $showAlert){
                 switch userAlert{
                 case .secession:
-                    return Alert(title: Text("회원 탈퇴 확인"), message: Text("회원 탈퇴 시 로그인 정보가 제거되며, 추후 서비스 재이용 시 다시 가입하셔야합니다.\n계속 하시겠습니까?"), primaryButton: .destructive(Text("예")){
+                    return Alert(title: Text("회원 탈퇴 확인".localized()), message: Text("회원 탈퇴 시 모든 정보가 제거되며, 추후 서비스 재이용 시 다시 가입하셔야합니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
                         loadView = .secession
                         showSecession = true
-                    }, secondaryButton: .destructive(Text("아니오")))
+                    }, secondaryButton: .destructive(Text("아니오".localized())))
                     
                 case .signOut:
-                    return Alert(title: Text("로그아웃 확인"), message: Text("로그아웃 시 자동로그인은 자동으로 해제됩니다.\n계속 하시겠습니까?"), primaryButton: .destructive(Text("예")){
+                    return Alert(title: Text("로그아웃 확인".localized()), message: Text("로그아웃 시 자동로그인은 자동으로 해제됩니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
                         loadView = .signOut
                         showSignOut = true
-                    }, secondaryButton: .destructive(Text("아니오")))
+                    }, secondaryButton: .destructive(Text("아니오".localized())))
                 }
                 
             }
@@ -409,6 +424,16 @@ struct more: View {
                     EmptyView()
                 }
             })
+            
+            VStack {
+                Text("선택된 카테고리 없음".localized())
+                    .font(.largeTitle)
+                    .foregroundColor(.gray)
+                
+                Text("계속 하려면 화면 좌측의 버튼을 터치해 카테고리를 선택하십시오.".localized())
+                    .foregroundColor(.gray)
+            }
+            
         }
         
     }

@@ -52,25 +52,25 @@ struct SportsRow: View {
             HStack {
                 Text(sports.date as! String)
                 Spacer()
-                Text("모집 인원 : " + String(sports.allPeople))
+                Text("모집 인원 : ".localized() + String(sports.allPeople))
                 Spacer()
-                Text("현재 인원 : " + String(sports.currentPeople))
+                Text("현재 인원 : ".localized() + String(sports.currentPeople))
             }
             
             VStack {
                 HStack {
-                    Text(getStatus() ? "지원 가능" : "지원 불가")
+                    Text(getStatus() ? "지원 가능".localized() : "지원 불가".localized())
                         .foregroundColor(.white)
                         .frame(width : 80, height : 30)
                         .background(RoundedRectangle(cornerRadius: 10).foregroundColor(getStatus() ? Color.blue : Color.red).opacity(0.7))
                     
                     Spacer()
                     
-                    Text("장소 : " + sports.location)
+                    Text("장소 : ".localized() + sports.location)
                     
                     Spacer()
                     
-                    Text("종목 : " + sports.event)
+                    Text("종목 : ".localized() + sports.event)
                 }
             }
         }
