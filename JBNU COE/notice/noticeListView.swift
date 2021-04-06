@@ -19,7 +19,6 @@ class getNotices: ObservableObject{
             }
             
             else{
-                
                 for document in QuerySnapshot!.documents{
                         self.getNoticeData(name: document.documentID)
                 }
@@ -50,13 +49,24 @@ class getNotices: ObservableObject{
 
 struct noticeListView: View {
     @ObservedObject var getNotices: getNotices
+    @State private var searchText = ""
     
     var body: some View {
         NavigationView{
-            List(getNotices.notices.indices, id: \.self){ index in
-                NavigationLink(destination: noticeDetail(notice: self.$getNotices.notices[index])){
-                    NoticeRow(notice: self.$getNotices.notices[index])
+            VStack{
+                SearchBar(text: $searchText, placeholder: "공지사항 검색".localized())
+                
+                List{
+                    ForEach(getNotices.notices.filter{
+                        self.searchText.isEmpty ? true : $0.title.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        
+                        NavigationLink(destination : noticeDetail(notice : index)){
+                            NoticeRow(notice : index)
+                        }
+                    }
                 }
+            
                 
             }.navigationBarTitle("공지사항".localized(), displayMode: .large)
             .navigationBarItems(trailing:

@@ -47,21 +47,14 @@ struct StudentCouncil_PledgeProgress: View {
     @State private var welfares : [Pledge] = []
     @State private var learningList : [String] = []
     @State private var learnings : [Pledge] = []
-    
+    @State var searchText = ""
+
     func getPledgeList(){
         implementedCnt = 0.0
         db = Firestore.firestore()
         let docRef = db.collection("Pledge")
         let pledgeRef = db.collection("Pledge").document(isSelected)
-        
-//        if !pledges.isEmpty{
-//            pledges.removeAll()
-//        }
-        
-        if !pledgeList.isEmpty{
-            pledgeList.removeAll()
-        }
-        
+
         if isSelected == "All"{
             docRef.getDocuments(){(querySnapshot, err) in
                 if let err = err{
@@ -149,16 +142,14 @@ struct StudentCouncil_PledgeProgress: View {
                 setProgress(setPledge: Pledge, implemented: final_Str[0])
             }
         }
-        
     }
     
     func setProgress(setPledge : String, implemented : String){
+
         var implement = ""
 
         if implemented.contains("1"){
             implementedCnt += 1.0
-            print(implementedCnt)
-            print("cnt : ", pledgeList.count)
             implement = "이행 완료"
         }
         
@@ -167,30 +158,65 @@ struct StudentCouncil_PledgeProgress: View {
         }
         
         if isSelected == "All"{
-            progressValue = implementedCnt / Float(pledgeList.count) * 100
-            print(progressValue)
+            if !pledges.contains(where: {($0.pledge == setPledge)}){
+                pledges.append(Pledge(pledge: setPledge, implemented: implement))
+            }
             
-            pledges.append(Pledge(pledge: setPledge, implemented: implement))
+            if pledges.count == 37{
+                progressValue = implementedCnt / Float(37) * 100
+            }
+            
         }
         
         if isSelected == "Communication"{
-            progressValue = implementedCnt / Float(communicationList.count) * 100
-            communications.append(Pledge(pledge : setPledge, implemented: implement))
+            if !communications.contains(where: {($0.pledge == setPledge)}){
+                communications.append(Pledge(pledge: setPledge, implemented: implement))
+            }
+            
+            if communications.count == 8{
+                progressValue = implementedCnt / Float(8) * 100
+
+            }
         }
         
         if isSelected == "Welfare"{
-            progressValue = implementedCnt / Float(welfareList.count) * 100
-            welfares.append(Pledge(pledge : setPledge, implemented: implement))
+            
+            if !welfares.contains(where: {($0.pledge == setPledge)}){
+                welfares.append(Pledge(pledge: setPledge, implemented: implement))
+            }
+            
+            
+            if welfares.count == 13{
+                progressValue = implementedCnt / Float(13) * 100
+
+            }
+
         }
         
         if isSelected == "Learning"{
-            progressValue = implementedCnt / Float(learningList.count) * 100
-            learnings.append(Pledge(pledge : setPledge, implemented: implement))
+            
+            if !learnings.contains(where: {($0.pledge == setPledge)}){
+                learnings.append(Pledge(pledge: setPledge, implemented: implement))
+            }
+            
+            if learnings.count == 8{
+                progressValue = implementedCnt / Float(8) * 100
+
+            }
+
         }
         
         if isSelected == "Culture"{
-            progressValue = implementedCnt / Float(cultureList.count) * 100
-            cultures.append(Pledge(pledge : setPledge, implemented: implement))
+            
+            if !cultures.contains(where: {($0.pledge == setPledge)}){
+                cultures.append(Pledge(pledge: setPledge, implemented: implement))
+            }
+            
+            if cultures.count == 8{
+                progressValue = implementedCnt / Float(8) * 100
+
+            }
+
         }
     }
     
@@ -199,6 +225,8 @@ struct StudentCouncil_PledgeProgress: View {
             ProgressBar(progress : self.$progressValue)
                 .frame(width : 150, height : 150)
                 .padding(40)
+            
+            SearchBar(text : $searchText , placeholder: "공약 검색".localized())
             
             Spacer()
             
@@ -236,7 +264,7 @@ struct StudentCouncil_PledgeProgress: View {
                             isSelected = "Learning"
                             getPledgeList()
                         }){
-                            Text("학업").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
+                            Text("취업 / 학습").foregroundColor(.white).padding([.horizontal], 15).padding([.vertical], 10)
                         }.background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.green))
                 }
             }.padding([.horizontal], 10)
@@ -245,32 +273,52 @@ struct StudentCouncil_PledgeProgress: View {
             Spacer()
             
             if isSelected == "All"{
-                List(pledges.indices, id: \.self){ index in
-                    PledgeRow(pledge: self.$pledges[index])
+                List{
+                    ForEach(pledges.filter{
+                        self.searchText.isEmpty ? true : $0.pledge.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        PledgeRow(pledge: index)
+                    }
                 }
             }
             
             if isSelected == "Communication"{
-                List(communications.indices, id: \.self){ index in
-                    PledgeRow(pledge: self.$communications[index])
+                List{
+                    ForEach(communications.filter{
+                        self.searchText.isEmpty ? true : $0.pledge.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        PledgeRow(pledge: index)
+                    }
                 }
             }
             
             if isSelected == "Culture"{
-                List(cultures.indices, id: \.self){ index in
-                    PledgeRow(pledge: self.$cultures[index])
+                List{
+                    ForEach(cultures.filter{
+                        self.searchText.isEmpty ? true : $0.pledge.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        PledgeRow(pledge: index)
+                    }
                 }
             }
             
             if isSelected == "Welfare"{
-                List(welfares.indices, id: \.self){ index in
-                    PledgeRow(pledge: self.$welfares[index])
+                List{
+                    ForEach(welfares.filter{
+                        self.searchText.isEmpty ? true : $0.pledge.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        PledgeRow(pledge: index)
+                    }
                 }
             }
             
             if isSelected == "Learning"{
-                List(learnings.indices, id: \.self){ index in
-                    PledgeRow(pledge: self.$learnings[index])
+                List{
+                    ForEach(learnings.filter{
+                        self.searchText.isEmpty ? true : $0.pledge.lowercased().contains(self.searchText.lowercased())
+                    }, id: \.self){ index in
+                        PledgeRow(pledge: index)
+                    }
                 }
             }
             

@@ -10,8 +10,13 @@ import FirebaseStorage
 import FirebaseFirestore
 import SDWebImageSwiftUI
 
+struct URLList : Hashable{
+    var index : Int
+    var url : URL?
+}
+
 struct noticeDetail: View {
-    @Binding var notice : Notice
+    let notice : Notice
     @State var date = ""
     @State var contents = ""
     @State var index = ""
@@ -20,37 +25,40 @@ struct noticeDetail: View {
     @State var lastScaleValue: CGFloat = 1.0
     @State var scale : CGFloat = 1.0
     @State var imageIndex : Int = 0
-    @State var items = [URL(string: "")]
-
+    @State var items = [URLList]()
+    @State var showModal = false
+    @State var selectedURL = URL(string: "")
+    
     func loadNotice(){
-        let docRef = db.collection("Notice").document(notice.title)
-        
-        docRef.getDocument(){(document, err) in
-            if let document = document{
-                date.append(document.get("timeStamp") as! String)
-                contents.append(document.get("contents") as! String)
-                index.append(document.get("index") as! String)
-                url.append(document.get("url") as! String)
-                var read = document.get("read") as! Int
-                
-                if document.get("imageIndex") != nil{
-                    let imageIndex = document.get("imageIndex") as! Int
-                    loadNoticeImage(index : index, imageIndex: imageIndex)
-                }
-                
-                else{
-                    loadNoticeImage(index: index, imageIndex: 1)
-                }
-                
-                docRef.updateData(["read" : read + 1]){
-                    err in
-                    if let err = err{
-                        print(err)
+        if contents == ""{
+            let docRef = db.collection("Notice").document(notice.title)
+            
+            docRef.getDocument(){(document, err) in
+                if let document = document{
+                    date.append(document.get("timeStamp") as! String)
+                    contents.append(document.get("contents") as! String)
+                    index.append(document.get("index") as! String)
+                    url.append(document.get("url") as! String)
+                    var read = document.get("read") as! Int
+                    
+                    if document.get("imageIndex") != nil{
+                        let imageIndex = document.get("imageIndex") as! Int
+                        loadNoticeImage(index : index, imageIndex: imageIndex)
+                    }
+                    
+                    else{
+                        loadNoticeImage(index: index, imageIndex: 1)
+                    }
+                    
+                    docRef.updateData(["read" : read + 1]){
+                        err in
+                        if let err = err{
+                            print(err)
+                        }
                     }
                 }
             }
         }
-            
     }
     
     func loadNoticeImage(index : String, imageIndex : Int){
@@ -69,10 +77,12 @@ struct noticeDetail: View {
                     }
                     
                     else{
-                        items.append(url!)
+                        items.append(URLList(index: i, url: url!))
                     }
                     
-                    print(items)
+                    items.sort(by : {$0.index < $1.index})
+                    
+                    print(items , "\n")
                 }
             }
         }
@@ -87,66 +97,78 @@ struct noticeDetail: View {
                 }
                 
                 self.imageURL = url!
-                items.append(url!)
+                items.append(URLList(index: 0, url: url!))
             }
         }
         
         else{
             
         }
+        
+
     }
     
     var body: some View {
-            ScrollView{
-                VStack {
-                    Text(date)
-                    
-                    Spacer()
-                    
+        ScrollView{
+            VStack {
+                Text(date)
+                
+                Spacer()
+                
+                if !items.isEmpty{
                     ScrollView(.horizontal){
                         HStack {
-                            ForEach(1..<items.count, id: \.self){ index in
-                                WebImage(url: self.items[index])
+                            ForEach(items.indices, id: \.self){ index in
+                                WebImage(url: items[index].url)
                                     .resizable()
                                     .frame(width: 300, height : 300, alignment:.top)
+                                    .onTapGesture {
+                                        selectedURL = items[index].url
+                                        showModal = true
+                                    }
                             }
+                            
                         }
                     }
-                    
-                    Spacer().frame(height : 30)
-                    
-                    Text(contents.replacingOccurrences(of: "\\n", with: "\n"))
-                    
-                    Spacer()
-                    
-                    if(url != ""){
-                        Link(destination : URL(string: url)!){
-                            HStack{
-                                Text("URL 연결하기".localized())
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                            }
+                }
+                
+                Spacer().frame(height : 30)
+                
+                Text(contents.replacingOccurrences(of: "\\n", with: "\n"))
+                
+                Spacer()
+                
+                if(url != ""){
+                    Link(destination : URL(string: url)!){
+                        HStack{
+                            Text("URL 연결하기".localized())
+                                .foregroundColor(.white)
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.white)
                         }
-                        .padding(20)
-                        .frame(width : UIScreen.main.bounds.width / 2)
-                        .background(RoundedRectangle(cornerRadius : 16).foregroundColor(.blue))
-                        
                     }
+                    .padding(20)
+                    .frame(width : UIScreen.main.bounds.width / 2)
+                    .background(RoundedRectangle(cornerRadius : 16).foregroundColor(.blue))
                     
-                }.padding(30)
-        
+                }
+                
+            }.padding(30)
+            
         }.navigationBarTitle(notice.title, displayMode: .large)
         .onAppear(perform: {
             loadNotice()
         })
+        .sheet(isPresented : self.$showModal){
+            SingleImageView(url: $selectedURL)
+        }
     }
 }
 
-struct noticeDetail_Previews: PreviewProvider {
-    @State static var notice = Notice(title: "", date: "", contents: "", read : 0)
-
-    static var previews: some View {
-        noticeDetail(notice: $notice)
-    }
-}
+//struct noticeDetail_Previews: PreviewProvider {
+//    @State static var notice = Notice(title: "", date: "", contents: "", read : 0)
+//
+//    static var previews: some View {
+//        noticeDetail(notice: $notice)
+//    }
+//}

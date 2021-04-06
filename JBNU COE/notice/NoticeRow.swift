@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct NoticeRow: View {
-    @Binding var notice: Notice
+    let notice: Notice
     
-    init(notice: Binding<Notice>){
-        self._notice = notice
-    }
+//    init(notice: Binding<Notice>){
+//        self._notice = notice
+//    }
     
     var body: some View {
         VStack(alignment : .leading){
@@ -28,10 +28,10 @@ struct NoticeRow: View {
     }
 }
 
-struct NoticeRow_Previews: PreviewProvider {
-    @State static var notice = Notice(title: "", date: "", contents: "", read : 0)
-
-    static var previews: some View {
-        NoticeRow(notice: $notice)
-    }
-}
+//struct NoticeRow_Previews: PreviewProvider {
+//    @State static var notice = Notice(title: "", date: "", contents: "", read : 0)
+//
+//    static var previews: some View {
+//        NoticeRow(notice: $notice)
+//    }
+//}

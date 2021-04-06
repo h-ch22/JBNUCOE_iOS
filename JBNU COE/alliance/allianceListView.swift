@@ -43,45 +43,47 @@ class getStores: ObservableObject{
     @State var engName : String = ""
     var storeList : [String] = []
     @State var allStoreDict : [String : String] = [:]
-    @State var filter = ""
-    var filteredArray : [Alliance] = []
     @State var isEnable = ""
-    
-    func setFilter(text : String){
-        filter = text
-    }
-    
+
     func getAllianceList(category : String){
         db = Firestore.firestore()
-        self.category = category
         alliance.removeAll()
         storeList.removeAll()
         allStoreDict.removeAll()
-        
-        if category != "All"{
-            let docRef = db.collection("Coalition").document(category)
-            docRef.getDocument() { (document, error) in
-                if let document = document {
-                    self.storeList.append(contentsOf: Array(document.data()!.keys))
-                    print(Array(document.data()!.keys))
+        var benefitDictionary: Any?
+        self.category = category
+
+        let docRef = db.collection("Coalition").document(category)
+        docRef.getDocument() { (document, error) in
+            if let document = document {
+                self.storeList.append(contentsOf: Array(document.data()!.keys))
+                print(Array(document.data()!.keys))
+                
+                for i in 0..<self.storeList.count{
+                    let benefit_db = document.data()?[self.storeList[i]] as? String ?? "준비 중입니다."
+                    benefitDictionary = document.data()?[self.storeList[i]] as! [String : Any]
                     
-                    for i in 0..<self.storeList.count{
-                        self.getTime(storeName: self.storeList[i], category: category)
-                    }
+                    let s = String(describing: benefitDictionary)
+                    let split_Str = s.components(separatedBy: "Optional([\"benefits\":")
+                    let final_Str = split_Str[1].components(separatedBy: "])")
                     
-                } else {
-                    print("Document does not exist in cache")
-                    print(category)
+                    self.getTime(storeName: self.storeList[i], category: category, benefit: final_Str[0])
                 }
+                
+            } else {
+                print("Document does not exist in cache")
+                print(category)
             }
         }
         
-        if category == "All"{
-            getAllAllianceList()
-        }
     }
     
     func getAllAllianceList(){
+        alliance.removeAll()
+        storeList.removeAll()
+        allStoreDict.removeAll()
+        var benefitDictionary: Any?
+        category = "All"
         db = Firestore.firestore()
         
         db.collection("Coalition").getDocuments(){ (querySnapshot, err) in
@@ -102,7 +104,14 @@ class getStores: ObservableObject{
                     storeList.append(contentsOf: document.data().keys)
                     
                     for i in 0..<storeList.count{
-                        self.getTime(storeName: storeList[i], category: document.documentID)
+                        let benefit_db = document.data()[storeList[i]] as? String ?? "준비 중입니다."
+                        benefitDictionary = document.data()[storeList[i]] as! [String : Any]
+                        
+                        let s = String(describing: benefitDictionary)
+                        let split_Str = s.components(separatedBy: "Optional([\"benefits\":")
+                        let final_Str = split_Str[1].components(separatedBy: "])")
+                        
+                        self.getTime(storeName: storeList[i], category: document.documentID, benefit: final_Str[0])
                         
                     }
                 }
@@ -110,17 +119,17 @@ class getStores: ObservableObject{
         }
     }
     
-    func getTime(storeName : String, category : String){
+    func getTime(storeName : String, category : String, benefit : String){
         
         let docRef = db.collection("location").document(storeName)
         var enable = ""
         
         docRef.getDocument(){document, err in
             if let document = document{
-                var openTime = document.get("open") as! String
-                var closeTime = document.get("close") as! String
-                var brake = document.get("break") as! String
-                var closed = document.get("closed") as! String
+                let openTime = document.get("open") as! String
+                let closeTime = document.get("close") as! String
+                let brake = document.get("break") as! String
+                let closed = document.get("closed") as! String
                 
                 if openTime != "unknown" && closeTime != "unknown"{
                     enable = openTime + " ~ " + closeTime
@@ -130,45 +139,23 @@ class getStores: ObservableObject{
                     enable = "알 수 없음"
                 }
                 
-                self.loadBenefits(storeName: storeName, category: category, isEnable: enable, brake : brake, closed : closed)
+                self.setBenefits(benefit: benefit, category: category, storeName: storeName, isEnable: enable, brake: brake, closed: closed)
             }
             
         }
     }
     
-    func loadBenefits(storeName : String, category: String, isEnable : String, brake : String, closed : String){
-        print(storeName + "," + category)
-        var benefitDictionary: Any?
-        
-        db = Firestore.firestore()
-        
-        let docRef = db.collection("Coalition").document(category)
-        
-        docRef.getDocument(){(document, error) in
-            if let document = document{
-                let benefit_db = document.data()?[storeName] as? String ?? "준비 중입니다."
-                benefitDictionary = document.data()?[storeName] as! [String : Any]
-                
-                let s = String(describing: benefitDictionary)
-                var split_Str = s.components(separatedBy: "Optional([\"benefits\":")
-                var final_Str = split_Str[1].components(separatedBy: "])")
-                self.setBenefits(benefit : final_Str[0], storeName: storeName, isEnable : isEnable, brake : brake, closed : closed)
-            }
-        }
-        
-    }
-    
-    func setBenefits(benefit: String, storeName : String, isEnable : String, brake : String, closed : String){
+    func setBenefits(benefit: String, category : String, storeName : String, isEnable : String, brake : String, closed : String){
         var benefits = [String : String]()
         
         benefits.updateValue(benefit, forKey: storeName)
         for (key, value) in benefits{
-            self.loadimg(storeName: storeName, benefits: benefits, isEnable: isEnable, brake : brake, closed : closed)
+            self.loadimg(storeName: storeName, benefits: benefits, category : category, isEnable: isEnable, brake : brake, closed : closed)
         }
         
     }
     
-    func loadimg(storeName : String, benefits : [String : String], isEnable : String, brake : String, closed : String){
+    func loadimg(storeName : String, benefits : [String : String], category : String, isEnable : String, brake : String, closed : String){
         var urlDict = [String : String]()
         var engDict = [String : String]()
         var strURL : String = ""
@@ -195,7 +182,7 @@ class getStores: ObservableObject{
                     strURL = imgurl!.absoluteString
                     
                     urlDict.updateValue(strURL, forKey: storeName)
-                    self.setData(storeName: storeName, category: self.category, benefits: benefits, engDict: engDict, urlDict: urlDict, isEnable : isEnable, brake : brake, closed : closed)
+                    self.setData(storeName: storeName, category: category, benefits: benefits, engDict: engDict, urlDict: urlDict, isEnable : isEnable, brake : brake, closed : closed)
                     
                 }
             }
@@ -206,11 +193,6 @@ class getStores: ObservableObject{
         self.alliance.append(
             Alliance(storeName: storeName, benefits: benefits[storeName]!, engName: engDict[storeName]!, url: URL(string: urlDict[storeName]!)!, category: category, isEnable: isEnable, brake : brake, closed : closed)
         )
-        
-        filteredArray = self.alliance.filter{storeName.contains($0.storeName)}
-        
-        print(storeName + ":" + isEnable)
-        
     }
 }
 
@@ -234,9 +216,16 @@ struct allianceListView: View {
     
     var body: some View {
         VStack (alignment:.leading){
-            List(getStores.alliance.indices, id: \.self){ index in
-                NavigationLink(destination: storeDetail(alliance: self.$getStores.alliance[index])){
-                    AllianceRow(alliance: self.$getStores.alliance[index])
+            SearchBar(text: $searchText, placeholder: "제휴업체 검색".localized())
+            
+            List{
+                ForEach(getStores.alliance.filter{
+                    self.searchText.isEmpty ? true : $0.storeName.lowercased().contains(self.searchText.lowercased())
+                }, id: \.self){ index in
+                    
+                    NavigationLink(destination: storeDetail(alliance: index)){
+                        AllianceRow(alliance: index)
+                    }
                 }
             }
             
@@ -249,7 +238,16 @@ struct allianceListView: View {
         })
         
         .onAppear(perform: {
-            getStores.getAllianceList(category: category)
+            if getStores.storeList.isEmpty{
+                if category == "All"{
+                    getStores.getAllAllianceList()
+                }
+                
+                else{
+                    getStores.getAllianceList(category: category)
+                }
+            }
+            
         })
     }
 }

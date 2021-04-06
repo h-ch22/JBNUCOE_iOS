@@ -25,6 +25,7 @@ struct FeedbackHub_main: View {
     @State var activeAlert : feedbackAlert = .feedback
     @State var showAlert = false
     @EnvironmentObject var user : UserManagement
+    @Environment(\.presentationMode) private var presentationMode
     @State var finResult = ""{
         didSet(newVal){
             if newVal == "success"{
@@ -184,8 +185,18 @@ struct FeedbackHub_main: View {
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding([.horizontal],30)
                         
-                        TextEditor(text : $Feedback).textFieldStyle(RoundedBorderTextFieldStyle()).padding().lineSpacing(10).frame(height : UIScreen.main.bounds.height / 2)
-
+                        ZStack(alignment: .topLeading) {
+                            if Feedback.isEmpty {
+                                HStack {
+                                    Text("피드백의 내용을 입력하세요.")
+                                        .padding()
+                                    Spacer()
+                                }
+                            }
+                            
+                            TextEditor(text: $Feedback)
+                                .padding().lineSpacing(10).frame(height : UIScreen.main.bounds.height / 2).opacity(Feedback.isEmpty ? 0.25 : 1)
+                        }
 
                         Spacer()
                         
@@ -244,7 +255,11 @@ struct FeedbackHub_main: View {
                     case .success:
                         return Alert(title : Text("피드백 전송 완료".localized()),
                               message: Text("피드백이 정상적으로 전송되었습니다.\n학우님의 소중한 피드백은 관련 부서로 전달하여, 충분히 검토한 후 최대한 반영하기 위해 노력하겠습니다.\n감사합니다.".localized()),
-                              dismissButton: .default(Text("확인".localized())){showAlert = false})
+                              dismissButton: .default(Text("확인".localized())){
+                                showAlert = false
+                                self.presentationMode.wrappedValue.dismiss()
+
+                              })
                         
                     case .type:
                     return Alert(title : Text("주제 선택".localized()),

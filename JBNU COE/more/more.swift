@@ -269,6 +269,24 @@ struct more: View {
                             
                             Divider()
                             
+                            NavigationLink(destination: MenuView()) {
+                                HStack{
+                                    Image("ic_menu")
+                                        .resizable()
+                                        .frame(width: 50,
+                                               height :50)
+                                    
+                                    
+                                    Text("학식 메뉴 확인하기".localized())
+                                        .font(.title)
+                                        .foregroundColor(.gray)
+                                }
+                            }
+                            
+                            Divider()
+                        }
+                        
+                        Group{
                             NavigationLink(destination: HandWriting_ListView(getHandWritingList: getHandWritingList())) {
                                 HStack{
                                     Image("ic_crown")
@@ -284,9 +302,7 @@ struct more: View {
                             }
 
                             Divider()
-                        }
-                        
-                        Group{
+                            
                             Button(action:{
                                 loadView = .Feedbackhub
                                 showFeedbackHub = true

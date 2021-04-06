@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct PledgeRow: View {
-    @Binding var pledge: Pledge
-
-    init(pledge: Binding<Pledge>){
-        self._pledge = pledge
-    }
+    let pledge: Pledge
     
     var body: some View {
         VStack(alignment:.leading) {

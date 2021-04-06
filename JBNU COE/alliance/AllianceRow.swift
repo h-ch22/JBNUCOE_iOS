@@ -9,11 +9,7 @@ import SwiftUI
 import SDWebImageSwiftUI
 
 struct AllianceRow: View {
-    @Binding var alliance: Alliance
-    
-    init(alliance: Binding<Alliance>){
-        self._alliance = alliance
-    }
+    let alliance: Alliance
     
     var body: some View {
         HStack {
@@ -77,13 +73,5 @@ struct AllianceRow: View {
                 }
             }
         }
-    }
-}
-
-struct AllianceRow_Previews: PreviewProvider {
-    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable : "", brake : "", closed :"")
-
-    static var previews: some View {
-        AllianceRow(alliance : $alliance)
     }
 }

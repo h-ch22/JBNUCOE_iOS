@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -23,6 +23,7 @@
 		7B6BD71525E68B01006D1A1C /* ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B6BD71425E68B01006D1A1C /* ic.png */; };
 		7B6BD71A25E692F5006D1A1C /* EULA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6BD71925E692F5006D1A1C /* EULA.swift */; };
 		7B6BD71F25E6931E006D1A1C /* Privacy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B6BD71E25E6931E006D1A1C /* Privacy.swift */; };
+		7B7E855F2609AFDC00161621 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B7E855E2609AFDC00161621 /* SearchBar.swift */; };
 		7B9EADFC25EF5D430024CF3B /* ic_event.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B9EADFB25EF5D430024CF3B /* ic_event.png */; };
 		7BAEFA362600DEF100C4B43B /* ic_crown.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BAEFA352600DEF100C4B43B /* ic_crown.png */; };
 		7BAEFA422600E0D500C4B43B /* HandWriting_ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEFA412600E0D500C4B43B /* HandWriting_ListView.swift */; };
@@ -33,6 +34,14 @@
 		7BAEFA5B2600EA1800C4B43B /* PhotoPickerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEFA5A2600EA1800C4B43B /* PhotoPickerModel.swift */; };
 		7BAEFA602600F5F600C4B43B /* HandWritingRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEFA5F2600F5F600C4B43B /* HandWritingRow.swift */; };
 		7BAEFA6526010F9500C4B43B /* HandWritingDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAEFA6426010F9500C4B43B /* HandWritingDetails.swift */; };
+		7BC7A335261043E6000A1519 /* ic_menu.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7A334261043E6000A1519 /* ic_menu.png */; };
+		7BC7A33B26104589000A1519 /* MenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BC7A33A26104589000A1519 /* MenuView.swift */; };
+		7BC7A344261045DF000A1519 /* SwiftSoup in Frameworks */ = {isa = PBXBuildFile; productRef = 7BC7A343261045DF000A1519 /* SwiftSoup */; };
+		7BC7A34A26104C99000A1519 /* ic_moon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7A34826104C99000A1519 /* ic_moon.png */; };
+		7BC7A34B26104C99000A1519 /* ic_sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BC7A34926104C99000A1519 /* ic_sun.png */; };
+		7BD4B8932608A32B007B3CFD /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4B8922608A32B007B3CFD /* SingleImageView.swift */; };
+		7BD4B8982608B18E007B3CFD /* AdDetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4B8972608B18E007B3CFD /* AdDetailLoader.swift */; };
+		7BD730062611734B00F4FEC7 /* ic_morning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD730052611734A00F4FEC7 /* ic_morning.png */; };
 		7BE8CE1425E78E9D00268AB5 /* img_cj.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1225E78E9D00268AB5 /* img_cj.png */; };
 		7BE8CE1525E78E9D00268AB5 /* img_hy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1325E78E9D00268AB5 /* img_hy.png */; };
 		7BE8CE1A25E7904400268AB5 /* CampusMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1925E7904400268AB5 /* CampusMap.storyboard */; };
@@ -282,6 +291,7 @@
 		7B6BD71E25E6931E006D1A1C /* Privacy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Privacy.swift; sourceTree = "<group>"; };
 		7B7CBFE425FFB23000183458 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		7B7CBFE625FFB23000183458 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		7B7E855E2609AFDC00161621 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		7B9EADFB25EF5D430024CF3B /* ic_event.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_event.png; sourceTree = "<group>"; };
 		7BAEFA352600DEF100C4B43B /* ic_crown.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_crown.png; sourceTree = "<group>"; };
 		7BAEFA412600E0D500C4B43B /* HandWriting_ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandWriting_ListView.swift; sourceTree = "<group>"; };
@@ -292,6 +302,13 @@
 		7BAEFA5A2600EA1800C4B43B /* PhotoPickerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPickerModel.swift; sourceTree = "<group>"; };
 		7BAEFA5F2600F5F600C4B43B /* HandWritingRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandWritingRow.swift; sourceTree = "<group>"; };
 		7BAEFA6426010F9500C4B43B /* HandWritingDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandWritingDetails.swift; sourceTree = "<group>"; };
+		7BC7A334261043E6000A1519 /* ic_menu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_menu.png; sourceTree = "<group>"; };
+		7BC7A33A26104589000A1519 /* MenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuView.swift; sourceTree = "<group>"; };
+		7BC7A34826104C99000A1519 /* ic_moon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_moon.png; sourceTree = "<group>"; };
+		7BC7A34926104C99000A1519 /* ic_sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_sun.png; sourceTree = "<group>"; };
+		7BD4B8922608A32B007B3CFD /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
+		7BD4B8972608B18E007B3CFD /* AdDetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailLoader.swift; sourceTree = "<group>"; };
+		7BD730052611734A00F4FEC7 /* ic_morning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_morning.png; sourceTree = "<group>"; };
 		7BE8CE1225E78E9D00268AB5 /* img_cj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_cj.png; sourceTree = "<group>"; };
 		7BE8CE1325E78E9D00268AB5 /* img_hy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_hy.png; sourceTree = "<group>"; };
 		7BE8CE1925E7904400268AB5 /* CampusMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CampusMap.storyboard; sourceTree = "<group>"; };
@@ -488,6 +505,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17343804F0E329178F3760F7 /* Pods_JBNU_COE.framework in Frameworks */,
+				7BC7A344261045DF000A1519 /* SwiftSoup in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,8 +563,17 @@
 				7BAEFA5F2600F5F600C4B43B /* HandWritingRow.swift */,
 				7BAEFA6426010F9500C4B43B /* HandWritingDetails.swift */,
 				7BF3932E260345A700585234 /* HandWritingEdit.swift */,
+				7BD4B8922608A32B007B3CFD /* SingleImageView.swift */,
 			);
 			path = HandWriting;
+			sourceTree = "<group>";
+		};
+		7BC7A33926104416000A1519 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				7BC7A33A26104589000A1519 /* MenuView.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 		F609E7E825AC33FD00635FEE /* notice */ = {
@@ -631,6 +658,7 @@
 				F6378B5E25B0472D00B9ACAD /* AllianceRow.swift */,
 				F685075C25B1BDA30054E9DF /* MapView.storyboard */,
 				F685076125B1BDAB0054E9DF /* MapViewController.swift */,
+				7BD4B8972608B18E007B3CFD /* AdDetailLoader.swift */,
 			);
 			path = alliance;
 			sourceTree = "<group>";
@@ -689,6 +717,7 @@
 		F6A1E88525AABB9400BD02EA /* JBNU COE */ = {
 			isa = PBXGroup;
 			children = (
+				7BC7A33926104416000A1519 /* Menu */,
 				7BAEFA3A2600DF6A00C4B43B /* HandWriting */,
 				7B01AAA725FF804900CB4C85 /* InfoPlist.strings */,
 				7B19E84625FA05F80024B8A5 /* Calendar */,
@@ -714,6 +743,7 @@
 				F6C71BB425AB986500112B91 /* BottomTabManager.swift */,
 				F6378B2625B00D3500B9ACAD /* tmp.storyboard */,
 				F6E7B90225C4B80000BD4434 /* AppDelegate.swift */,
+				7B7E855E2609AFDC00161621 /* SearchBar.swift */,
 			);
 			path = "JBNU COE";
 			sourceTree = "<group>";
@@ -747,6 +777,8 @@
 		F6A27C5025AB4B8200A7CED2 /* ic */ = {
 			isa = PBXGroup;
 			children = (
+				7BD730052611734A00F4FEC7 /* ic_morning.png */,
+				7BC7A334261043E6000A1519 /* ic_menu.png */,
 				F602873625B82F0400863E26 /* ic_calendar.png */,
 				F63C9BFB25B817D800965984 /* ic_20px.png */,
 				F63C9BFF25B817D800965984 /* ic_29px.png */,
@@ -758,6 +790,8 @@
 				F63C9C0025B817D800965984 /* ic_60px.png */,
 				F63C9BF525B817D700965984 /* ic_76px.png */,
 				F63C9BF425B817D700965984 /* ic_80px.png */,
+				7BC7A34826104C99000A1519 /* ic_moon.png */,
+				7BC7A34926104C99000A1519 /* ic_sun.png */,
 				F63C9BF225B817D700965984 /* ic_87px.png */,
 				F63C9BF825B817D700965984 /* ic_88px.png */,
 				F63C9BF725B817D700965984 /* ic_100px.png */,
@@ -934,6 +968,9 @@
 			dependencies = (
 			);
 			name = "JBNU COE";
+			packageProductDependencies = (
+				7BC7A343261045DF000A1519 /* SwiftSoup */,
+			);
 			productName = "JBNU COE";
 			productReference = F6A1E88325AABB9400BD02EA /* JBNU COE.app */;
 			productType = "com.apple.product-type.application";
@@ -1009,6 +1046,9 @@
 				ko,
 			);
 			mainGroup = F6A1E87A25AABB9400BD02EA;
+			packageReferences = (
+				7BC7A342261045DF000A1519 /* XCRemoteSwiftPackageReference "SwiftSoup" */,
+			);
 			productRefGroup = F6A1E88425AABB9400BD02EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1063,9 +1103,11 @@
 				7BEB161725E25B84003A20E2 /* building_7_4f.jpeg in Resources */,
 				7BEB160C25E25B84003A20E2 /* building_8_1f.jpeg in Resources */,
 				7BEB161C25E25B84003A20E2 /* building_3_2f.jpeg in Resources */,
+				7BD730062611734B00F4FEC7 /* ic_morning.png in Resources */,
 				7BEB161225E25B84003A20E2 /* building_9_9f.jpeg in Resources */,
 				7BEB160325E25B84003A20E2 /* building_8_4f.jpeg in Resources */,
 				7BEB15F225E25B83003A20E2 /* building_4_4f.jpeg in Resources */,
+				7BC7A335261043E6000A1519 /* ic_menu.png in Resources */,
 				7BEB161325E25B84003A20E2 /* building_4_b1f.jpeg in Resources */,
 				F63C9C0D25B817D800965984 /* ic_120px.png in Resources */,
 				F6C71BAC25AB985300112B91 /* ic_meal.png in Resources */,
@@ -1088,6 +1130,7 @@
 				7B6BD71525E68B01006D1A1C /* ic.png in Resources */,
 				7BEB15F725E25B83003A20E2 /* building_6_5f.jpeg in Resources */,
 				F63C9C0925B817D800965984 /* ic_40px.png in Resources */,
+				7BC7A34A26104C99000A1519 /* ic_moon.png in Resources */,
 				7BEB161025E25B84003A20E2 /* building_3_1f.jpeg in Resources */,
 				7BE8CE1525E78E9D00268AB5 /* img_hy.png in Resources */,
 				F6110F8B25B5733700ED88B9 /* PageView.storyboard in Resources */,
@@ -1119,6 +1162,7 @@
 				7BEB15C025E253F4003A20E2 /* ic_sports.png in Resources */,
 				F63C9B9A25B80B4800965984 /* sports_background.png in Resources */,
 				7BE8CE1A25E7904400268AB5 /* CampusMap.storyboard in Resources */,
+				7BC7A34B26104C99000A1519 /* ic_sun.png in Resources */,
 				7BEB160D25E25B84003A20E2 /* building_9_8f.jpeg in Resources */,
 				F686F0A825AB86C7009BA783 /* background_ipad.png in Resources */,
 				7B01AAA525FF804900CB4C85 /* InfoPlist.strings in Resources */,
@@ -1289,7 +1333,9 @@
 				F6378B5A25B046A500B9ACAD /* Alliance.swift in Sources */,
 				F6378B5525B03CDB00B9ACAD /* NoticeRow.swift in Sources */,
 				7BAEFA6526010F9500C4B43B /* HandWritingDetails.swift in Sources */,
+				7BC7A33B26104589000A1519 /* MenuView.swift in Sources */,
 				F63F034725B865C10001428F /* StudentCouncil_introduce.swift in Sources */,
+				7BD4B8982608B18E007B3CFD /* AdDetailLoader.swift in Sources */,
 				F63C9BB025B80DC200965984 /* ApplyMatch.swift in Sources */,
 				F610044225AE1D710082B2D1 /* storeDetail.swift in Sources */,
 				F6AB029925B9D22600A02607 /* SportsMapLoader.swift in Sources */,
@@ -1334,6 +1380,7 @@
 				F6C71BBA25AB99D700112B91 /* Ad_1.swift in Sources */,
 				F6A1E88725AABB9400BD02EA /* JBNU_COEApp.swift in Sources */,
 				7BAEFA472600E26100C4B43B /* HandWriting.swift in Sources */,
+				7BD4B8932608A32B007B3CFD /* SingleImageView.swift in Sources */,
 				F64CC0FB25B07921008B3459 /* secessionView.swift in Sources */,
 				F685075825B184B00054E9DF /* finish.swift in Sources */,
 				F65013EE25D7D3A800C66AC5 /* Pledge.swift in Sources */,
@@ -1342,6 +1389,7 @@
 				F6E7B8A025C4701700BD4434 /* myRoomDetails.swift in Sources */,
 				F65AC78125ABA791000D5379 /* allianceListView.swift in Sources */,
 				7BAEFA512600E56F00C4B43B /* PhotoPicker.swift in Sources */,
+				7B7E855F2609AFDC00161621 /* SearchBar.swift in Sources */,
 				F623113B25AD89140069112F /* FeedbackHub_main.swift in Sources */,
 				F6A27CBE25AB51B200A7CED2 /* Home_Phone.swift in Sources */,
 				F600B0FD25B9687C00817ACE /* Ad_3.swift in Sources */,
@@ -1537,7 +1585,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1564,7 +1612,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1710,6 +1758,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7BC7A342261045DF000A1519 /* XCRemoteSwiftPackageReference "SwiftSoup" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scinfu/SwiftSoup.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.3.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7BC7A343261045DF000A1519 /* SwiftSoup */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7BC7A342261045DF000A1519 /* XCRemoteSwiftPackageReference "SwiftSoup" */;
+			productName = SwiftSoup;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F6A1E87B25AABB9400BD02EA /* Project object */;
 }

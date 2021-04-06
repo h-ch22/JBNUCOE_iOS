@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "620F36A5-83E8-4AFA-883F-2423B0EA34D8"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "90304396-FCDA-49F3-96B7-D49A033554BF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "JBNU COE/Student Council/StudentCouncil_PledgeProgress.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "279"
+            endingLineNumber = "279"
+            landmarkName = "unknown"
+            landmarkType = "0">
+            <Locations>
+               <Location
+                  uuid = "90304396-FCDA-49F3-96B7-D49A033554BF - 355ea1c5cf01ca0c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, JBNU_COE.SearchBar, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;)&gt; in JBNU_COE.StudentCouncil_PledgeProgress.body.getter : some"
+                  moduleName = "JBNU COE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/changjinha/Desktop/2021/JBNU_COE/Swift/JBNU%20COE/JBNU%20COE/Student%20Council/StudentCouncil_PledgeProgress.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "250"
+                  endingLineNumber = "250"
+                  offsetFromSymbolStart = "1184">
+               </Location>
+               <Location
+                  uuid = "90304396-FCDA-49F3-96B7-D49A033554BF - c75a4da6f554e854"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (JBNU_COE.Pledge) -&gt; Swift.Bool in closure #2 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, JBNU_COE.SearchBar, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;)&gt; in JBNU_COE.StudentCouncil_PledgeProgress.body.getter : some"
+                  moduleName = "JBNU COE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/changjinha/Desktop/2021/JBNU_COE/Swift/JBNU%20COE/JBNU%20COE/Student%20Council/StudentCouncil_PledgeProgress.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "250"
+                  endingLineNumber = "250"
+                  offsetFromSymbolStart = "392">
+               </Location>
+               <Location
+                  uuid = "90304396-FCDA-49F3-96B7-D49A033554BF - 22801423553e3210"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (JBNU_COE.Pledge) -&gt; JBNU_COE.PledgeRow in closure #2 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, JBNU_COE.SearchBar, SwiftUI.Spacer, &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;, Swift.Optional&lt;SwiftUI.List&lt;Swift.Never, SwiftUI.ForEach&lt;Swift.Array&lt;JBNU_COE.Pledge&gt;, JBNU_COE.Pledge, JBNU_COE.PledgeRow&gt;&gt;&gt;)&gt; in JBNU_COE.StudentCouncil_PledgeProgress.body.getter : some"
+                  moduleName = "JBNU COE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/changjinha/Desktop/2021/JBNU_COE/Swift/JBNU%20COE/JBNU%20COE/Student%20Council/StudentCouncil_PledgeProgress.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "251"
+                  endingLineNumber = "251"
+                  offsetFromSymbolStart = "168">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

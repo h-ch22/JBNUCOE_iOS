@@ -10,7 +10,7 @@ import SwiftUI
 struct BottomTabManager: View {
     var body: some View {
             TabView() {
-                Home_Phone().tabItem {
+                Home_Phone(getStores: getStores()).tabItem {
                     Image(systemName: "location.fill.viewfinder")
                     Text("제휴 업체".localized()) }.tag(1)
                 

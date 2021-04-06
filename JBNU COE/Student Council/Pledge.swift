@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Pledge {
+struct Pledge : Hashable{
     var pledge : String
     var implemented : String
 }

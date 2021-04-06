@@ -7,5 +7,5 @@
 */
 "CFBundleDisplayName" = "JBNU COE";
 "NSCalendarsUsageDescription" = "You need the appropriate permission to link the Employment calendar with the iOS calendar.";
-"NSLocationAlwaysAndWhenInUseUsageDescription" = "Location permissions are required to display your location in real time.";
-"NSLocationWhenInUseUsageDescription" = "Location permissions are required to display your location in real time.";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "We need to access your location permission to display your location and store location for find route your self";
+"NSLocationWhenInUseUsageDescription" = "We need to access your location permission to display your location and store location for find route your self";

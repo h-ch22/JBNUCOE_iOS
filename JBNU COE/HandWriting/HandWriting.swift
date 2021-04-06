@@ -7,14 +7,16 @@
 
 import Foundation
 
-struct HandWriting : Equatable{
+struct HandWriting : Equatable, Hashable{
     var title : String
     var author : String
     var read : Int
     var recommend : Int
     var dateTime : String
+    var docId : String
     
-    init(title : String, author : String, read : Int, recommend : Int, dateTime : String){
+    init(docId : String, title : String, author : String, read : Int, recommend : Int, dateTime : String){
+        self.docId = docId
         self.title = title
         self.author = author
         self.read = read

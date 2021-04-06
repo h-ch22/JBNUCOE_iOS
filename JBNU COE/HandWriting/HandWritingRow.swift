@@ -8,11 +8,7 @@
 import SwiftUI
 
 struct HandWritingRow: View {
-    @Binding var handWriting: HandWriting
-    
-    init(handWriting: Binding<HandWriting>){
-        self._handWriting = handWriting
-    }
+    let handWriting: HandWriting
     
     var body: some View {
         VStack(alignment : .leading){
@@ -41,12 +37,3 @@ struct HandWritingRow: View {
         }.padding()
     }
 }
-
-struct HandWritingRow_Previews: PreviewProvider {
-    @State static var handWriting = HandWriting(title: "Test", author: "소프트웨어공학과 18 하**", read: 0, recommend: 0, dateTime:"0000. 00. 00. 00:00")
-
-    static var previews: some View {
-        HandWritingRow(handWriting: $handWriting)
-    }
-}
-

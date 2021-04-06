@@ -15,14 +15,15 @@ struct Home_Phone: View {
     @State var categoryKR : String = ""
     @State private var selectedPage = 0
     @State var timeRemaining = 2
-    
+    @ObservedObject var getStores: getStores
+
     var timer = Timer.publish(every:1, on: .current, in: .common).autoconnect()
     
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack {
-                    ZStack {
+                    ZStack(alignment : .topTrailing) {
                         TabView(selection: $selectedPage){
                             Ad_1().tag(0)
                             Ad_2().tag(1)
@@ -53,8 +54,14 @@ struct Home_Phone: View {
                             }
                             
                         }
+                        
+                        NavigationLink(destination: AdDetailLoader(selected: $selectedPage)) {
+                            HStack{
+                                Image(systemName: "chevron.right").foregroundColor(.white)
+                            }.padding([.horizontal], 60).padding([.vertical], 15)
+                        }.background(Circle().foregroundColor(.white).opacity(0.5)).padding(5)
                     }
-                    
+                
                     Spacer()
                     
                     Text("원하시는 카테고리를 선택해보세요!".localized())
@@ -185,7 +192,9 @@ struct Home_Phone: View {
                 Text("계속 하려면 화면 좌측의 버튼을 터치해 카테고리를 선택하십시오.".localized())
                     .foregroundColor(.gray)
             }
-        }
+        }.onAppear(perform: {
+            getStores.alliance.removeAll()
+        })
         
         
     }

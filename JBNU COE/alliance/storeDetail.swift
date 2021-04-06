@@ -14,7 +14,7 @@ import CoreLocation
 import Combine
 
 struct storeDetail: View {
-    @Binding var alliance : Alliance
+    let alliance : Alliance
     @State var engName : String = ""
     @State private var imageURL = URL(string: "")
     @State var phone = ""
@@ -37,34 +37,37 @@ struct storeDetail: View {
     }
     
     func getPhone(){
-        let phoneRef = db.collection("location").document(alliance.storeName)
-
-        phoneRef.getDocument(){(document, err) in
-            if let document = document{
-                let phone_str = document.get("tel") as! String
-                
-                phone.append(phone_str)
+        if(phone == ""){
+            let phoneRef = db.collection("location").document(alliance.storeName)
+            
+            phoneRef.getDocument(){(document, err) in
+                if let document = document{
+                    let phone_str = document.get("tel") as! String
+                    
+                    phone.append(phone_str)
+                }
             }
         }
+        
     }
     
     func loadMenu(){
-        menu = ""
-        price = ""
-        
-        db = Firestore.firestore()
-        let docRef = db.collection("location").document(storeName)
-        docRef.getDocument(){document, err in
-            if let document = document{
-                let menu = document.get("menu") as! String
-                let price = document.get("price") as! String
-                
-                self.menu.append(menu)
-                self.price.append(price)
-                
-                loadMenuImg()
+        if(menu == "" || price == ""){
+            db = Firestore.firestore()
+            let docRef = db.collection("location").document(storeName)
+            docRef.getDocument(){document, err in
+                if let document = document{
+                    let menu = document.get("menu") as! String
+                    let price = document.get("price") as! String
+                    
+                    self.menu.append(menu)
+                    self.price.append(price)
+                    
+                    loadMenuImg()
+                }
             }
         }
+        
     }
     
     func loadMenuImg(){
@@ -112,7 +115,7 @@ struct storeDetail: View {
                     }
                     
                     Divider()
-
+                    
                     HStack(alignment : .center){
                         Button(action: {
                             let numberString = "tel://" + phone
@@ -129,19 +132,30 @@ struct storeDetail: View {
                         }
                         
                         Spacer().frame(width : 30)
-
-                        HStack{
-                            NavigationLink(destination : loadMap(storeName: $storeName, benefits: $benefit)){
-                                HStack{
-                                    Image(systemName : "map.fill")
-                                        .foregroundColor(.blue)
-                                    
-                                    Text("지도 보기".localized())
-                                        .foregroundColor(.blue)
-                                }
+                        
+                        NavigationLink(destination : loadMap(storeName: $storeName, benefits: $benefit)){
+                            HStack{
+                                Image(systemName : "map.fill")
+                                    .foregroundColor(.blue)
+                                
+                                Text("지도 보기".localized())
+                                    .foregroundColor(.blue)
                             }
                         }
-                                                
+                        
+                        Spacer().frame(width : 30)
+                        
+                        Button(action : {}){
+                            HStack{
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.orange)
+                                
+                                Text("찜하기".localized())
+                                    .foregroundColor(.orange)
+                            }
+                        }
+                        
+                        
                     }.padding(5)
                 }.frame(width : 350, height : 250)
                 .background(RoundedRectangle(cornerRadius: 15)
@@ -151,9 +165,19 @@ struct storeDetail: View {
                 VStack(alignment:.center){
                     Spacer()
                     
-                    Text("대표 메뉴".localized())
-                        .font(.title)
-                        .fontWeight(.bold)
+                    if alliance.category.lowercased() == "convenience" || alliance.category.lowercased() == "sports"{
+                        Text("가격".localized())
+                            .font(.title)
+                            .fontWeight(.bold)
+                        
+                    }
+                    
+                    else{
+                        Text("대표 메뉴".localized())
+                            .font(.title)
+                            .fontWeight(.bold)
+                    }
+                    
                     
                     Divider()
                     
@@ -196,10 +220,10 @@ struct storeDetail: View {
             benefit = alliance.benefits
             loadMenu()
         })
-//        .onDisappear(perform: {
-//            menu = ""
-//            price = ""
-//        })
+        //        .onDisappear(perform: {
+        //            menu = ""
+        //            price = ""
+        //        })
         
     }
 }
@@ -219,13 +243,5 @@ struct loadMap : UIViewControllerRepresentable{
         MapViewController().setMarker(storeName: storeName, benefits: benefits)
         
         return viewController
-    }
-}
-
-struct storeDetail_Previews: PreviewProvider {
-    @State static var alliance = Alliance(storeName: "", benefits: "", engName: "", url: URL(string: "")!, category: "", isEnable: "", brake : "", closed : "")
-
-    static var previews: some View {
-        storeDetail(alliance: $alliance)
     }
 }

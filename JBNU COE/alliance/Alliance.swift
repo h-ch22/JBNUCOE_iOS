@@ -9,7 +9,7 @@ import SwiftUI
 import Foundation
 
 
-struct Alliance{
+struct Alliance : Hashable{
     var storeName : String
     var benefits : String
     var engName : String
