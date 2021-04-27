@@ -267,8 +267,9 @@ struct FeedbackHub_main: View {
                           dismissButton: .default(Text("확인".localized())){showAlert = false})
                     }
                     
-                }
             }
+        }
+            
         
     }
 }

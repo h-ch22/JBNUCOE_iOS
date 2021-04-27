@@ -126,16 +126,11 @@ struct check: View {
         .fullScreenCover(isPresented: $processSignUp, content: {
             signUpProgress(processSignUp: $processSignUp, name: $name, phone: $phone, studentNo: $studentNo, dept: $dept, password: $password, mail: $mail)
         })
-        
-        
-//        .sheet(isPresented: $processSignUp, content: {
-//            signUpProgress(processSignUp: $processSignUp)
-//        })
     }
 }
 
-//struct check_Previews: PreviewProvider {
-//    static var previews: some View {
-//        check(showProgress: .constant(true), inputImage: .constant(""), studentNo: .constant(""), name: .constant(""), password: .constant(""), dept: .constant(""), phone: .constant(""))
-//    }
-//}
+struct check_Previews: PreviewProvider {
+    static var previews: some View {
+        check(showProgress: .constant(false), inputImage: .constant(nil), studentNo: .constant(""), name: .constant(""), password: .constant(""), dept: .constant(""), phone: .constant(""), mail: .constant(""))
+    }
+}

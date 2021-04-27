@@ -67,7 +67,7 @@ struct checkAcademic: View {
     @Binding var showAcademic : Bool
     @State var depts = ["건축공학과", "고분자.나노공학과", "고분자섬유나노공학부", "신소재공학부", "기계공학과", "기계설계공학부", "기계시스템공학부", "도시공학과", "바이오메디컬공학부", "산업정보시스템공학과", "소프트웨어공학과",
     "신소재공학부", "양자시스템공학과", "유기소재파이버공학과", "유기소재섬유공학과", "융합기술공학과", "융합기술공학부","자원.에너지공학과", "전기공학과", "전자공학부", "컴퓨터공학부", "토목/환경/자원.에너지공학부", "항공우주공학과",
-    "화학공학부", "IT응용시스템공학과", "IT정보공학과"]
+    "화학공학부", "환경공학과", "IT응용시스템공학과", "IT정보공학과"]
     
     @State var selected = 0
     @State var showImagePicker = false
@@ -91,102 +91,83 @@ struct checkAcademic: View {
     }
     
     var body: some View {
-        ScrollView{
-            VStack {
-                Group{
-                    Spacer()
-                    
-                    Text("이제 학적사항을 확인합니다.".localized())
-                        .font(.largeTitle)
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                    
-                    Text("학과를 선택하세요.".localized())
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Picker(selection: $selected, label: Text("학과를 선택하세요.".localized())){
-                        ForEach(0..<depts.count){
-                            Text(self.depts[$0])
-                        }
+        NavigationView{
+            ScrollView{
+                VStack {
+                    Group{
+                        Spacer()
+                        
+                        Text("이제 학적사항을 확인합니다.".localized())
+                            .font(.title)
+                            .fontWeight(.semibold)
+                        
+                        Spacer()
+                        
+                        Picker(selection: $selected, label: Text("학과를 선택하세요.".localized())){
+                            ForEach(0..<depts.count){
+                                Text(self.depts[$0])
+                            }
+                        }.pickerStyle(MenuPickerStyle())
+                        
+                        Text("선택된 학과 : " + depts[selected])
+                        TextField("학번".localized(), text: $studentNo)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(20)
+                        
+                        Spacer()
                     }
                     
-                    TextField("학번".localized(), text: $studentNo)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(20)
-                    
-                    Spacer()
-                }
-                
-                Group{
-                    Text("학생증 불러오기".localized())
-                        .font(.title)
-                        .fontWeight(.bold)
-                    
-                    Spacer()
-                    
-                    Text("학우님의 학생증은 별도로 저장되지 않습니다.".localized())
-                        .foregroundColor(.red)
-                        .multilineTextAlignment(.center)
-                    
-                    Spacer()
-
-                    if pickedImage != nil{
-                        pickedImage?
-                            .resizable()
-                            .scaledToFit()
-                    }
-                    
-                    Button(action: {
-                        self.showSheet = true
-                    }){
-                        HStack {
-                            Text("학생증 로드".localized())
-                            Image(systemName: "chevron.right.circle")
-                        }
-                    }
-                    
-                    Spacer()
-                    
-                    VStack{
-                        Text("인증 실패 화면이 계속 표시되나요?".localized())
+                    Group{
+                        Text("학생증 불러오기".localized())
+                            .font(.title)
                             .fontWeight(.bold)
                         
                         Spacer()
                         
-                        Text("1. 자르거나 수정하지 않은 원본 이미지인지 확인해주세요.".localized())
+                        Text("학우님의 학생증은 별도로 저장되지 않습니다.".localized())
+                            .foregroundColor(.red)
                             .multilineTextAlignment(.center)
                         
                         Spacer()
-                        
-                        Text("2. 선택한 학과명과 학생증의 학과명을 확인해주세요.".localized())
-                            .multilineTextAlignment(.center)
-                        
-                        Spacer()
-                        
-                        Text("3. 학생증의 학과가 없는 경우 공과대학 SNS에 문의해주세요.".localized())
-                            .multilineTextAlignment(.center)
-                        
-                        Spacer()
-                    }.padding(15).background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.gray).opacity(0.2))
-                    
-                    HStack {
-                        Button(action: {
-                            self.showAcademic = false
-                        }){VStack{
-                            Image(systemName : "arrow.left.circle")
-                                .resizable()
-                                .frame(width : 50, height : 50)
-                                .foregroundColor(.gray)
-                            
-                            Text("이전".localized())
-                                .foregroundColor(.gray)
-                        }}
-                        
-                        Spacer().frame(width : 50)
-                        
 
+                        if pickedImage != nil{
+                            pickedImage?
+                                .resizable()
+                                .scaledToFit()
+                        }
+                        
+                        Button(action: {
+                            self.showSheet = true
+                        }){
+                            HStack {
+                                Text("학생증 로드".localized())
+                                Image(systemName: "chevron.right.circle")
+                            }
+                        }
+                        
+                        Spacer()
+                        
+                        VStack{
+                            Text("인증 실패 화면이 계속 표시되나요?".localized())
+                                .fontWeight(.bold)
+                            
+                            Spacer()
+                            
+                            Text("1. 자르거나 수정하지 않은 원본 이미지인지 확인해주세요.".localized())
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                            
+                            Text("2. 선택한 학과명과 학생증의 학과명을 확인해주세요.".localized())
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                            
+                            Text("3. 학생증의 학과가 없는 경우 공과대학 SNS에 문의해주세요.".localized())
+                                .multilineTextAlignment(.center)
+                            
+                            Spacer()
+                        }.padding(15).background(RoundedRectangle(cornerRadius: 15.0).foregroundColor(.gray).opacity(0.2))
                         
                         Button(action: {
                             if studentNo != "" && inputImage != nil{
@@ -196,22 +177,20 @@ struct checkAcademic: View {
                             else{
                                 showAlert = true
                             }
-                                                        
-                        }){VStack{
-                            Image(systemName : "arrow.right.circle")
-                                .resizable()
-                                .frame(width : 50, height : 50)
-                                .foregroundColor(.gray)
-                            
-                            Text("다음".localized())
-                                .foregroundColor(.gray)
-                        }}
+                        }){
+                            HStack{
+                                Text("다음".localized()).foregroundColor(.white)
+                                Image(systemName: "chevron.right").foregroundColor(.white)
+                            }
+                        }.frame(width: 250, height: 60, alignment: .center)
+                        .background(RoundedRectangle(cornerRadius: 50).foregroundColor(.blue))
                     }
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
-        }.actionSheet(isPresented: $showSheet, content: {
+        }
+        .actionSheet(isPresented: $showSheet, content: {
             ActionSheet(title: Text("학생증 로드".localized()), message: Text("캡처된 학생증이 있는 경우 학생증 로드,\n학생증을 캡처해야할 경우 모바일 도서관 앱 열기 버튼을 클릭하십시오.".localized()), buttons:[
                 .default(Text("학생증 로드".localized()), action:{activeSheet = .picker
                     showImagePicker = true

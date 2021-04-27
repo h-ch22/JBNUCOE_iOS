@@ -28,61 +28,45 @@ struct enterInfo: View {
     }
     
     var body: some View {
-        ScrollView{
-            VStack {
-                Group{
-                    Spacer()
-                    
-                    Text("인적사항을 입력해주세요.".localized())
-                        .font(.title)
-                        .fontWeight(.semibold)
-                    
-                    Spacer()
-                    
-                    TextField("E-Mail", text: $mail)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.emailAddress)
-                        .padding(30)
-                                        
-                    SecureField("비밀번호 (6자 이상)".localized(), text: $password)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.asciiCapable)
-                        .padding(30)
-                    
-                    SecureField("비밀번호 확인".localized(), text: $checkPassword)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.asciiCapable)
-                        .padding(30)                   
-                    
-                }
-                
-                Group{
-                    TextField("성명".localized(), text : $name)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(30)
-                    
-                    TextField("연락처".localized(), text : $phone)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .padding(30)
-                        .keyboardType(.numberPad)
-                    
-                    Spacer()
-                }
-                
-                HStack {
-                    Button(action: {
-                        self.showView = false
-                    }){VStack{
-                        Image(systemName : "arrow.left.circle")
-                            .resizable()
-                            .frame(width : 50, height : 50)
-                            .foregroundColor(.gray)
+        NavigationView{
+            ScrollView{
+                VStack {
+                    Group{
+                        Text("인적사항을 입력해주세요.".localized())
+                            .font(.title)
+                            .fontWeight(.semibold)
                         
-                        Text("이전".localized())
-                            .foregroundColor(.gray)
-                    }}
+                        Spacer()
+                        
+                        TextField("E-Mail", text: $mail)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.emailAddress)
+                            .padding(30)
+                                            
+                        SecureField("비밀번호 (6자 이상)".localized(), text: $password)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.asciiCapable)
+                            .padding(30)
+                        
+                        SecureField("비밀번호 확인".localized(), text: $checkPassword)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .keyboardType(.asciiCapable)
+                            .padding(30)
+                        
+                    }
                     
-                    Spacer().frame(width : 50)
+                    Group{
+                        TextField("성명".localized(), text : $name)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(30)
+                        
+                        TextField("연락처".localized(), text : $phone)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                            .padding(30)
+                            .keyboardType(.numberPad)
+                        
+                        Spacer()
+                    }
                     
                     Button(action: {
                         if password != checkPassword{
@@ -105,20 +89,19 @@ struct enterInfo: View {
                             showAcademic = true
 
                         }
-                    }){VStack{
-                        Image(systemName : "arrow.right.circle")
-                            .resizable()
-                            .frame(width : 50, height : 50)
-                            .foregroundColor(.gray)
-                        
-                        Text("다음".localized())
-                            .foregroundColor(.gray)
-                    }}
+                    }){
+                        HStack{
+                            Text("다음".localized()).foregroundColor(.white)
+                            Image(systemName: "chevron.right").foregroundColor(.white)
+                        }
+                    }.frame(width: 250, height: 60, alignment: .center)
+                    .background(RoundedRectangle(cornerRadius: 50).foregroundColor(.blue))
+                    
+                    Spacer()
                 }
-                
-                Spacer()
             }
-        }.alert(isPresented: $showAlert, content: {
+        }
+        .alert(isPresented: $showAlert, content: {
             switch alert{
             case .blankField:
                 return Alert(title: Text("공백 필드".localized()),

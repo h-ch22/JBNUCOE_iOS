@@ -22,6 +22,8 @@ struct finish: View {
                     .font(.largeTitle)
                     .fontWeight(.bold)
                 
+                Text("시작 버튼을 터치해서 시작해보세요!")
+                
                 Spacer().frame(height : 40)
                 
                 NavigationLink(destination: ContentView(show: $show

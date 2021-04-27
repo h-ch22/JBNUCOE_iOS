@@ -74,6 +74,48 @@ struct SignIn: View {
                         Text("자동 로그인".localized())
                     }.padding(20)
                     
+                    Spacer().frame(height : 30)
+
+                    Button(action: {
+                        self.isHidden = false
+                        userManagement.signIn(mail: mail, password: password)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
+                            if userManagement.isSignedIn && autoSignIn{
+                                self.isHidden = true
+                                userManagement.autoLogIn(mail: mail, password: password)
+
+                            }
+                            
+                            if userManagement.isSignedIn && !autoSignIn{
+                                self.isHidden = true
+                                userManagement.autoLogOut()
+
+                            }
+                            
+                            if !userManagement.isSignedIn{
+                                self.isHidden = true
+                                self.showAlert = true
+                            }
+                        }
+                        
+                    }
+                    ){
+                        HStack {
+                            Text("로그인하기".localized())
+                                .foregroundColor(.white)
+                            Image(systemName: "chevron.right")
+                                .foregroundColor(.white)
+                        }
+                        .frame(width: 250, height: 30)
+                        .padding()
+                        .background(Color.blue)
+                        .border(Color.blue, width:2)
+                        .cornerRadius(25)
+                    }
+                    
+                    Spacer()
+                    
                     HStack{
                         NavigationLink(destination: ResetPassword()) {
                             Text("로그인에 문제가 있나요?".localized())
@@ -82,52 +124,12 @@ struct SignIn: View {
                         
                         Spacer()
                         
-                        Button(action: {
-                            self.isHidden = false
-                            userManagement.signIn(mail: mail, password: password)
-                            
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0){
-                                if userManagement.isSignedIn && autoSignIn{
-                                    self.isHidden = true
-                                    userManagement.autoLogIn(mail: mail, password: password)
-
-                                }
-                                
-                                if userManagement.isSignedIn && !autoSignIn{
-                                    self.isHidden = true
-                                    userManagement.autoLogOut()
-
-                                }
-                                
-                                if !userManagement.isSignedIn{
-                                    self.isHidden = true
-                                    self.showAlert = true
-                                }
-                            }
-                            
-                        }
-                        ){
-                            HStack {
-                                Text("로그인하기".localized())
-                                    .foregroundColor(.white)
-                                Image(systemName: "chevron.right")
-                                    .foregroundColor(.white)
-                            }
-                            .frame(minWidth:0, maxWidth:150)
-                            .padding()
-                            .background(Color.orange)
-                            .border(Color.orange, width:2)
-                            .cornerRadius(20)
+                        NavigationLink(destination: License(license: license)) {
+                            Text("회원가입".localized()).foregroundColor(.blue)
                         }
                     }.padding()
                     
-                    Spacer()
-                    
-                    NavigationLink(destination: License(license: license)) {
-                        Text("회원가입".localized()).foregroundColor(.gray)
-                    }
-                    
-                    Spacer()
+                    Spacer().frame(height : 50)
                     
                     Text("(C) 2021 Jeonbuk National University\nPublic Relations Department of\nCollege of Engineering Student Council\nAll Rights Reserved.")
                         .multilineTextAlignment(.center)

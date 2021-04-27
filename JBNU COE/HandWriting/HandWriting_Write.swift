@@ -65,8 +65,6 @@ struct HandWriting_Write: View {
         dateFormat.dateFormat = "yyyy-MM-dd HH:mm:ss"
         let letters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
         
-        
-        
         Progress()
         
         var phone : String = ""

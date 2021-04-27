@@ -25,7 +25,7 @@ enum loadView: Identifiable{
         hashValue
     }
     
-    case secession, Feedbackhub, signOut, imagePicker
+    case secession, Feedbackhub, signOut, imagePicker, changePW
 }
 
 func changeProfile(inputImage : UIImage?){
@@ -129,10 +129,13 @@ struct more: View {
     @State var showSignOut = false
     @State var showFeedbackHub = false
     @State var showImagePicker = false
+    @State var showchangePW = false
     @State var pickedImage : Image?
     @State var inputImage : UIImage?
     @ObservedObject var license = loadLicense()
     @State var isChanging = false
+    @ObservedObject var text = loadText()
+
     
     init(){
         db = Firestore.firestore()
@@ -164,282 +167,326 @@ struct more: View {
     
     var body: some View {
         NavigationView{
-            VStack(alignment:.leading) {
-                HStack{
-                    profileView(imageURL: $imageURL)
-                    
-                    Spacer().frame(width : 10)
-                    
-                    VStack(alignment: .leading) {
-                        Text(userManagement.name)
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
+            ZStack {
+                Color.background_home.edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+
+                VStack(alignment:.center) {
+                    HStack{
+                        profileView(imageURL: $imageURL)
                         
-                        Text(userManagement.dept)
-                        Text(userManagement.studentNo)
+                        Spacer().frame(width : 10)
                         
-                        if userManagement.isAdmin{
-                            HStack{
-                                Image(systemName : "checkmark.shield.fill")
-                                    .foregroundColor(.green)
-                                
-                                Text(userManagement.spot)
-                                    .foregroundColor(.green)
+                        VStack(alignment: .leading) {
+                            Text(userManagement.name)
+                                .font(.largeTitle)
+                                .fontWeight(.bold)
+                            
+                            
+                            Text(userManagement.dept)
+                            Text(userManagement.studentNo)
+                            
+                            if userManagement.isAdmin{
+                                HStack{
+                                    Image(systemName : "checkmark.shield.fill")
+                                        .foregroundColor(.green)
+                                    
+                                    Text(userManagement.spot)
+                                        .foregroundColor(.green)
+                                }
                             }
-                        }
-                        
-                        else{
-                            HStack{
-                                
+                            
+                            else{
+                                HStack{
+                                    
+                                }
                             }
+                            
+                            Button(action: {
+                                loadView = .imagePicker
+                                showImagePicker = true
+                            }){
+                                Text("프로필 이미지 변경".localized())
+                                    .foregroundColor(.gray)
+                            }.padding(5)
+                            .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 1))
                         }
-                        
-                        Button(action: {
-                            loadView = .imagePicker
-                            showImagePicker = true
-                        }){
-                            Text("프로필 이미지 변경".localized())
-                                .foregroundColor(.gray)
-                        }.padding(5)
-                        .background(RoundedRectangle(cornerRadius: 5).stroke(Color.gray, lineWidth: 1))
                     }
-                }.padding([.horizontal], 30)
-                Divider()
-                
-                ScrollView{
-                    VStack(alignment: .leading){
-                        Group{
-                            NavigationLink(destination: StudentCouncil_main()) {
-                                HStack{
-                                    Image("ic_coelogo")
-                                        .resizable()
-                                        .frame(width : 50, height : 50)
-                                    
-                                    Text("공대학생회 소개".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
+                    .padding()
+                    
+                    ScrollView{
+                        VStack{
+                            Group{
+                                NavigationLink(destination: StudentCouncil_main()){
+                                    HStack{
+                                        Image("ic_coelogo")
+                                            .resizable()
+                                            .frame(width : 30, height : 30)
+
+                                        Text("공대 학생회 소개 및 정보".localized())
+                                            .foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+                                    }
+                                }.frame(width: 300, height: 50)
+                                .padding()
+                                .background(Color.background_button)
+                                .cornerRadius(5)
+                                
+                                NavigationLink(destination: StudentCouncil_PledgeProgress()){
+                                    HStack{
+                                        Image("ic_percentage")
+                                            .resizable()
+                                            .frame(width : 30, height : 30)
+
+                                        Text("실시간 공약 이행률".localized())
+                                            .foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+                                    }
+                                }.frame(width: 300, height: 50)
+                                .padding()
+                                .background(Color.background_button)
+                                .cornerRadius(5)
+                                
+                                NavigationLink(destination: DisplayCalendar().navigationBarTitle("취업 캘린더".localized()).navigationBarTitleDisplayMode(.inline)) {
+                                    HStack{
+                                        Image("ic_calendar")
+                                            .resizable()
+                                            .frame(width : 30, height : 30)
+                                        
+                                        Text("취업 캘린더".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
+                                }
+                                
+                                
+                                NavigationLink(destination: CampusMapView()) {
+                                    HStack{
+                                        Image("ic_map")
+                                            .resizable()
+                                            .frame(width: 30,
+                                                   height :30)
+                                        
+                                        
+                                        Text("캠퍼스 맵".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
+                                }
+                                                                
+                                NavigationLink(destination: Products()) {
+                                    HStack{
+                                        Image("ic_products")
+                                            .resizable()
+                                            .frame(width: 30,
+                                                   height :30)
+                                        
+                                        
+                                        Text("대여 사업 잔여 수량 확인".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
+                                }
+                                
+                                NavigationLink(destination: DeliveryView()) {
+                                    HStack{
+                                        Image("ic_box")
+                                            .resizable()
+                                            .frame(width: 30,
+                                                   height :30)
+                                        
+                                        
+                                        Text("택배 대리 수령 요청".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
                                 }
                             }
                             
-                            Divider()
-                            
-                            NavigationLink(destination: DisplayCalendar().navigationBarTitle("취업 캘린더".localized()).navigationBarTitleDisplayMode(.inline)) {
-                                HStack{
-                                    Image("ic_calendar")
-                                        .resizable()
-                                        .frame(width : 50, height : 50)
-                                    
-                                    Text("취업 캘린더".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                            
-                            Divider()
-                            
-                            NavigationLink(destination: CampusMapView()) {
-                                HStack{
-                                    Image("ic_map")
-                                        .resizable()
-                                        .frame(width: 50,
-                                               height :50)
-                                    
-                                    
-                                    Text("캠퍼스 맵".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                            
-                            Divider()
-                            
-                            NavigationLink(destination: Products()) {
-                                HStack{
-                                    Image("ic_products")
-                                        .resizable()
-                                        .frame(width: 50,
-                                               height :50)
-                                    
-                                    
-                                    Text("대여 사업 잔여 수량 확인".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                            
-                            Divider()
-                            
-                            NavigationLink(destination: MenuView()) {
-                                HStack{
-                                    Image("ic_menu")
-                                        .resizable()
-                                        .frame(width: 50,
-                                               height :50)
-                                    
-                                    
-                                    Text("학식 메뉴 확인하기".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
-                                }
-                            }
-                            
-                            Divider()
-                        }
-                        
-                        Group{
-                            NavigationLink(destination: HandWriting_ListView(getHandWritingList: getHandWritingList())) {
-                                HStack{
-                                    Image("ic_crown")
-                                        .resizable()
-                                        .frame(width: 50,
-                                               height :50)
+                            Group{
+                                NavigationLink(destination: HandWriting_ListView(getHandWritingList: getHandWritingList())) {
+                                    HStack{
+                                        Image("ic_crown")
+                                            .resizable()
+                                            .frame(width: 30,
+                                                   height :30)
 
 
-                                    Text("합격자 수기 공유".localized())
-                                        .font(.title)
-                                        .foregroundColor(.gray)
+                                        Text("합격자 수기 공유".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
                                 }
-                            }
+                                
+                                Button(action:{
+                                    loadView = .Feedbackhub
+                                    showFeedbackHub = true
+                                }){
+                                    HStack{
+                                        Image("ic_feedback")
+                                            .resizable()
+                                            .frame(width: 30,
+                                                   height : 30)
+                                        
+                                        
+                                        Text("피드백 허브".localized()).foregroundColor(Color.txtcolor)
+                                        
+                                        Spacer()
 
-                            Divider()
+                                    }.frame(width: 300, height: 50)
+                                    .padding()
+                                    .background(Color.background_button)
+                                    .cornerRadius(5)
+                                    
+                                }.fullScreenCover(isPresented: $secession, content: {
+                                    secessionView(secession: $secession)
+                                })
+                                
+                                
+                            }
                             
                             Button(action:{
-                                loadView = .Feedbackhub
-                                showFeedbackHub = true
+                                loadView = .changePW
+                                showchangePW = true
                             }){
                                 HStack{
-                                    Image("ic_feedback")
+                                    Image("ic_password")
                                         .resizable()
-                                        .frame(width: 50,
-                                               height : 50)
+                                        .frame(width: 30,
+                                               height : 30)
+                                    
+                                    Text("비밀번호 변경".localized())
+                                        .foregroundColor(Color.txtcolor)
+                                    
+                                    Spacer()
+
+                                }.frame(width: 300, height: 50)
+                                .padding()
+                                .background(Color.background_button)
+                                .cornerRadius(5)
+                            }
+                            
+                            Button(action:{
+                                userAlert = .signOut
+                                showAlert = true
+                            }){
+                                HStack{
+                                    Image(systemName : "xmark.octagon.fill")
+                                        .resizable()
+                                        .frame(width: 30,
+                                               height : 30)
+                                        .foregroundColor(.red)
+                                    
+                                    Text("로그아웃".localized())
+                                        .foregroundColor(.red)
+                                    
+                                    Spacer()
+
+                                }.frame(width: 300, height: 50)
+                                .padding()
+                                .background(Color.background_button)
+                                .cornerRadius(5)
+                            }
+                            
+                                                        
+                            Button(action:{
+                                userAlert = .secession
+                                showAlert = true
+                                
+                            }){
+                                HStack{
+                                    Image(systemName: "xmark")
+                                        .resizable()
+                                        .frame(width: 30,
+                                               height : 30)
+                                        .foregroundColor(.red)
                                     
                                     
-                                    Text("피드백 허브".localized())
-                                        .foregroundColor(.gray)
-                                        .font(.title)
+                                    Text("회원 탈퇴".localized())
+                                        .foregroundColor(.red)
                                     
-                                }
-                            }.fullScreenCover(isPresented: $secession, content: {
-                                secessionView(secession: $secession)
-                            })
-                            
-                            
-                        }
-                        
-                        
-                        Divider()
-                        
-                        Button(action:{
-                            userAlert = .signOut
-                            showAlert = true
-                        }){
-                            HStack{
-                                Image(systemName : "xmark.octagon.fill")
-                                    .resizable()
-                                    .frame(width: 50,
-                                           height : 50)
-                                    .foregroundColor(.red)
-                                
-                                Text("로그아웃".localized())
-                                    .foregroundColor(.red)
-                                    .font(.title)
-                                
+                                    Spacer()
+
+                                }.frame(width: 300, height: 50)
+                                .padding()
+                                .background(Color.background_button)
+                                .cornerRadius(5)
                             }
-                        }
-                        
-                        
-                        Divider()
-                        
-                        Button(action:{
-                            userAlert = .secession
-                            showAlert = true
                             
-                        }){
-                            HStack{
-                                Image("ic_cancel")
-                                    .resizable()
-                                    .frame(width: 50,
-                                           height : 50)
-                                
-                                
-                                
-                                Text("회원 탈퇴".localized())
-                                    .foregroundColor(.red)
-                                    .font(.title)
-                                
-                            }
-                        }
+                        }.padding(30)
+                    }
+                }.navigationBarTitle("더 보기".localized(), displayMode: .large)
+                .onAppear(perform: {
+                    userManagement.getEmail()
+                    loadProfile()
+                    self.isChanging = isProcessing
+                })
+                .alert(isPresented: $showAlert){
+                    switch userAlert{
+                    case .secession:
+                        return Alert(title: Text("회원 탈퇴 확인".localized()), message: Text("회원 탈퇴 시 모든 정보가 제거되며, 추후 서비스 재이용 시 다시 가입하셔야합니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
+                            loadView = .secession
+                            showSecession = true
+                        }, secondaryButton: .destructive(Text("아니오".localized())))
                         
-                        
-                        
-                        Divider()
-                        
-                        NavigationLink(destination: info()) {
-                            HStack{
-                                Image(systemName: "info.circle.fill")
-                                    .resizable()
-                                    .frame(width: 50,
-                                           height : 50)
-                                    .foregroundColor(.gray)
-                                
-                                
-                                Text("정보".localized())
-                                    .foregroundColor(.gray)
-                                    .font(.title)
-                                
-                                
-                            }
-                        }
-                    }.padding(30)
-                }
-            }.navigationBarTitle("더 보기".localized(), displayMode: .large)
-            .onAppear(perform: {
-                userManagement.getEmail()
-                loadProfile()
-                self.isChanging = isProcessing
-            })
-            .alert(isPresented: $showAlert){
-                switch userAlert{
-                case .secession:
-                    return Alert(title: Text("회원 탈퇴 확인".localized()), message: Text("회원 탈퇴 시 모든 정보가 제거되며, 추후 서비스 재이용 시 다시 가입하셔야합니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
-                        loadView = .secession
-                        showSecession = true
-                    }, secondaryButton: .destructive(Text("아니오".localized())))
+                    case .signOut:
+                        return Alert(title: Text("로그아웃 확인".localized()), message: Text("로그아웃 시 자동로그인은 자동으로 해제됩니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
+                            loadView = .signOut
+                            showSignOut = true
+                        }, secondaryButton: .destructive(Text("아니오".localized())))
+                    }
                     
-                case .signOut:
-                    return Alert(title: Text("로그아웃 확인".localized()), message: Text("로그아웃 시 자동로그인은 자동으로 해제됩니다.\n계속 하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
-                        loadView = .signOut
-                        showSignOut = true
-                    }, secondaryButton: .destructive(Text("아니오".localized())))
                 }
                 
-            }
-            
-            .sheet(item: $loadView){item in
-                switch item{
-                case .Feedbackhub:
-                    FeedbackHub_category(show : $showFeedbackHub)
-                    
-                case .secession:
-                    secessionView(secession: $showSecession)
-                    
-                case .signOut:
-                    JBNU_COE.signOut(signOut : $signOut)
-                    
-                case .imagePicker:
-                    JBNU_COE.showImagePicker(image: self.$inputImage)
-                }
-            }
-            
-            .overlay(Group{
-                if isProcessing{
-                    Progress()
+                .sheet(item: $loadView){item in
+                    switch item{
+                    case .Feedbackhub:
+                        FeedbackHub_category(show : $showFeedbackHub)
+                        
+                    case .secession:
+                        secessionView(secession: $showSecession)
+                        
+                    case .signOut:
+                        JBNU_COE.signOut(signOut : $signOut)
+                        
+                    case .imagePicker:
+                        JBNU_COE.showImagePicker(image: self.$inputImage)
+                        
+                    case .changePW:
+                        changePassword()
+                    }
                 }
                 
-                else{
-                    EmptyView()
-                }
+                .overlay(Group{
+                    if isProcessing{
+                        Progress()
+                    }
+                    
+                    else{
+                        EmptyView()
+                    }
             })
+            }
             
             VStack {
                 Text("선택된 카테고리 없음".localized())

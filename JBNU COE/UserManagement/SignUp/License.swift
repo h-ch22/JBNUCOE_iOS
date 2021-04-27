@@ -42,7 +42,7 @@ struct License: View {
     @State var loadView = false
 
     var body: some View {
-        VStack {
+        VStack {            
             Text("이용 약관을 읽어주세요.".localized())
                 .font(.title)
                 .fontWeight(.semibold)
@@ -51,40 +51,22 @@ struct License: View {
                 VStack{
                     Text(license.license)
                 }
-            }
+            }.padding()
             
             Spacer()
             
-            HStack{
-                NavigationLink(destination : SignIn().navigationBarHidden(true)){
-                    VStack{
-                        Image(systemName : "arrow.left.circle")
-                            .resizable()
-                            .frame(width : 50, height : 50)
-                            .foregroundColor(.gray)
-                        
-                        Text("동의 안 함".localized())
-                            .foregroundColor(.gray)
-
-                    }
+            Button(action: {showAlert = true}){
+                HStack{
+                    Text("동의".localized()).foregroundColor(.white)
+                    Image(systemName: "chevron.right").foregroundColor(.white)
                 }
-                
-                Spacer().frame(width : 50)
-
-                Button(action: {
-                    showAlert = true
-                }){
-                    VStack{
-                        Image(systemName : "arrow.right.circle")
-                            .resizable()
-                            .frame(width : 50, height : 50)
-                            .foregroundColor(.gray)
-                        
-                        
-                        Text("동의".localized())
-                            .foregroundColor(.gray)
-                    }
-                }
+            }.frame(width: 250, height: 60, alignment: .center)
+            .background(RoundedRectangle(cornerRadius: 50).foregroundColor(.blue))
+            
+            Spacer()
+            
+            NavigationLink(destination: SignIn().navigationBarHidden(true)){
+                Text("동의 안 함".localized()).foregroundColor(.gray)
             }
         }.alert(isPresented: $showAlert, content: {
             Alert(title: Text("이용 약관 동의".localized()), message: Text("소프트웨어 이용약관에 동의합니다.".localized()), primaryButton: .destructive(Text("예".localized())){loadView = true}, secondaryButton: .default(Text("아니오".localized())))
@@ -95,10 +77,8 @@ struct License: View {
     }
 }
 
-//struct License_Previews: PreviewProvider {
-//    @ObservedObject var loadlicense = loadLicense()
-//
-//    static var previews: some View {
-//        License(license: load)
-//    }
-//}
+struct License_Previews: PreviewProvider {
+    static var previews: some View {
+        License(license: loadLicense())
+    }
+}

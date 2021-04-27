@@ -15,7 +15,8 @@ struct Privacy: View {
             VStack{
                 Text(license.license)
             }
-        }
+        }.navigationBarTitle("개인정보 처리 방침")
+        .navigationBarTitleDisplayMode(.inline)
         
     }
 }

@@ -323,6 +323,7 @@ struct StudentCouncil_PledgeProgress: View {
             }
             
         }.navigationBarTitle("실시간 공약 이행률")
+        .navigationBarTitleDisplayMode(.inline)
         .onAppear(perform: {
             getPledgeList()
         })

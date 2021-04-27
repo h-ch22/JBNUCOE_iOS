@@ -276,6 +276,8 @@ struct FeedbackHub_category: View {
             }.navigationBarTitle(Text("카테고리 선택".localized())).navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()}){
                 Text("닫기".localized())
+            }, trailing: NavigationLink(destination: showMyFeedback(getFeedbacks: getMyFeedbacks())) {
+                Text("보낸 피드백 확인")
             })
             
         }

@@ -7,10 +7,11 @@
 
 import SwiftUI
 import FirebaseFirestore
+import FirebaseAuth
 
 class getFeedbacks: ObservableObject{
     @Published var feedbacks: [Feedback] = []
-
+    
     func getFeedback(){
         db.collection("Feedback").getDocuments(){(QuerySnapshot, err) in
             if let err = err{
@@ -32,9 +33,21 @@ class getFeedbacks: ObservableObject{
         
         docRef.getDocument(){(document, err) in
             if let document = document{
-                self.feedbacks.append(
-                    Feedback(title: name, author: document.get("author") as? String ?? "", date: document.get("Date Time") as? String ?? "", category: document.get("Category") as? String ?? "", type: document.get("Type") as? String ?? "", contents: document.get("Feedback") as? String ?? "")
-                )
+                var answered = false
+                
+                if document.get("answer") != nil{
+                    answered = true
+                }
+                
+                else{
+                    answered = false
+                }
+                
+                if !self.feedbacks.contains(where: {($0.title == name)}){
+                    self.feedbacks.append(
+                        Feedback(title: name, author: document.get("author") as? String ?? "", date: document.get("Date Time") as? String ?? "", category: document.get("Category") as? String ?? "", type: document.get("Type") as? String ?? "", contents: document.get("Feedback") as? String ?? "", answered : answered)
+                    )
+                }
                 
                 self.feedbacks.sort{
                     $0.date > $1.date
@@ -59,9 +72,16 @@ struct FeedbackListView: View {
         }.onAppear(perform: {
             getFeedbacks.getFeedback()
         })
-            .onDisappear(perform: {
-                getFeedbacks.feedbacks.removeAll()
-            })
+        
+            .navigationBarItems(trailing:
+                Button(action: {
+                    getFeedbacks.feedbacks.removeAll()
+                    getFeedbacks.getFeedback()
+                }){
+                    Image(systemName: "arrow.clockwise")
+                                            
+                }
+            )
     }
 }
 

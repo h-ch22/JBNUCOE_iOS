@@ -143,17 +143,17 @@ struct storeDetail: View {
                             }
                         }
                         
-                        Spacer().frame(width : 30)
-                        
-                        Button(action : {}){
-                            HStack{
-                                Image(systemName: "star.fill")
-                                    .foregroundColor(.orange)
-                                
-                                Text("찜하기".localized())
-                                    .foregroundColor(.orange)
-                            }
-                        }
+//                        Spacer().frame(width : 30)
+//
+//                        Button(action : {}){
+//                            HStack{
+//                                Image(systemName: "star.fill")
+//                                    .foregroundColor(.orange)
+//
+//                                Text("찜하기".localized())
+//                                    .foregroundColor(.orange)
+//                            }
+//                        }
                         
                         
                     }.padding(5)
