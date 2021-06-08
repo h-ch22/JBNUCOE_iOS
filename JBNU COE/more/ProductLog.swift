@@ -19,6 +19,7 @@ class getLogData : ObservableObject{
         let umbrellaRef = db.collection("Products").document("umbrella").collection("Log")
         let slipperRef = db.collection("Products").document("slipper").collection("Log")
         let uniformRef = db.collection("Products").document("uniform").collection("Log")
+        let helmetRef = db.collection("Products").document("helmet").collection("Log")
         
         batteryRef.getDocuments(){(QuerySnapshot, err) in
             if let err = err{
@@ -81,6 +82,18 @@ class getLogData : ObservableObject{
                                                         }
                                                     }
                                                 }
+                                                
+                                                helmetRef.getDocuments(){(QuerySnapshot, err) in
+                                                    if let err = err{
+                                                        print(err)
+                                                    }
+                                                    
+                                                    else{
+                                                        for document in QuerySnapshot!.documents{
+                                                            self.getLogData(documentID: document.documentID, category: "helmet", studentNo: studentNo)
+                                                        }
+                                                    }
+                                                }
                                             }
                                         }
                                     }
@@ -119,6 +132,10 @@ class getLogData : ObservableObject{
         
         if category == "slipper"{
             categoryKR = "슬리퍼".localized()
+        }
+        
+        if category == "helmet"{
+            categoryKR = "헬멧".localized()
         }
         
         docRef.getDocument(){(document, err) in

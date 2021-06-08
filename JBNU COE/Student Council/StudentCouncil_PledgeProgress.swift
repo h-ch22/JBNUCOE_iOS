@@ -48,6 +48,7 @@ struct StudentCouncil_PledgeProgress: View {
     @State private var learningList : [String] = []
     @State private var learnings : [Pledge] = []
     @State var searchText = ""
+    @State var showSheet = false
 
     func getPledgeList(){
         implementedCnt = 0.0
@@ -327,6 +328,7 @@ struct StudentCouncil_PledgeProgress: View {
         .onAppear(perform: {
             getPledgeList()
         })
+
     }
 }
 

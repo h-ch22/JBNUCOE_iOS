@@ -22,6 +22,9 @@
 		7B19E87025FA0A3F0024B8A5 /* DisplayCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B19E86F25FA0A3F0024B8A5 /* DisplayCalendar.swift */; };
 		7B1B5C8725EEAB4400543DBF /* img_hjy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B1B5C8625EEAB4400543DBF /* img_hjy.png */; };
 		7B2800F626242C9600EC6A31 /* StudentCouncil_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B2800F526242C9600EC6A31 /* StudentCouncil_main.swift */; };
+		7B53E3D92652B24F008C8E73 /* EventsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E3D82652B24F008C8E73 /* EventsHelper.swift */; };
+		7B53E3DB2652B314008C8E73 /* EventRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E3DA2652B314008C8E73 /* EventRow.swift */; };
+		7B53E3DD2652B35E008C8E73 /* EventItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B53E3DC2652B35E008C8E73 /* EventItem.swift */; };
 		7B56583B25FCF5A300F6E2B8 /* ic_slippers.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B56583925FCF5A300F6E2B8 /* ic_slippers.png */; };
 		7B56583C25FCF5A300F6E2B8 /* ic_uniform.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B56583A25FCF5A300F6E2B8 /* ic_uniform.png */; };
 		7B6BD71525E68B01006D1A1C /* ic.png in Resources */ = {isa = PBXBuildFile; fileRef = 7B6BD71425E68B01006D1A1C /* ic.png */; };
@@ -57,6 +60,7 @@
 		7BD4B8932608A32B007B3CFD /* SingleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4B8922608A32B007B3CFD /* SingleImageView.swift */; };
 		7BD4B8982608B18E007B3CFD /* AdDetailLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD4B8972608B18E007B3CFD /* AdDetailLoader.swift */; };
 		7BD730062611734B00F4FEC7 /* ic_morning.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD730052611734A00F4FEC7 /* ic_morning.png */; };
+		7BD8F00E265B79B100B5E504 /* ic_helmet.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BD8F00D265B79B100B5E504 /* ic_helmet.png */; };
 		7BE8CE1425E78E9D00268AB5 /* img_cj.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1225E78E9D00268AB5 /* img_cj.png */; };
 		7BE8CE1525E78E9D00268AB5 /* img_hy.png in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1325E78E9D00268AB5 /* img_hy.png */; };
 		7BE8CE1A25E7904400268AB5 /* CampusMap.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7BE8CE1925E7904400268AB5 /* CampusMap.storyboard */; };
@@ -300,6 +304,9 @@
 		7B19E86F25FA0A3F0024B8A5 /* DisplayCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayCalendar.swift; sourceTree = "<group>"; };
 		7B1B5C8625EEAB4400543DBF /* img_hjy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_hjy.png; sourceTree = "<group>"; };
 		7B2800F526242C9600EC6A31 /* StudentCouncil_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentCouncil_main.swift; sourceTree = "<group>"; };
+		7B53E3D82652B24F008C8E73 /* EventsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsHelper.swift; sourceTree = "<group>"; };
+		7B53E3DA2652B314008C8E73 /* EventRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRow.swift; sourceTree = "<group>"; };
+		7B53E3DC2652B35E008C8E73 /* EventItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventItem.swift; sourceTree = "<group>"; };
 		7B56583925FCF5A300F6E2B8 /* ic_slippers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_slippers.png; sourceTree = "<group>"; };
 		7B56583A25FCF5A300F6E2B8 /* ic_uniform.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_uniform.png; sourceTree = "<group>"; };
 		7B6BD71425E68B01006D1A1C /* ic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic.png; sourceTree = "<group>"; };
@@ -336,6 +343,7 @@
 		7BD4B8922608A32B007B3CFD /* SingleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImageView.swift; sourceTree = "<group>"; };
 		7BD4B8972608B18E007B3CFD /* AdDetailLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailLoader.swift; sourceTree = "<group>"; };
 		7BD730052611734A00F4FEC7 /* ic_morning.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_morning.png; sourceTree = "<group>"; };
+		7BD8F00D265B79B100B5E504 /* ic_helmet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_helmet.png; sourceTree = "<group>"; };
 		7BE8CE1225E78E9D00268AB5 /* img_cj.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_cj.png; sourceTree = "<group>"; };
 		7BE8CE1325E78E9D00268AB5 /* img_hy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_hy.png; sourceTree = "<group>"; };
 		7BE8CE1925E7904400268AB5 /* CampusMap.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CampusMap.storyboard; sourceTree = "<group>"; };
@@ -575,6 +583,32 @@
 			path = Calendar;
 			sourceTree = "<group>";
 		};
+		7B53E3D52652B231008C8E73 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				7B53E3D72652B241008C8E73 /* Helper */,
+				7B53E3D62652B236008C8E73 /* View */,
+			);
+			path = Events;
+			sourceTree = "<group>";
+		};
+		7B53E3D62652B236008C8E73 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B53E3D72652B241008C8E73 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7B53E3D82652B24F008C8E73 /* EventsHelper.swift */,
+				7B53E3DA2652B314008C8E73 /* EventRow.swift */,
+				7B53E3DC2652B35E008C8E73 /* EventItem.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		7BAEFA3A2600DF6A00C4B43B /* HandWriting */ = {
 			isa = PBXGroup;
 			children = (
@@ -755,6 +789,7 @@
 		F6A1E88525AABB9400BD02EA /* JBNU COE */ = {
 			isa = PBXGroup;
 			children = (
+				7B53E3D52652B231008C8E73 /* Events */,
 				7BF00389262AF12B00F1B1AF /* Delivery */,
 				7BC7A33926104416000A1519 /* Menu */,
 				7BAEFA3A2600DF6A00C4B43B /* HandWriting */,
@@ -820,6 +855,7 @@
 				7BC7A334261043E6000A1519 /* ic_menu.png */,
 				F602873625B82F0400863E26 /* ic_calendar.png */,
 				F63C9BFB25B817D800965984 /* ic_20px.png */,
+				7BD8F00D265B79B100B5E504 /* ic_helmet.png */,
 				F63C9BFF25B817D800965984 /* ic_29px.png */,
 				F63C9BF625B817D700965984 /* ic_40px.png */,
 				7BAEFA352600DEF100C4B43B /* ic_crown.png */,
@@ -1144,6 +1180,7 @@
 				7BEB160625E25B84003A20E2 /* building_4_3f.jpeg in Resources */,
 				7BEB161525E25B84003A20E2 /* building_8_2f.jpeg in Resources */,
 				7B01AA8D25FF573800CB4C85 /* Localizable.strings in Resources */,
+				7BD8F00E265B79B100B5E504 /* ic_helmet.png in Resources */,
 				7BEB161125E25B84003A20E2 /* building_5_1f.jpeg in Resources */,
 				F63C9C1125B817D800965984 /* ic_216px.png in Resources */,
 				7BEB161725E25B84003A20E2 /* building_7_4f.jpeg in Resources */,
@@ -1415,10 +1452,12 @@
 				F6378B5025B03C4B00B9ACAD /* Notice.swift in Sources */,
 				F63F034225B865B00001428F /* StudentCouncil_greet.swift in Sources */,
 				7BF0039F262AFFBF00F1B1AF /* DeliveryRow.swift in Sources */,
+				7B53E3DD2652B35E008C8E73 /* EventItem.swift in Sources */,
 				F6A27CEA25AB569B00A7CED2 /* ResetPassword.swift in Sources */,
 				7BAEFA562600E9DB00C4B43B /* PickedMediaItems.swift in Sources */,
 				F6AB029E25B9D26500A02607 /* SportsMapView.swift in Sources */,
 				7B19E86325FA086E0024B8A5 /* CalendarViewController.swift in Sources */,
+				7B53E3DB2652B314008C8E73 /* EventRow.swift in Sources */,
 				F6C71BB525AB986500112B91 /* BottomTabManager.swift in Sources */,
 				7B16C15F25F2267300E21F5A /* Product.swift in Sources */,
 				F6378B0625AFE9CC00B9ACAD /* UserManagement.swift in Sources */,
@@ -1426,6 +1465,7 @@
 				7BC36A932621B4D80069F688 /* myFeedbackRow.swift in Sources */,
 				7B19E87025FA0A3F0024B8A5 /* DisplayCalendar.swift in Sources */,
 				7BF3932F260345A700585234 /* HandWritingEdit.swift in Sources */,
+				7B53E3D92652B24F008C8E73 /* EventsHelper.swift in Sources */,
 				F6AB029425B9D1D200A02607 /* SportsMapViewController.swift in Sources */,
 				F600B10225B96A1F00817ACE /* CampusMapView.swift in Sources */,
 				F600B0F825B9686500817ACE /* Ad_2.swift in Sources */,
@@ -1641,7 +1681,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1651,7 +1691,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.jbnu.JBNU-COE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1668,7 +1708,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "JBNU COE/JBNU COE.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 5;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"JBNU COE/Preview Content\"";
 				DEVELOPMENT_TEAM = JLQKH6P6PL;
 				ENABLE_PREVIEWS = YES;
@@ -1678,7 +1718,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.0;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "kr.ac.jbnu.JBNU-COE";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -16,6 +16,7 @@ struct Products: View {
     @State var serviceStatus : Bool = true
     @State var uniformLate : Int = 0
     @State var slipperLate : Int = 0
+    @State var helmetLate : Int = 0
     
     func getData(){
         db = Firestore.firestore()
@@ -27,6 +28,7 @@ struct Products: View {
         let umbrellaRef = db.collection("Products").document("umbrella")
         let slipperRef = db.collection("Products").document("slipper")
         let uniformRef = db.collection("Products").document("uniform")
+        let helmetRef = db.collection("Products").document("helmet")
         
         statusRef.getDocument(){(document, err) in
             if let document = document{
@@ -122,6 +124,12 @@ struct Products: View {
         uniformRef.getDocument(){(document, err) in
             if let document = document{
                 uniformLate = document.get("late") as! Int
+            }
+        }
+        
+        helmetRef.getDocument(){(document, err) in
+            if let document = document{
+                helmetLate = document.get("late") as! Int
             }
         }
     }
@@ -334,6 +342,38 @@ struct Products: View {
                             HStack {
                                 Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
                                 Text("대여 가능 (잔여 : ".localized() + String(uniformLate) + "개)".localized()).foregroundColor(.green)
+                                
+                                Spacer()
+                            }
+                        }
+                        
+                        else{
+                            HStack {
+                                Image(systemName: "xmark").resizable().frame(width : 20, height : 20).foregroundColor(.red)
+                                Text("대여 불가".localized()).foregroundColor(.red)
+                                
+                                Spacer()
+                            }
+                        }
+                    }.padding(20)
+                    
+                    Divider()
+
+                    VStack {
+                        HStack{
+                            Image("ic_helmet")
+                                .resizable().frame(width : 50, height: 50)
+
+                            Text("헬멧".localized())
+                                .fontWeight(.semibold)
+
+                            Spacer()
+                        }
+                        
+                        if helmetLate > 0{
+                            HStack {
+                                Image(systemName: "checkmark").resizable().frame(width : 20, height : 20).foregroundColor(.green)
+                                Text("대여 가능 (잔여 : ".localized() + String(helmetLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
                             }

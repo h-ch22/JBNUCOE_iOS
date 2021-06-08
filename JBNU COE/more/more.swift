@@ -135,7 +135,6 @@ struct more: View {
     @ObservedObject var license = loadLicense()
     @State var isChanging = false
     @ObservedObject var text = loadText()
-
     
     init(){
         db = Firestore.firestore()

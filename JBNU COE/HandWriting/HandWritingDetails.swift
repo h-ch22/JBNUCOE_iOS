@@ -312,7 +312,7 @@ struct HandWritingDetails: View {
                         
                         Divider()
                         
-                        Text(examName)
+                        Text(examName).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
 .background(RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.gray).opacity(0.2))
@@ -325,7 +325,7 @@ struct HandWritingDetails: View {
                         
                         Divider()
                         
-                        Text(examDate)
+                        Text(examDate).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
 .background(RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.gray).opacity(0.2))
@@ -338,7 +338,7 @@ struct HandWritingDetails: View {
                         
                         Divider()
                         
-                        Text(meter)
+                        Text(meter).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
 .background(RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.gray).opacity(0.2))
@@ -351,7 +351,7 @@ struct HandWritingDetails: View {
                         
                         Divider()
                         
-                        Text(term)
+                        Text(term).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
 .background(RoundedRectangle(cornerRadius: 15)
                         .foregroundColor(.gray).opacity(0.2))
@@ -364,7 +364,7 @@ struct HandWritingDetails: View {
                         
                         Divider()
                         
-                        Text(review)
+                        Text(review).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     } .padding(15).background(RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.gray).opacity(0.2))
                     
@@ -378,7 +378,7 @@ struct HandWritingDetails: View {
                     
                     Divider()
                     
-                    Text(howTO)
+                    Text(howTO).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }                  .padding(15)
 .background(RoundedRectangle(cornerRadius: 15)
                     .foregroundColor(.gray).opacity(0.2))
