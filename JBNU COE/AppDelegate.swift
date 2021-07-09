@@ -3,6 +3,8 @@ import FirebaseMessaging
 import UserNotifications
 import Foundation
 import UIKit
+import WidgetKit
+
 class AppDelegate: NSObject {
     
     let gcmMessageIDKey = "gcm.message_id"
@@ -44,7 +46,10 @@ class AppDelegate: NSObject {
       }
 
       // Print full message.
-      print(userInfo)
+      print("received : \(userInfo)")
+        
+      WidgetCenter.shared.reloadAllTimelines()
+
     }
 
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any],

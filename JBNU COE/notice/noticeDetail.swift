@@ -165,6 +165,12 @@ struct noticeDetail: View {
     }
 }
 
+extension String{
+    func localized(bundle: Bundle = .main, tableName : String = "Localizable") -> String{
+        return NSLocalizedString(self, tableName : tableName, value : "\(self)", comment: "")
+    }
+}
+
 //struct noticeDetail_Previews: PreviewProvider {
 //    @State static var notice = Notice(title: "", date: "", contents: "", read : 0)
 //

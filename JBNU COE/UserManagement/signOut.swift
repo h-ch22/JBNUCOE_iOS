@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-import FirebaseAuth
+import Firebase
 
 enum alertSignOut{
     case fail, success
@@ -37,6 +37,50 @@ struct signOut: View {
     func dosignOut(){
         do{
             UserManagement().autoLogOut()
+            
+            db.collection("User").document(Auth.auth().currentUser?.email as! String).updateData([
+                "token" : FieldValue.delete()
+            ]){ err in
+                if let err = err{
+                }
+                
+                else{
+                    let ref = db.collection("User").document(Auth.auth().currentUser?.email as! String)
+                    
+                    ref.getDocument(){(result, err) in
+                        if let err = err{
+                            print(err)
+                        }
+                        
+                        else{
+                            let studentNo = result!.get("studentNo") as! String
+                            
+                            let adminRef = db.collection("User").document("Admin")
+                            
+                            adminRef.getDocument(){(document, err) in
+                                if let err = err{
+                                    print(err)
+                                }
+                                
+                                else{
+                                    if document!.get(studentNo) != nil{
+                                        adminRef.collection("tokens").document(studentNo).delete(){err in
+                                            if let err = err{
+                                                print(err)
+                                            }
+                                            
+                                            else{
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
             try Auth.auth().signOut()
             print("signout...")
             
@@ -48,6 +92,8 @@ struct signOut: View {
             else{
                 result = "fail"
             }
+            
+            
         }   catch let err as Error{
             result = "fail"
         }

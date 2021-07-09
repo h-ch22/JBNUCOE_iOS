@@ -9,47 +9,10 @@ import SwiftUI
 import FirebaseStorage
 import FirebaseFirestore
 
-class getNotices: ObservableObject{
-    @Published var notices: [Notice] = []
-    
-    func getNotices(){
-        db.collection("Notice").getDocuments(){(QuerySnapshot, err) in
-            if let err = err{
-                print(err)
-            }
-            
-            else{
-                for document in QuerySnapshot!.documents{
-                        self.getNoticeData(name: document.documentID)
-                }
-            }
-        }
-    }
-    
-    func getNoticeData(name : String){
-        let docRef = db.collection("Notice").document(name)
-        
-        docRef.getDocument(){(document, err) in
-            if let document = document{
-                
-                if !self.notices.contains(where: {($0.title == name)}){
-                    self.notices.append(
-                        Notice(title: name, date: document.get("timeStamp") as? String ?? "", contents: document.get("contents") as? String ?? "", read: document.get("read") as? Int ?? 0)
-                    )
-                }
-                
-                self.notices.sort{
-                    $0.date > $1.date
-                }
-            }
-        }
-        
-    }
-}
-
 struct noticeListView: View {
     @ObservedObject var getNotices: getNotices
     @State private var searchText = ""
+    @State private var showAlert = false
     
     var body: some View {
         NavigationView{
@@ -72,7 +35,9 @@ struct noticeListView: View {
             .navigationBarItems(trailing:
                 Button(action: {
                     getNotices.notices.removeAll()
-                    getNotices.getNotices()
+                    getNotices.getNotices(){result in
+                        
+                    }
                 }){
                     Image(systemName: "arrow.clockwise")
                                             
@@ -89,7 +54,9 @@ struct noticeListView: View {
             }
         }
         .onAppear(perform: {
-            getNotices.getNotices()
+            getNotices.getNotices(){result in
+                
+            }
         }).buttonStyle(PlainButtonStyle())
         .listStyle(GroupedListStyle())
     }

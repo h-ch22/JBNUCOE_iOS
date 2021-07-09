@@ -7,6 +7,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import Firebase
 
 enum feedbackAlert{
     case err, success, type, feedback
@@ -74,12 +75,17 @@ struct FeedbackHub_main: View {
             category_KR = "기타"
         }
         
+        if category == "Complaints"{
+            category_KR = "민원사업"
+        }
+        
         db.collection("Feedback").document(title).setData([
             "Feedback": Feedback,
             "Category" : category_KR,
             "Type" : type,
             "Date Time" : dateFormat.string(from: now),
-            "author" : user.dept + " " + user.studentNo + " " + user.name
+            "author" : user.dept + " " + user.studentNo + " " + user.name,
+            "mail" : Auth.auth().currentUser?.email as! String
         ]){err in
             if let err = err{
                 result = false

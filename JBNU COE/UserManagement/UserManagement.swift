@@ -8,6 +8,7 @@
 import Foundation
 import FirebaseFirestore
 import FirebaseAuth
+import Firebase
 
 var db = Firestore.firestore()
 
@@ -100,6 +101,44 @@ class UserManagement : ObservableObject{
         Auth.auth().signIn(withEmail: mail, password: password){
             (user, error) in
             if user != nil{
+                let docRef = db.collection("User").document(Auth.auth().currentUser?.email as! String)
+                
+                docRef.updateData(["token" : Messaging.messaging().fcmToken]){ err in
+                    if let err = err{
+                        print(err)
+                    }
+                    
+                    else{
+                        let ref = db.collection("User").document(Auth.auth().currentUser?.email as! String)
+                        
+                        ref.getDocument(){(result, err) in
+                            if let err = err{
+                                print(err)
+                            }
+                            
+                            else{
+                                let studentNo = result!.get("studentNo") as! String
+                                
+                                let adminRef = db.collection("User").document("Admin")
+                                
+                                adminRef.getDocument(){(document, err) in
+                                    if let err = err{
+                                        print(err)
+                                    }
+                                    
+                                    else{
+                                        if document!.get(studentNo) != nil{
+                                            adminRef.collection("tokens").document(studentNo).setData(["token" :
+                                                Messaging.messaging().fcmToken
+                                            ])
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
                 self.isSignedIn = true
                 self.mail.append(mail)
                 self.mail = mail

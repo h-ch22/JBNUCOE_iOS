@@ -14,9 +14,17 @@ struct Products: View {
     @State var labcoatLate : Int = 0
     @State var umbrellaLate : Int = 0
     @State var serviceStatus : Bool = true
+    @State var admin : String = ""
     @State var uniformLate : Int = 0
     @State var slipperLate : Int = 0
     @State var helmetLate : Int = 0
+    @State var Late_230 : Int = 0
+    @State var Late_240 : Int = 0
+    @State var Late_250 : Int = 0
+    @State var Late_260 : Int = 0
+    @State var Late_270 : Int = 0
+    @State var Late_280 : Int = 0
+    
     
     func getData(){
         db = Firestore.firestore()
@@ -33,6 +41,9 @@ struct Products: View {
         statusRef.getDocument(){(document, err) in
             if let document = document{
                 var status = document.get("isAvailable") as! Bool
+                var admin = document.get("admin") as! String
+                
+                self.admin = admin
                 
                 var openTime = "09:00"
                 var closeTime = "18:00"
@@ -52,6 +63,7 @@ struct Products: View {
 
                 var open = String()
                 open = DayFomrat.string(from: now) + " " + openTime
+                
                 var close = String()
                 close = DayFomrat.string(from: now) + " " + closeTime
                 
@@ -81,7 +93,7 @@ struct Products: View {
                 print("open : " , open_date)
                 print("close : " , close_date)
 
-                if currentDate > open_date && currentDate < close_date && status{
+                if currentDate > open_date && currentDate < close_date && status && admin != ""{
                     serviceStatus = true
                 }
                 
@@ -118,6 +130,12 @@ struct Products: View {
         slipperRef.getDocument(){(document, err) in
             if let document = document{
                 slipperLate = document.get("late") as! Int
+                Late_230 = document.get("230") as! Int
+                Late_240 = document.get("240") as! Int
+                Late_250 = document.get("250") as! Int
+                Late_260 = document.get("260") as! Int
+                Late_270 = document.get("270") as! Int
+                Late_280 = document.get("280") as! Int
             }
         }
         
@@ -148,6 +166,10 @@ struct Products: View {
                     Text("서비스를 정상적으로 이용하실 수 있습니다.".localized())
                         .fontWeight(.semibold)
                         .foregroundColor(.green)
+                    
+                    Text("현재 관리자 : \(admin)")
+                        .fontWeight(.semibold)
+                        .foregroundColor(.green)
                 }
                 
                 else{
@@ -157,6 +179,10 @@ struct Products: View {
                         .foregroundColor(.orange)
                     
                     Text("서비스 준비 중입니다.".localized())
+                        .fontWeight(.semibold)
+                        .foregroundColor(.orange)
+                    
+                    Text("점심 시간 : 12:00 ~ 13:00".localized())
                         .fontWeight(.semibold)
                         .foregroundColor(.orange)
                 }
@@ -312,6 +338,11 @@ struct Products: View {
                                 Text("대여 가능 (잔여 : ".localized() + String(slipperLate) + "개)".localized()).foregroundColor(.green)
                                 
                                 Spacer()
+                            }
+                            
+                            HStack{
+                                Text("240 : \(Late_240), 250 : \(Late_250),\n260 : \(Late_260), 270 : \(Late_270), 280 : \(Late_280)")
+                                    .foregroundColor(.green)
                             }
                         }
                         

@@ -8,6 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 import FirebaseStorage
+import FirebaseFirestore
 
 enum secessionAlert{
     case success, fail
@@ -44,7 +45,49 @@ struct secessionView: View {
             }
             
             else{
+                let ref = db.collection("User").document(Auth.auth().currentUser?.email as! String)
                 
+                ref.getDocument(){(result, err) in
+                    if let err = err{
+                        print(err)
+                    }
+                    
+                    else{
+                        let studentNo = result!.get("studentNo") as! String
+                        
+                        let adminRef = db.collection("User").document("Admin")
+                        
+                        adminRef.getDocument(){(document, err) in
+                            if let err = err{
+                                print(err)
+                            }
+                            
+                            else{
+                                if document!.get(studentNo) != nil{
+                                    adminRef.collection("tokens").document(studentNo).delete(){err in
+                                        if let err = err{
+                                            print(err)
+                                        }
+                                        
+                                        else{
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                
+                db.collection("User").document(Auth.auth().currentUser?.email as! String).delete(){err in
+                    if let err = err{
+                        print(err)
+                    }
+                    
+                    else{
+                        
+                    }
+                }
             }
         }
         

@@ -15,6 +15,7 @@ struct FeedbackHub_category: View {
     @State var isPromiseSelected = false
     @State var isEventSelected = false
     @State var isAppSelected = false
+    @State var isComplaintsSelected = false
     @Binding var show : Bool
     @State var isOtherSelected = false
     @State var category = ""
@@ -48,6 +49,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = false
                                 isAppSelected = false
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "wrench.and.screwdriver.fill")
@@ -76,6 +78,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = false
                                 isAppSelected = false
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "cross.fill")
@@ -106,6 +109,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = false
                                 isAppSelected = false
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "bubble.left.and.bubble.right.fill")
@@ -134,6 +138,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = false
                                 isAppSelected = false
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "list.bullet.rectangle")
@@ -164,6 +169,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = true
                                 isAppSelected = false
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "rays")
@@ -192,6 +198,7 @@ struct FeedbackHub_category: View {
                                 isEventSelected = false
                                 isAppSelected = true
                                 isOtherSelected = false
+                                isComplaintsSelected = false
                             }){
                                 HStack{
                                     Image(systemName: "apps.iphone")
@@ -210,35 +217,70 @@ struct FeedbackHub_category: View {
                             .background(RoundedRectangle(cornerRadius: 20)
                                         .stroke(isAppSelected ? Color.orange : Color.gray, lineWidth: 3))
                         }
+                        
                         Spacer()
                         
-                        Button(action: {
-                            isEnabled = true
-                            category = "Others"
-                            isFacilitySelected = false
-                            isWelfareSelected = false
-                            isCommunicationSelected = false
-                            isPromiseSelected = false
-                            isEventSelected = false
-                            isAppSelected = false
-                            isOtherSelected = true
-                        }){
-                            HStack{
-                                Image(systemName: "ellipsis.circle.fill")
-                                    .resizable()
-                                    .frame(width : 30, height : 30)
-                                    .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
-                                
-                                Text("기타".localized())
-                                    .font(.title)
-                                    .fontWeight(.bold)
-                                    .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
-                            }
-                        }.frame(width : 120,
-                                height : 40)
-                        .padding(30)
-                        .background(RoundedRectangle(cornerRadius: 20)
-                                    .stroke(isOtherSelected ? Color.orange : Color.gray, lineWidth: 3))
+                        HStack{
+                            Button(action: {
+                                isEnabled = true
+                                category = "Complaints"
+                                isFacilitySelected = false
+                                isWelfareSelected = false
+                                isComplaintsSelected = true
+                                isCommunicationSelected = false
+                                isPromiseSelected = false
+                                isEventSelected = false
+                                isAppSelected = false
+                                isOtherSelected = false
+                            }){
+                                HStack{
+                                    Image(systemName: "cube.box.fill")
+                                        .resizable()
+                                        .frame(width : 30, height : 30)
+                                        .foregroundColor(isComplaintsSelected ? Color.orange : Color.gray)
+                                    
+                                    Text("민원\n사업".localized())
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .fixedSize(horizontal: false, vertical: true)
+                                        .foregroundColor(isComplaintsSelected ? Color.orange : Color.gray)
+                                }
+                            }.frame(width : 120,
+                                    height : 40)
+                            .padding(30)
+                            .background(RoundedRectangle(cornerRadius: 20)
+                                        .stroke(isComplaintsSelected ? Color.orange : Color.gray, lineWidth: 3))
+                            
+                            Button(action: {
+                                isEnabled = true
+                                category = "Others"
+                                isFacilitySelected = false
+                                isWelfareSelected = false
+                                isCommunicationSelected = false
+                                isComplaintsSelected = false
+                                isPromiseSelected = false
+                                isEventSelected = false
+                                isAppSelected = false
+                                isOtherSelected = true
+                            }){
+                                HStack{
+                                    Image(systemName: "ellipsis.circle.fill")
+                                        .resizable()
+                                        .frame(width : 30, height : 30)
+                                        .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
+                                    
+                                    Text("기타".localized())
+                                        .font(.title)
+                                        .fontWeight(.bold)
+                                        .foregroundColor(isOtherSelected ? Color.orange : Color.gray)
+                                }
+                            }.frame(width : 120,
+                                    height : 40)
+                            .padding(30)
+                            .background(RoundedRectangle(cornerRadius: 20)
+                                        .stroke(isOtherSelected ? Color.orange : Color.gray, lineWidth: 3))
+                        }
+                        
                         
                         Spacer()
                         
