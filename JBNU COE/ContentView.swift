@@ -9,17 +9,36 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
+//func serverTimeReturn(completionHandler:(_ getResDate: Date?) -> Void){
+//
+//let url = URL(string: "http://www.google.com")
+//    let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+//        let httpResponse = response as? HTTPURLResponse
+//        if let contentType = httpResponse!.allHeaderFields["Date"] as? String {
+//
+//            var dFormatter = DateFormatter()
+//            dFormatter.dateFormat = "EEE, dd MMM yyyy HH:mm:ss z"
+//            var serverTime = dFormatter.date(from: contentType)
+//            completionHandler(serverTime)
+//        }
+//    }
+//
+//    task.resume()
+//}
+
 struct ContentView: View {
     @State var isSignedIn : Bool = false
     @State var uid : String = ""
     @State var pwd : String = ""
     @State var studentNo : String = ""
+    
     @EnvironmentObject var userManagement : UserManagement
     @Binding var show : Bool
     
     @ViewBuilder
     var body: some View {
             VStack{
+                
                 if userManagement.isSignedIn{
                     BottomTabManager()
                 }

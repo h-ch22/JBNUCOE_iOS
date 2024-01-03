@@ -314,8 +314,8 @@ struct HandWritingDetails: View {
                         
                         Text(examName).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
-.background(RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.gray).opacity(0.2))
+                        .background(RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(.gray).opacity(0.2))
                     
                     Spacer()
                     
@@ -327,8 +327,8 @@ struct HandWritingDetails: View {
                         
                         Text(examDate).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
-.background(RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.gray).opacity(0.2))
+                        .background(RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(.gray).opacity(0.2))
                     
                     Spacer()
                     
@@ -340,8 +340,8 @@ struct HandWritingDetails: View {
                         
                         Text(meter).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
-.background(RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.gray).opacity(0.2))
+                        .background(RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(.gray).opacity(0.2))
                     
                     Spacer()
                     
@@ -353,8 +353,8 @@ struct HandWritingDetails: View {
                         
                         Text(term).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     }                      .padding(15)
-.background(RoundedRectangle(cornerRadius: 15)
-                        .foregroundColor(.gray).opacity(0.2))
+                        .background(RoundedRectangle(cornerRadius: 15)
+                                        .foregroundColor(.gray).opacity(0.2))
                     
                     Spacer()
                     
@@ -366,10 +366,10 @@ struct HandWritingDetails: View {
                         
                         Text(review).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                     } .padding(15).background(RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.gray).opacity(0.2))
+                                                .foregroundColor(.gray).opacity(0.2))
                     
                 }
-
+                
                 Spacer()
                 
                 VStack{
@@ -380,92 +380,91 @@ struct HandWritingDetails: View {
                     
                     Text(howTO).fixedSize(horizontal: false, vertical: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }                  .padding(15)
-.background(RoundedRectangle(cornerRadius: 15)
-                    .foregroundColor(.gray).opacity(0.2))
+                    .background(RoundedRectangle(cornerRadius: 15)
+                                    .foregroundColor(.gray).opacity(0.2))
                 
             }.padding()
-            .navigationBarTitle(handWriting.title)
-            .navigationBarTitleDisplayMode(.large)
+                .navigationBarTitle(handWriting.title)
+                .navigationBarTitleDisplayMode(.large)
             
-            .onAppear(perform: {
-                title = handWriting.title
-                docId = handWriting.docId
-                userManagement.getEmail()
-                checkAdmin()
-                loadData()
-            })
+                .onAppear(perform: {
+                    title = handWriting.title
+                    docId = handWriting.docId
+                    checkAdmin()
+                    loadData()
+                })
             
-            .sheet(isPresented : self.$showModal){
-                SingleImageView(url: $selectedURL)
-            }
-            
-            .toolbar{
-                ToolbarItem(placement: .navigationBarLeading){
-                    Text("")
+                .sheet(isPresented : self.$showModal){
+                    SingleImageView(url: $selectedURL)
                 }
-                ToolbarItem(placement: .navigationBarTrailing){
-                    HStack{
-                        if !isAuthor{
-                            Button(action : {
-                                alertType = .recommend
-                                showAlert = true
-                            })
-                            {
-                                Image(systemName: "hand.thumbsup").foregroundColor(.red)
+            
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarLeading){
+                        Text("")
+                    }
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        HStack{
+                            if !isAuthor{
+                                Button(action : {
+                                    alertType = .recommend
+                                    showAlert = true
+                                })
+                                {
+                                    Image(systemName: "hand.thumbsup").foregroundColor(.red)
+                                }
                             }
-                        }
-
-                        if isAuthor{
-                            NavigationLink(destination : HandWritingEdit(examName: $title, meter: $examName, term: $meter, review: $term, howTO: $review, title: $howTO, id: $docId)){
-                                Image(systemName: "pencil").foregroundColor(.blue)
+                            
+                            if isAuthor{
+                                NavigationLink(destination : HandWritingEdit(examName: $title, meter: $examName, term: $meter, review: $term, howTO: $review, title: $howTO, id: $docId)){
+                                    Image(systemName: "pencil").foregroundColor(.blue)
+                                }
                             }
-                        }
-                        
-                        if isAdmin || isAuthor{
-                            Button(action : {
-                                alertType = .delete
-                                showAlert = true
-                            }){
-                                Image(systemName: "trash").foregroundColor(.red)
+                            
+                            if isAdmin || isAuthor{
+                                Button(action : {
+                                    alertType = .delete
+                                    showAlert = true
+                                }){
+                                    Image(systemName: "trash").foregroundColor(.red)
+                                }
                             }
+                            
                         }
                         
                     }
                     
                 }
-
-            }
             
-            .alert(isPresented: $showAlert){
-                switch alertType{
-                case .recommend:
-                    return Alert(title: Text("추천 확인".localized()), message: Text("이 글을 추천하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
-                        doRecommend()
-                    }, secondaryButton: .destructive(Text("아니오".localized())))
-                    
-                case .recommendSuccess:
-                    return Alert(title : Text("처리 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())){
-                        getRecommend()
-                    })
-                    
-                case .recommendFail:
-                    return Alert(title : Text("오류".localized()), message: Text("이미 추천한 글이거나, 네트워크 상태가 불안정합니다.".localized()), dismissButton: .default(Text("확인".localized())))
-                    
-                case .delete:
-                    return Alert(title: Text("제거 확인".localized()), message: Text("제거 시 복구할 수 없습니다.\n계속하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
-                        delete()
-                    }, secondaryButton: .destructive(Text("아니오".localized())))
-                    
-                case .deleteSuccess:
-                    return Alert(title : Text("처리 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())){
+                .alert(isPresented: $showAlert){
+                    switch alertType{
+                    case .recommend:
+                        return Alert(title: Text("추천 확인".localized()), message: Text("이 글을 추천하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
+                            doRecommend()
+                        }, secondaryButton: .destructive(Text("아니오".localized())))
                         
-                    })
+                    case .recommendSuccess:
+                        return Alert(title : Text("처리 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())){
+                            getRecommend()
+                        })
+                        
+                    case .recommendFail:
+                        return Alert(title : Text("오류".localized()), message: Text("이미 추천한 글이거나, 네트워크 상태가 불안정합니다.".localized()), dismissButton: .default(Text("확인".localized())))
+                        
+                    case .delete:
+                        return Alert(title: Text("제거 확인".localized()), message: Text("제거 시 복구할 수 없습니다.\n계속하시겠습니까?".localized()), primaryButton: .destructive(Text("예".localized())){
+                            delete()
+                        }, secondaryButton: .destructive(Text("아니오".localized())))
+                        
+                    case .deleteSuccess:
+                        return Alert(title : Text("처리 완료".localized()), message: Text("정상 처리되었습니다.".localized()), dismissButton: .default(Text("확인".localized())){
+                            
+                        })
+                        
+                    case .deleteFail:
+                        return Alert(title : Text("오류".localized()), message: Text("제거 중 문제가 발생하였습니다.\n네트워크 상태를 확인하거나, 나중에 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())))
+                    }
                     
-                case .deleteFail:
-                    return Alert(title : Text("오류".localized()), message: Text("제거 중 문제가 발생하였습니다.\n네트워크 상태를 확인하거나, 나중에 다시 시도하십시오.".localized()), dismissButton: .default(Text("확인".localized())))
                 }
-                
-            }
             
         }
         .overlay(Group{

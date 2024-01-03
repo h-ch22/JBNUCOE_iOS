@@ -37,5 +37,9 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+GoogleService-Info.plist
+JBNU COE/EoS/
+JBNU COE/License
+UserManagement.swift
 
 # End of https://www.toptal.com/developers/gitignore/api/macos,cocoapods

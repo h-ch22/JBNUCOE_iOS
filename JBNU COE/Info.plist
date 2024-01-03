@@ -39,6 +39,8 @@
 	</dict>
 	<key>NSCalendarsUsageDescription</key>
 	<string>취업캘린더와 iOS 캘린더 연동을 위해 해당 권한이 필요합니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>QR코드 스캔을 위해 카메라 권한이 필요합니다.</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>사용자의 위치를 지도에 실시간으로 표시하여 업체 위치와 현재 위치를 확인할 수 있는 기능을 사용하기 위해 위치 권한이 필요합니다.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

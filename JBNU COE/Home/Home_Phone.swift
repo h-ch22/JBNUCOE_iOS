@@ -309,6 +309,9 @@ struct Home_Phone: View {
                         
                     }.navigationBarTitle("제휴 업체".localized(), displayMode: .large)
                     .navigationBarBackButtonHidden(true)
+//                    .navigationBarItems(trailing: NavigationLink(destination : QRScannerView()){
+//                        Image(systemName : "qrcode.viewfinder")
+//                    })
                     .onDisappear(perform: {
                         withAnimation{
                             selectedPage = 0
