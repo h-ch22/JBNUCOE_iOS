@@ -57,7 +57,7 @@
 ![](ReadMe/feedbackHub.jpeg)<br>
 
 ## Compatibility</br>
-> JBNU-CH is compatible with these devices. </br>
+> JBNU COE is compatible with these devices. </br>
 ### iPhone</br>
 
 > iPhone 15 Pro Max </br>
